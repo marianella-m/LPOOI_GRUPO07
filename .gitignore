@@ -1,2 +1,4 @@
 #Visual Studio 2010
 *.suo
+**/bin/
+**/obj/
