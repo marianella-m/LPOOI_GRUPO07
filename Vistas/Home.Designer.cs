@@ -36,9 +36,9 @@
             this.altaClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaObraSocialToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlContent = new System.Windows.Forms.Panel();
             this.altaProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlContent = new System.Windows.Forms.Panel();
             this.menuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             this.productosToolStripMenuItem});
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
-            this.menuPrincipal.Size = new System.Drawing.Size(855, 28);
+            this.menuPrincipal.Size = new System.Drawing.Size(1357, 28);
             this.menuPrincipal.TabIndex = 0;
             this.menuPrincipal.Text = "menuPrincipal";
             // 
@@ -108,13 +108,6 @@
             this.productosToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
             this.productosToolStripMenuItem.Text = "Productos";
             // 
-            // pnlContent
-            // 
-            this.pnlContent.Location = new System.Drawing.Point(12, 77);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(709, 282);
-            this.pnlContent.TabIndex = 2;
-            // 
             // altaProductoToolStripMenuItem
             // 
             this.altaProductoToolStripMenuItem.Name = "altaProductoToolStripMenuItem";
@@ -127,11 +120,18 @@
             this.consultaProductosToolStripMenuItem.Size = new System.Drawing.Size(205, 24);
             this.consultaProductosToolStripMenuItem.Text = "Consulta Productos";
             // 
+            // pnlContent
+            // 
+            this.pnlContent.Location = new System.Drawing.Point(12, 77);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(1333, 516);
+            this.pnlContent.TabIndex = 2;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 399);
+            this.ClientSize = new System.Drawing.Size(1357, 620);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.menuPrincipal);
             this.MainMenuStrip = this.menuPrincipal;
