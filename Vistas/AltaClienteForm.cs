@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ClasesBase;
+using ClasesBase.services;
 
 namespace Vistas
 {
@@ -19,13 +20,21 @@ namespace Vistas
 
         private void btnRegistrarCliente_Click(object sender, EventArgs e)
         {
-
-
-            var save = MessageBox.Show("Desea guardar cambios?", "Atencion", MessageBoxButtons.YesNo);
-            if (save == DialogResult.Yes)
+            try
             {
+                if (string.IsNullOrWhiteSpace(txtNombreCliente.Text)
+                    || string.IsNullOrWhiteSpace(txtApellidoCliente.Text)
+                    || string.IsNullOrWhiteSpace(txtDNICliente.Text)
+                    || string.IsNullOrWhiteSpace(txtDireccionCliente.Text)
+                    || string.IsNullOrWhiteSpace(txtCUITCliente.Text)
+                    || string.IsNullOrWhiteSpace(txtNcarnetCliente.Text)
+                   )
+                {
 
-                this.Hide(); //cerrando la ventana anterior
+                    MessageBox.Show("Existen campos sin completar", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    return;
+                }
 
                 string nombre = txtNombreCliente.Text;
                 string apellido = txtApellidoCliente.Text;
@@ -34,23 +43,43 @@ namespace Vistas
                 string cuit = txtCUITCliente.Text;
                 string nCarnet = txtNcarnetCliente.Text;
 
-                //mostrando datos por msgbox
-                MessageBox.Show("USUARIO REGISTRADO! \nNOMBRE: " + nombre + "\nAPELLIDO: " + apellido +
-                    "\nDNI: " + dni + "\nDIRECCION: " + direccion + "\nCUIT: " + cuit
-                     + "\nNº DE CARNET : " + nCarnet);
+                Cliente c = new Cliente(nombre, apellido, dni, direccion, cuit, nCarnet);
 
+                DialogResult resultado = MessageBox.Show(
+                    "¿Desea guardar los cambios del cliente?\n\n" +
+                    "Nombre: " + nombre + "\n" +
+                    "Apellido: " + apellido + "\n" +
+                    "DNI: " + dni +
+                    "Direccion: " + direccion +"\n"+
+                    "Cuit: " + cuit +"\n"+
+                    "Carnet: " + nCarnet + "\n"
+                    , "Confirmar guardado",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (resultado == DialogResult.No)
+                {
+                    return;
+                }
+
+                ClienteService.AgregarCliente(c);
+
+                txtNombreCliente.Clear();
+                txtApellidoCliente.Clear();
+                txtDNICliente.Clear();
+                txtDireccionCliente.Clear();
+                txtCUITCliente.Clear();
+                txtNcarnetCliente.Clear();
+
+                FormControlUtil.showToast(lblToast, "Guardado exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
         }
-
-        // boton volver en alta cliente
-        private void btnAtrasFormCliente_Click(object sender, EventArgs e)
-        {
-            Home home = new Home();
-            home.Show();
-            this.Hide();
-        }
-
 
     }
 }
