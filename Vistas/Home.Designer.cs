@@ -39,6 +39,7 @@
             this.altaProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.btnCloseSession = new System.Windows.Forms.Button();
             this.menuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +51,8 @@
             this.productosToolStripMenuItem});
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
-            this.menuPrincipal.Size = new System.Drawing.Size(1357, 28);
+            this.menuPrincipal.Padding = new System.Windows.Forms.Padding(6, 20, 0, 20);
+            this.menuPrincipal.Size = new System.Drawing.Size(1357, 64);
             this.menuPrincipal.TabIndex = 0;
             this.menuPrincipal.Text = "menuPrincipal";
             // 
@@ -127,11 +129,26 @@
             this.pnlContent.Size = new System.Drawing.Size(1333, 516);
             this.pnlContent.TabIndex = 2;
             // 
+            // btnCloseSession
+            // 
+            this.btnCloseSession.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseSession.Location = new System.Drawing.Point(1271, 12);
+            this.btnCloseSession.Name = "btnCloseSession";
+            this.btnCloseSession.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
+            this.btnCloseSession.Size = new System.Drawing.Size(74, 39);
+            this.btnCloseSession.TabIndex = 3;
+            this.btnCloseSession.Text = "Salir";
+            this.btnCloseSession.UseVisualStyleBackColor = true;
+            this.btnCloseSession.Click += new System.EventHandler(this.btnCloseSession_Click);
+            this.btnCloseSession.MouseLeave += new System.EventHandler(this.btnCloseSession_MouseLeave);
+            this.btnCloseSession.MouseHover += new System.EventHandler(this.btnCloseSession_MouseHover);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1357, 620);
+            this.Controls.Add(this.btnCloseSession);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.menuPrincipal);
             this.MainMenuStrip = this.menuPrincipal;
@@ -159,5 +176,6 @@
         private System.Windows.Forms.ToolStripMenuItem consultaObraSocialToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem altaProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaProductosToolStripMenuItem;
+        private System.Windows.Forms.Button btnCloseSession;
     }
 }
