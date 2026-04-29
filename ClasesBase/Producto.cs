@@ -5,10 +5,19 @@ using System.Text;
 
 namespace ClasesBase
 {
-    class Producto
+    public class Producto
     {
-        private string Prod_Codigo {get; set;}
-        private string Prod_Categoria { get; set; }
-        private string Prod_Descripcion { get; set; } 
+        public string Prod_Codigo { get; set; }
+        public string Prod_Categoria { get; set; }
+        public string Prod_Descripcion { get; set; }
+        public decimal Prod_Precio { get; set; }
+
+        public Producto(string codigo, string categoria, string descripcion, decimal precio)
+        {
+            Prod_Codigo = codigo;
+            Prod_Categoria = categoria;
+            Prod_Descripcion = descripcion;
+            Prod_Precio = precio;
+        }
     }
 }

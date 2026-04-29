@@ -77,5 +77,18 @@ namespace Vistas
             btnCloseSession.Font = fuenteOriginal;
         }
 
+        private void altaProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NavigationManager.Navigate(pnlContent, new AltaProductosForm());
+        }
+
+        private void consultaProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlContent.Controls.Clear();
+            TextBox txtBox = new TextBox();
+            txtBox.Text = "Texto Ingresado......";
+            pnlContent.Controls.Add(txtBox);
+        }
+
     }
 }

@@ -48,6 +48,7 @@
     <Compile Include="Rol.cs" />
     <Compile Include="services\LoginService.cs" />
     <Compile Include="services\ObraSocialService.cs" />
+    <Compile Include="services\ProductoService.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
