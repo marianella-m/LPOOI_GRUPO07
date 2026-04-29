@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltaClienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaClienteForm.Designer.cs">
+      <DependentUpon>AltaClienteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AltaObraSocialForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="NavigationManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AltaClienteForm.resx">
+      <DependentUpon>AltaClienteForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AltaObraSocialForm.resx">
       <DependentUpon>AltaObraSocialForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,7 +115,9 @@
       <Name>ClasesBase</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="images\hacia-atras.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="images\elegante.png" />
   </ItemGroup>

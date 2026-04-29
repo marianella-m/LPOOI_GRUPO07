@@ -50,7 +50,8 @@
             this.productosToolStripMenuItem});
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
-            this.menuPrincipal.Size = new System.Drawing.Size(1357, 28);
+            this.menuPrincipal.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuPrincipal.Size = new System.Drawing.Size(1018, 24);
             this.menuPrincipal.TabIndex = 0;
             this.menuPrincipal.Text = "menuPrincipal";
             // 
@@ -60,20 +61,20 @@
             this.altaObraSocialToolStripMenuItem,
             this.consultaObraSocialToolStripMenuItem});
             this.obrasSocialesToolStripMenuItem.Name = "obrasSocialesToolStripMenuItem";
-            this.obrasSocialesToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
+            this.obrasSocialesToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
             this.obrasSocialesToolStripMenuItem.Text = "Obras Sociales";
             // 
             // altaObraSocialToolStripMenuItem
             // 
             this.altaObraSocialToolStripMenuItem.Name = "altaObraSocialToolStripMenuItem";
-            this.altaObraSocialToolStripMenuItem.Size = new System.Drawing.Size(236, 24);
+            this.altaObraSocialToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.altaObraSocialToolStripMenuItem.Text = "Alta Obra Social";
             this.altaObraSocialToolStripMenuItem.Click += new System.EventHandler(this.altaObraSocialToolStripMenuItem_Click);
             // 
             // consultaObraSocialToolStripMenuItem
             // 
             this.consultaObraSocialToolStripMenuItem.Name = "consultaObraSocialToolStripMenuItem";
-            this.consultaObraSocialToolStripMenuItem.Size = new System.Drawing.Size(236, 24);
+            this.consultaObraSocialToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.consultaObraSocialToolStripMenuItem.Text = "Consulta Obras Sociales";
             this.consultaObraSocialToolStripMenuItem.Click += new System.EventHandler(this.consultaObraSocialToolStripMenuItem_Click);
             // 
@@ -83,20 +84,20 @@
             this.altaClienteToolStripMenuItem,
             this.consultaObraSocialToolStripMenuItem1});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.clientesToolStripMenuItem.Text = "Clientes";
             // 
             // altaClienteToolStripMenuItem
             // 
             this.altaClienteToolStripMenuItem.Name = "altaClienteToolStripMenuItem";
-            this.altaClienteToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
+            this.altaClienteToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.altaClienteToolStripMenuItem.Text = "Alta Cliente";
             this.altaClienteToolStripMenuItem.Click += new System.EventHandler(this.altaClienteToolStripMenuItem_Click);
             // 
             // consultaObraSocialToolStripMenuItem1
             // 
             this.consultaObraSocialToolStripMenuItem1.Name = "consultaObraSocialToolStripMenuItem1";
-            this.consultaObraSocialToolStripMenuItem1.Size = new System.Drawing.Size(191, 24);
+            this.consultaObraSocialToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
             this.consultaObraSocialToolStripMenuItem1.Text = "Consulta Clientes";
             // 
             // productosToolStripMenuItem
@@ -105,36 +106,38 @@
             this.altaProductoToolStripMenuItem,
             this.consultaProductosToolStripMenuItem});
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.productosToolStripMenuItem.Text = "Productos";
             // 
             // altaProductoToolStripMenuItem
             // 
             this.altaProductoToolStripMenuItem.Name = "altaProductoToolStripMenuItem";
-            this.altaProductoToolStripMenuItem.Size = new System.Drawing.Size(205, 24);
+            this.altaProductoToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.altaProductoToolStripMenuItem.Text = "Alta Producto";
             // 
             // consultaProductosToolStripMenuItem
             // 
             this.consultaProductosToolStripMenuItem.Name = "consultaProductosToolStripMenuItem";
-            this.consultaProductosToolStripMenuItem.Size = new System.Drawing.Size(205, 24);
+            this.consultaProductosToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.consultaProductosToolStripMenuItem.Text = "Consulta Productos";
             // 
             // pnlContent
             // 
-            this.pnlContent.Location = new System.Drawing.Point(12, 77);
+            this.pnlContent.Location = new System.Drawing.Point(9, 63);
+            this.pnlContent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1333, 516);
+            this.pnlContent.Size = new System.Drawing.Size(1000, 419);
             this.pnlContent.TabIndex = 2;
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1357, 620);
+            this.ClientSize = new System.Drawing.Size(1018, 504);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.menuPrincipal);
             this.MainMenuStrip = this.menuPrincipal;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Home";
             this.Text = "Home";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Home_FormClosed);

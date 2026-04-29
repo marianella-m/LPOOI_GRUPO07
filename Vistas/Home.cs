@@ -28,13 +28,21 @@ namespace Vistas
 
         }
 
+        // funcionalidad a boton en pestaña cliente -> alta cliente
         private void altaClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pnlContent.Controls.Clear();
-            Label label = new Label();
-            label.Text = "Label creado";
-            pnlContent.Controls.Add(label);
+            AltaClienteForm formAltaCliente = new AltaClienteForm();
+            formAltaCliente.Show();
+            this.Hide();
         }
+
+        //private void altaClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    pnlContent.Controls.Clear();
+        //    Label label = new Label();
+        //    label.Text = "Label creado";
+        //    pnlContent.Controls.Add(label);
+        //}
 
         private void consultaObraSocialToolStripMenuItem_Click(object sender, EventArgs e)
         {
