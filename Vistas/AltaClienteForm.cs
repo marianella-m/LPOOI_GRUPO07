@@ -49,9 +49,9 @@ namespace Vistas
                     "¿Desea guardar los cambios del cliente?\n\n" +
                     "Nombre: " + nombre + "\n" +
                     "Apellido: " + apellido + "\n" +
-                    "DNI: " + dni +
+                    "DNI: " + dni + "\n" +
                     "Direccion: " + direccion +"\n"+
-                    "Cuit: " + cuit +"\n"+
+                    "CUIT: " + cuit +"\n"+
                     "Carnet: " + nCarnet + "\n"
                     , "Confirmar guardado",
                     MessageBoxButtons.YesNo,

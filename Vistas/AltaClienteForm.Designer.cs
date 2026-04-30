@@ -91,7 +91,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 5;
-            this.label5.Text = "Direccìon";
+            this.label5.Text = "Direccìón";
             // 
             // label6
             // 

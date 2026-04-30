@@ -132,16 +132,16 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Descripcion";
+            this.label4.Text = "Descripción";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(164, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Categoria";
+            this.label3.Text = "Categoría";
             // 
             // label2
             // 
@@ -150,7 +150,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Codigo";
+            this.label2.Text = "Código";
             // 
             // button1
             // 

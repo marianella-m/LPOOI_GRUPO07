@@ -42,6 +42,7 @@ namespace Vistas
                 DialogResult resultado = MessageBox.Show(
                     "¿Seguro que quieres guardar este producto?\n\n" +
                     "Código: " + codigo + "\n" +
+                    "Categoría: " + categoria + "\n" +
                     "Descripción: " + descripcion + "\n" +
                     "Precio: " + precio,
                     "Confirmar guardado",
