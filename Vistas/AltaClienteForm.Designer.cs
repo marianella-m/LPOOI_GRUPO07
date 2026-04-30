@@ -179,7 +179,7 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtApellidoCliente);
             this.groupBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.groupBox1.Location = new System.Drawing.Point(10, 51);
+            this.groupBox1.Location = new System.Drawing.Point(11, 52);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(442, 232);
             this.groupBox1.TabIndex = 16;
