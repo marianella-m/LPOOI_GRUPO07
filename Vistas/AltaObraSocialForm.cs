@@ -77,15 +77,15 @@ namespace Vistas
                 return;
             }
             
-            string messageProperties = "\nCuit: " +
+            string messageProperties = "CUIT: " +
                 cuit + "\nRazon Social: " +
                 razonSocial + "\nDirección: " +
                 direccion + "\nTeléfono: " +
                 telefono;
 
-            DialogResult dialogResult = MessageBox.Show("Desea guardar los datos de la obra social ?" + messageProperties, "Alta Obra Social", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que quieres guardar esta obra social?\n\n" + messageProperties, "Confirmar guardado", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (dialogResult == DialogResult.OK) {
+            if (dialogResult == DialogResult.Yes) {
                 ObraSocial obraSocial = new ObraSocial(cuit, razonSocial, razonSocial, telefono);
                 service.saveObraSocial(obraSocial);
                 FormControlUtil.showToast(lblToast, "Guardado exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
