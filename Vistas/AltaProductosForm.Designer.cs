@@ -48,7 +48,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(69, 21);
+            this.label1.Location = new System.Drawing.Point(11, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(183, 25);
             this.label1.TabIndex = 8;
@@ -65,9 +65,9 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(74, 64);
+            this.groupBox1.Location = new System.Drawing.Point(11, 52);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(473, 276);
+            this.groupBox1.Size = new System.Drawing.Size(442, 232);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Producto";
@@ -75,9 +75,9 @@
             // btnGuardar
             // 
             this.btnGuardar.AccessibleName = "btnGuardar";
-            this.btnGuardar.Location = new System.Drawing.Point(325, 215);
+            this.btnGuardar.Location = new System.Drawing.Point(279, 181);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(97, 33);
+            this.btnGuardar.Size = new System.Drawing.Size(67, 28);
             this.btnGuardar.TabIndex = 4;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -86,40 +86,40 @@
             // txtPrecio
             // 
             this.txtPrecio.AccessibleName = "";
-            this.txtPrecio.Location = new System.Drawing.Point(243, 141);
+            this.txtPrecio.Location = new System.Drawing.Point(166, 106);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(133, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(100, 20);
             this.txtPrecio.TabIndex = 3;
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.AccessibleName = "";
             this.txtDescripcion.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtDescripcion.Location = new System.Drawing.Point(38, 141);
+            this.txtDescripcion.Location = new System.Drawing.Point(20, 106);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(120, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcion.TabIndex = 2;
             // 
             // txtCategoria
             // 
             this.txtCategoria.AccessibleName = "";
-            this.txtCategoria.Location = new System.Drawing.Point(243, 71);
+            this.txtCategoria.Location = new System.Drawing.Point(166, 50);
             this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(133, 20);
+            this.txtCategoria.Size = new System.Drawing.Size(100, 20);
             this.txtCategoria.TabIndex = 1;
             // 
             // txtCodigo
             // 
             this.txtCodigo.AccessibleName = "";
-            this.txtCodigo.Location = new System.Drawing.Point(38, 71);
+            this.txtCodigo.Location = new System.Drawing.Point(20, 50);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(120, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 0;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(240, 125);
+            this.label5.Location = new System.Drawing.Point(164, 89);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 3;
@@ -128,7 +128,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 125);
+            this.label4.Location = new System.Drawing.Point(17, 89);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 2;
@@ -137,7 +137,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(240, 55);
+            this.label3.Location = new System.Drawing.Point(164, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 1;
@@ -146,7 +146,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 55);
+            this.label2.Location = new System.Drawing.Point(17, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 0;
@@ -154,7 +154,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(449, 318);
+            this.button1.Location = new System.Drawing.Point(387, 327);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(8, 8);
             this.button1.TabIndex = 10;
@@ -164,7 +164,7 @@
             // lblToast
             // 
             this.lblToast.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblToast.Location = new System.Drawing.Point(396, 35);
+            this.lblToast.Location = new System.Drawing.Point(199, 5);
             this.lblToast.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblToast.Name = "lblToast";
             this.lblToast.Size = new System.Drawing.Size(151, 38);
@@ -175,7 +175,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(685, 389);
+            this.ClientSize = new System.Drawing.Size(470, 300);
             this.Controls.Add(this.lblToast);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
