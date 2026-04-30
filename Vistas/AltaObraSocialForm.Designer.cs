@@ -136,9 +136,9 @@
             this.lblRazonSocial.Location = new System.Drawing.Point(164, 34);
             this.lblRazonSocial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRazonSocial.Name = "lblRazonSocial";
-            this.lblRazonSocial.Size = new System.Drawing.Size(68, 13);
+            this.lblRazonSocial.Size = new System.Drawing.Size(70, 13);
             this.lblRazonSocial.TabIndex = 10;
-            this.lblRazonSocial.Text = "Razón social";
+            this.lblRazonSocial.Text = "Razón Social";
             // 
             // lblCuit
             // 

@@ -78,7 +78,7 @@ namespace Vistas
             }
             
             string messageProperties = "CUIT: " +
-                cuit + "\nRazon Social: " +
+                cuit + "\nRazón Social: " +
                 razonSocial + "\nDirección: " +
                 direccion + "\nTeléfono: " +
                 telefono;
