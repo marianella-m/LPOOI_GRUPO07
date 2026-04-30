@@ -127,28 +127,28 @@
             // 
             // txtDNICliente
             // 
-            this.txtDNICliente.Location = new System.Drawing.Point(312, 51);
+            this.txtDNICliente.Location = new System.Drawing.Point(312, 50);
             this.txtDNICliente.Name = "txtDNICliente";
             this.txtDNICliente.Size = new System.Drawing.Size(100, 20);
             this.txtDNICliente.TabIndex = 2;
             // 
             // txtDireccionCliente
             // 
-            this.txtDireccionCliente.Location = new System.Drawing.Point(19, 104);
+            this.txtDireccionCliente.Location = new System.Drawing.Point(20, 106);
             this.txtDireccionCliente.Name = "txtDireccionCliente";
             this.txtDireccionCliente.Size = new System.Drawing.Size(100, 20);
             this.txtDireccionCliente.TabIndex = 3;
             // 
             // txtCUITCliente
             // 
-            this.txtCUITCliente.Location = new System.Drawing.Point(166, 104);
+            this.txtCUITCliente.Location = new System.Drawing.Point(166, 106);
             this.txtCUITCliente.Name = "txtCUITCliente";
             this.txtCUITCliente.Size = new System.Drawing.Size(100, 20);
             this.txtCUITCliente.TabIndex = 4;
             // 
             // txtNcarnetCliente
             // 
-            this.txtNcarnetCliente.Location = new System.Drawing.Point(312, 104);
+            this.txtNcarnetCliente.Location = new System.Drawing.Point(312, 106);
             this.txtNcarnetCliente.Name = "txtNcarnetCliente";
             this.txtNcarnetCliente.Size = new System.Drawing.Size(100, 20);
             this.txtNcarnetCliente.TabIndex = 5;
