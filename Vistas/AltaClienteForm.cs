@@ -46,12 +46,12 @@ namespace Vistas
                 Cliente c = new Cliente(nombre, apellido, dni, direccion, cuit, nCarnet);
 
                 DialogResult resultado = MessageBox.Show(
-                    "¿Desea guardar los cambios del cliente?\n\n" +
+                    "¿Seguro que quieres guardar este cliente?\n\n" +
                     "Nombre: " + nombre + "\n" +
                     "Apellido: " + apellido + "\n" +
-                    "DNI: " + dni +
+                    "DNI: " + dni + "\n" +
                     "Direccion: " + direccion +"\n"+
-                    "Cuit: " + cuit +"\n"+
+                    "CUIT: " + cuit +"\n"+
                     "Carnet: " + nCarnet + "\n"
                     , "Confirmar guardado",
                     MessageBoxButtons.YesNo,
@@ -80,6 +80,5 @@ namespace Vistas
             }
 
         }
-
     }
 }
