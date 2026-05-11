@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using ClasesBase;
 using ClasesBase.services;
+using System.Data.SqlClient;
+using System.Configuration; 
 
 namespace Vistas
 {
@@ -27,6 +29,8 @@ namespace Vistas
             this.initRoles();
             this.initUsuarios();
             txtPassword.PasswordChar = '*';
+
+            validateDatabaseConnection();
         }
 
         private void initRoles() {
@@ -77,6 +81,29 @@ namespace Vistas
                 txtPassword.PasswordChar = '*';
                 btnShowHidePassword.Image = Properties.Resources.view__2_;
             }
+        }
+
+        private void validateDatabaseConnection() {
+            string nombreConexion = "opticaConnection";
+
+            try
+            {
+                string cadena = ConfigurationManager.ConnectionStrings[nombreConexion].ConnectionString;
+
+                using (SqlConnection con = new SqlConnection(cadena))
+                {
+                    con.Open();
+                    this.Text += " - BD Conectada";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error crítico de base de datos: " + ex.Message,
+                                "Error de Inicio",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        
         }
         
     }
