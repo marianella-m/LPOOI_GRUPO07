@@ -65,7 +65,7 @@ namespace Vistas
 
             if (usuarioLoggeado != null)
             {
-                new Home().Show();
+                new Home(usuarioLoggeado).Show();
                 this.Hide();
             }else {
                 MessageBox.Show("Usuario y password incorrectos", "Ingreso invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
