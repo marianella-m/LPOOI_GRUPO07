@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ClasesBase.services;
 
 namespace Vistas
 {
@@ -86,6 +87,16 @@ namespace Vistas
             TextBox txtBox = new TextBox();
             txtBox.Text = "Texto Ingresado......";
             pnlContent.Controls.Add(txtBox);
+        }
+
+        private void altaUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NavigationManager.Navigate(pnlContent, new AltaUsuario(0));
+        }
+
+        private void consultarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NavigationManager.Navigate(pnlContent, new ConsultaUsuarios());
         }
 
     }

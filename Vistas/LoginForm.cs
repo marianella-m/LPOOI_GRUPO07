@@ -58,8 +58,10 @@ namespace Vistas
                 MessageBox.Show("Usuario y contraseña son campos requeridos, no pueden estar vacios", "Ingreso invalido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            
-            Usuario usuarioLoggeado = LoginService.login(this.usuarios, username, password);
+            Usuario usuarioLoggeado;
+            usuarioLoggeado = LoginService.loginDB(username, password);
+            if(usuarioLoggeado == null)
+            usuarioLoggeado = LoginService.loginLista(this.usuarios, username, password);
 
             if (usuarioLoggeado != null)
             {
@@ -89,7 +91,6 @@ namespace Vistas
             try
             {
                 string cadena = ConfigurationManager.ConnectionStrings[nombreConexion].ConnectionString;
-
                 using (SqlConnection con = new SqlConnection(cadena))
                 {
                     con.Open();
