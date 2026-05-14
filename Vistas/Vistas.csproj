@@ -220,7 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="optica.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="optica_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

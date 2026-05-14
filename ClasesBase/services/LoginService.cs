@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace ClasesBase.services
 {
@@ -24,7 +25,8 @@ namespace ClasesBase.services
         {
             Usuario u = null;
 
-            SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            //SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["opticaConnection"].ConnectionString);
 
             SqlCommand cmd = new SqlCommand();
 
