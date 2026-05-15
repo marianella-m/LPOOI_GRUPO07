@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ClasesBase.services;
+using ClasesBase;
 
 namespace Vistas
 {
     public partial class ConsultaUsuarios : Form
     {
-        public ConsultaUsuarios()
+        Usuario usuarioActual = null;
+        public ConsultaUsuarios(Usuario u)
         {
+            usuarioActual = u;
             InitializeComponent();
         }
 
@@ -40,8 +43,15 @@ namespace Vistas
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            int id = (int) ListaUsuarios.CurrentRow.Cells["ID"].Value;
-            new AltaUsuario(id).Show();
+            if (ListaUsuarios.CurrentRow != null)
+            {
+                int id = Convert.ToInt32(ListaUsuarios.CurrentRow.Cells["ID"].Value);
+                new AltaUsuario(id).Show();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un usuario");
+            }
         }
 
         private void ListaUsuarios_MouseHover(object sender, EventArgs e)
@@ -53,12 +63,22 @@ namespace Vistas
         {
             if (ListaUsuarios.CurrentRow != null){
                 int id = Convert.ToInt32(ListaUsuarios.CurrentRow.Cells["ID"].Value);
-                UsuarioService.delete_usuarios(id);
-                load_usuarios();
+                if (verificarUsuario(id))
+                {
+                    MessageBox.Show("No puede autoeliminarse");
+                }
+                else
+                {
+                    UsuarioService.delete_usuarios(id);
+                    load_usuarios();
+                }
             }
             else {
                 MessageBox.Show("Seleccione un usuario");
             }
+        }
+        private bool verificarUsuario(int id){
+            return this.usuarioActual.Usu_ID == id;
         }
     }
 }
