@@ -6,14 +6,19 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ClasesBase.services;
+using ClasesBase;
 
 namespace Vistas
 {
     public partial class Home : Form
     {
-        public Home()
+        Usuario usuarioActual = null;
+
+        public Home(Usuario u)
         {
             InitializeComponent();
+            usuarioActual = u;
         }
 
         Font fuenteOriginal ;
@@ -25,6 +30,7 @@ namespace Vistas
 
             btnCloseSession.BackColor = Color.FromArgb(220, 90, 90);
             btnCloseSession.ForeColor = Color.White;
+            restricciones(usuarioActual);
         }
 
         private void altaObraSocialToolStripMenuItem_Click(object sender, EventArgs e)
@@ -88,5 +94,44 @@ namespace Vistas
             pnlContent.Controls.Add(txtBox);
         }
 
+        private void altaUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NavigationManager.Navigate(pnlContent, new AltaUsuario(0));
+        }
+
+        private void consultarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NavigationManager.Navigate(pnlContent, new ConsultaUsuarios());
+        }
+
+        private void restricciones(Usuario u)
+        {
+            if (u.Rol_Codigo == 1) //Administrador
+            {
+                altaUsuarioToolStripMenuItem.Enabled= true;
+                altaProductoToolStripMenuItem.Enabled= true;
+
+                altaClienteToolStripMenuItem.Enabled= false;
+                altaObraSocialToolStripMenuItem.Enabled= false;
+            }
+
+            else if (u.Rol_Codigo == 2) //Operador
+            {
+                altaUsuarioToolStripMenuItem.Enabled = false;
+                altaProductoToolStripMenuItem.Enabled = false;
+
+                altaClienteToolStripMenuItem.Enabled = true;
+                altaObraSocialToolStripMenuItem.Enabled = true;
+            }
+
+            else if (u.Rol_Codigo == 3) //Auditor
+            {
+                altaUsuarioToolStripMenuItem.Enabled = true;
+                altaProductoToolStripMenuItem.Enabled = true;
+
+                altaClienteToolStripMenuItem.Enabled = true;
+                altaObraSocialToolStripMenuItem.Enabled = true;
+            }
+        }
     }
 }
