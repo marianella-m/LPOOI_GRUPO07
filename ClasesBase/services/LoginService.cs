@@ -9,17 +9,6 @@ namespace ClasesBase.services
 {
     public class LoginService
     {
-
-        public static Usuario loginLista(List<Usuario> usuarios, string username, string password) {
-            Usuario userSearch = usuarios.FirstOrDefault(
-                usu => 
-                    username.Equals(usu.Usu_NombreUsuario) &&
-                    password.Equals(usu.Usu_Password )
-                    );
-
-            return userSearch;
-        
-        }
         public static Usuario loginDB(string usuario, string pass)
         {
             Usuario u = null;
@@ -55,6 +44,7 @@ namespace ClasesBase.services
                 string ape = reader["Usu_ApellidoNombre"].ToString();
                 int rol = Convert.ToInt32(reader["Rol_Codigo"]);
                 u = new Usuario(nom, password, ape, rol);
+                u.Usu_ID = Convert.ToInt32(reader["Usu_ID"]);
             }
             con.Close();
 

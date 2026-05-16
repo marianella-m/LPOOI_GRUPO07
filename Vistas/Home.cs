@@ -101,7 +101,7 @@ namespace Vistas
 
         private void consultarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NavigationManager.Navigate(pnlContent, new ConsultaUsuarios());
+            NavigationManager.Navigate(pnlContent, new ConsultaUsuarios(this.usuarioActual));
         }
 
         private void restricciones(Usuario u)

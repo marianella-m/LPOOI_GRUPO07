@@ -18,7 +18,6 @@ namespace Vistas
         public LoginForm()
         {
             InitializeComponent();
-            
         }
 
         List<Rol> roles = new List<Rol>();
@@ -26,24 +25,7 @@ namespace Vistas
         
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.initRoles();
-            this.initUsuarios();
             txtPassword.PasswordChar = '*';
-
-            validateDatabaseConnection();
-        }
-
-        private void initRoles() {
-            //Roles “Administrador”, “Operador” y “Auditor”
-            roles.Add(new Rol(1, "Administrador"));
-            roles.Add(new Rol(2, "Operador"));
-            roles.Add(new Rol(3, "Auditor"));
-        }
-
-        private void initUsuarios() {
-            usuarios.Add(new Usuario("admi123", "Admi2026", "Richard Rios", 1));
-            usuarios.Add(new Usuario("oper123", "Oper2026", "Luis Suarez", 2));
-            usuarios.Add(new Usuario("audi123", "Audi2026", "Pablo Perez", 3));
         }
 
 
@@ -58,10 +40,8 @@ namespace Vistas
                 MessageBox.Show("Usuario y contraseña son campos requeridos, no pueden estar vacios", "Ingreso invalido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            Usuario usuarioLoggeado;
-            usuarioLoggeado = LoginService.loginDB(username, password);
-            if(usuarioLoggeado == null)
-            usuarioLoggeado = LoginService.loginLista(this.usuarios, username, password);
+            
+            Usuario usuarioLoggeado = LoginService.loginDB(username, password);
 
             if (usuarioLoggeado != null)
             {
