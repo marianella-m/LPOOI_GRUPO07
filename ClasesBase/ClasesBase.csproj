@@ -71,6 +71,7 @@
     <Compile Include="services\ObraSocialService.cs" />
     <Compile Include="services\ProductoService.cs" />
     <Compile Include="services\UsuarioService.cs" />
+    <Compile Include="services\VentaService.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
