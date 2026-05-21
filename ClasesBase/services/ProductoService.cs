@@ -2,43 +2,125 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace ClasesBase.services
 {
     public class ProductoService
     {
-        private static List<Producto> productos = new List<Producto>();
-
-        public static void AgregarProducto(Producto p)
+        public static DataTable list_productos()
         {
-            if (p.Prod_Precio <= 0)
-            {
-                throw new Exception("El precio debe ser mayor a 0");
-            }
+            SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
-            if (BuscarPorCodigo(p.Prod_Codigo) != null)
-            {
-                throw new Exception("El producto ya existe");
-            }
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT CODIGO as 'Código', CATEGORIA as 'Categoría', DESCRIPCION as 'Descripción', PRECIO as 'Precio' FROM PRODUCTOS";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
 
-            productos.Add(p);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
         }
-
-        public static List<Producto> ObtenerProductos()
+        public static DataTable search_productos(string pattern)
         {
-            return productos;
+            SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT CODIGO as 'Código', CATEGORIA as 'Categoría', DESCRIPCION as 'Descripción', PRECIO as 'Precio' FROM PRODUCTOS WHERE DESCRIPCION LIKE @pattern OR DESCRIPCION LIKE @pattern";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+
+            cmd.Parameters.AddWithValue("@pattern", "%" + pattern + "%");
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
         }
-
-        public static Producto BuscarPorCodigo(string codigo)
+        public static Producto buscarPorCodigo(string codigo)
         {
-            foreach (Producto p in productos)
+            SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM PRODUCTOS WHERE CODIGO=@cod";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+
+            cmd.Parameters.AddWithValue("@cod", codigo);
+
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
             {
-                if (p.Prod_Codigo == codigo)
-                {
-                    return p;
-                }
+                Producto p = new Producto(
+                    reader["CODIGO"].ToString(),
+                    reader["CATEGORIA"].ToString(),
+                    reader["DESCRIPCION"].ToString(),
+                    Convert.ToDecimal(reader["PRECIO"])
+                );
+
+                con.Close();
+                return p;
             }
+
+            con.Close();
             return null;
+        }
+        public static void insert_producto(string codigo, string categoria, string descripcion, decimal precio)
+        {
+            SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "INSERT INTO PRODUCTOS( CODIGO, CATEGORIA, DESCRIPCION, PRECIO) VALUES (@cod, @cat, @des, @pre)";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+
+            cmd.Parameters.AddWithValue("@cod", codigo);
+            cmd.Parameters.AddWithValue("@cat", categoria);
+            cmd.Parameters.AddWithValue("@des", descripcion);
+            cmd.Parameters.AddWithValue("@pre", precio);
+
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        public static void update_producto(string codigo, string categoria, string descripcion, decimal precio)
+        {
+            SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "UPDATE PRODUCTOS SET CATEGORIA=@cat, DESCRIPCION=@des, PRECIO=@pre WHERE CODIGO=@cod";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+
+            cmd.Parameters.AddWithValue("@cod", codigo);
+            cmd.Parameters.AddWithValue("@cat", categoria);
+            cmd.Parameters.AddWithValue("@des", descripcion);
+            cmd.Parameters.AddWithValue("@pre", precio);
+
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        public static void delete_producto(string codigo)
+        {
+            SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "DELETE FROM PRODUCTOS WHERE CODIGO=@cod";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+
+            cmd.Parameters.AddWithValue("@cod", codigo);
+
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
     }
 }
