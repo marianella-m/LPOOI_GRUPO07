@@ -139,7 +139,7 @@ namespace Vistas
 
         private void consultarVentasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NavigationManager.Navigate(pnlContent, new ConsultaVentaForm());
+            NavigationManager.Navigate(pnlContent, new ConsultaVentasForm());
         }
     }
 }
