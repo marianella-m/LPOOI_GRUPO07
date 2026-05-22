@@ -32,6 +32,14 @@ namespace Vistas
             listViewProductos.Columns.Add("Descripción", 220);
             listViewProductos.Columns.Add("Precio", 90);    
             */
+            DataTable tableClientes = ClienteService.findAllClientes();
+
+            tableClientes.Columns.Add("ClienteTexto", typeof(string), "NOMBRE + ' ' + APELLIDO + ' - ' + DNI");
+
+            cmbBoxClientes.DataSource = tableClientes;
+
+            cmbBoxClientes.DisplayMember = "ClienteTexto";
+            cmbBoxClientes.ValueMember = "DNI"; 
 
             DataTable tableProductos = ProductoService.list_productos();
 
@@ -47,7 +55,7 @@ namespace Vistas
 
         private void dataGridViewDetallesVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 4 && e.RowIndex >= 0)
+            if (e.ColumnIndex == 5 && e.RowIndex >= 0)
             {
                 DialogResult respuesta = MessageBox.Show("¿Quitar este producto?", "Confirmar",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -112,7 +120,19 @@ namespace Vistas
         private void btnRegistrarVenta_Click(object sender, EventArgs e)
         {
             Venta venta = new Venta();
-            venta.Cliente = new Cliente("");
+
+            if (cmbBoxClientes.SelectedValue != null)
+            {
+                string dniCliente = cmbBoxClientes.SelectedValue.ToString();
+                venta.Cliente = new Cliente(dniCliente);
+
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un cliente para la venta.", "Aviso");
+            }
+
+
             venta.Fecha = dtTmPickerVenta.Value ;
 
             List<VentaDetalle> ventaDetalles = new List<VentaDetalle>();

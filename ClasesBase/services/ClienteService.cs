@@ -63,6 +63,18 @@ namespace ClasesBase.services
             return dt;
         }
 
+        public static DataTable findAllClientes()
+        {
+            string query = "SELECT * FROM CLIENTES";
+
+            SqlDataAdapter da = new SqlDataAdapter(query, ClasesBase.Properties.Settings.Default.opticaConnectionString);
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
+
         public void ModificarCliente(string dni, string apellido, string nombre,
                                      string direccion, string nroCarnet, string osCuit)
         {

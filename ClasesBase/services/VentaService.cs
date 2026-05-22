@@ -62,12 +62,18 @@ namespace ClasesBase.services
 
             cmd.CommandText = queryInsertDetalles;
 
+            cmd.Parameters.Add("@VentaNumero", SqlDbType.Int);
+            cmd.Parameters.Add("@ProductoCodigo", SqlDbType.VarChar);
+            cmd.Parameters.Add("@ProductoPrecio", SqlDbType.Decimal);
+            cmd.Parameters.Add("@Cantidad", SqlDbType.Decimal); 
+
             foreach(VentaDetalle detalle in detalles)
             {
-                cmd.Parameters.AddWithValue("@VentaNumero", ventaNumero);
-                cmd.Parameters.AddWithValue("@ProductoCodigo", detalle.Producto.Prod_Codigo);
-                cmd.Parameters.AddWithValue("@ProductoPrecio", detalle.Producto.Prod_Precio);
-                cmd.Parameters.AddWithValue("@Cantidad", detalle.Cantidad);
+                cmd.Parameters["@VentaNumero"].Value = ventaNumero;
+                cmd.Parameters["@ProductoCodigo"].Value = detalle.Producto.Prod_Codigo;
+                cmd.Parameters["@ProductoPrecio"].Value = detalle.Producto.Prod_Precio;
+                cmd.Parameters["@Cantidad"].Value = detalle.Cantidad;
+                cmd.ExecuteNonQuery();
             }
 
             cmd.Connection.Close();
