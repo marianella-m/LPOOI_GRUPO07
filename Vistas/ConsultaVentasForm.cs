@@ -6,16 +6,21 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ClasesBase.services;
 
 namespace Vistas
 {
-    public partial class ConsultaVentaForm : Form
+    public partial class ConsultaVentasForm : Form
     {
-        public ConsultaVentaForm()
+        public ConsultaVentasForm()
         {
             InitializeComponent();
         }
 
+        private void ConsultaVentasForm_Load(object sender, EventArgs e)
+        {
+            dtGridVentas.DataSource = VentaService.FindAllVentas();
+        }
 
     }
 }

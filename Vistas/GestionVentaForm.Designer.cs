@@ -37,15 +37,16 @@
             this.colHeaderDescripcion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colHeaderPrecio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dataGridViewDetallesVenta = new System.Windows.Forms.DataGridView();
-            this.btnAgregarProducto = new System.Windows.Forms.Button();
-            this.lblRegistroVenta = new System.Windows.Forms.Label();
-            this.btnRegistrarVenta = new System.Windows.Forms.Button();
             this.codigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productoDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deleteItem = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnAgregarProducto = new System.Windows.Forms.Button();
+            this.lblRegistroVenta = new System.Windows.Forms.Label();
+            this.btnRegistrarVenta = new System.Windows.Forms.Button();
+            this.lblToast = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetallesVenta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,36 +136,6 @@
             this.dataGridViewDetallesVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDetallesVenta_CellContentClick);
             this.dataGridViewDetallesVenta.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDetallesVenta_CellEndEdit);
             // 
-            // btnAgregarProducto
-            // 
-            this.btnAgregarProducto.Location = new System.Drawing.Point(25, 128);
-            this.btnAgregarProducto.Name = "btnAgregarProducto";
-            this.btnAgregarProducto.Size = new System.Drawing.Size(88, 26);
-            this.btnAgregarProducto.TabIndex = 6;
-            this.btnAgregarProducto.Text = "Agregar";
-            this.btnAgregarProducto.UseVisualStyleBackColor = true;
-            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
-            // 
-            // lblRegistroVenta
-            // 
-            this.lblRegistroVenta.AutoSize = true;
-            this.lblRegistroVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistroVenta.Location = new System.Drawing.Point(20, 9);
-            this.lblRegistroVenta.Name = "lblRegistroVenta";
-            this.lblRegistroVenta.Size = new System.Drawing.Size(185, 29);
-            this.lblRegistroVenta.TabIndex = 7;
-            this.lblRegistroVenta.Text = "Registro Venta";
-            // 
-            // btnRegistrarVenta
-            // 
-            this.btnRegistrarVenta.Location = new System.Drawing.Point(25, 534);
-            this.btnRegistrarVenta.Name = "btnRegistrarVenta";
-            this.btnRegistrarVenta.Size = new System.Drawing.Size(127, 27);
-            this.btnRegistrarVenta.TabIndex = 8;
-            this.btnRegistrarVenta.Text = "Registrar Venta";
-            this.btnRegistrarVenta.UseVisualStyleBackColor = true;
-            this.btnRegistrarVenta.Click += new System.EventHandler(this.btnRegistrarVenta_Click);
-            // 
             // codigoProducto
             // 
             this.codigoProducto.Frozen = true;
@@ -211,11 +182,51 @@
             this.deleteItem.Text = "Quitar Item";
             this.deleteItem.UseColumnTextForButtonValue = true;
             // 
+            // btnAgregarProducto
+            // 
+            this.btnAgregarProducto.Location = new System.Drawing.Point(25, 128);
+            this.btnAgregarProducto.Name = "btnAgregarProducto";
+            this.btnAgregarProducto.Size = new System.Drawing.Size(88, 26);
+            this.btnAgregarProducto.TabIndex = 6;
+            this.btnAgregarProducto.Text = "Agregar";
+            this.btnAgregarProducto.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
+            // 
+            // lblRegistroVenta
+            // 
+            this.lblRegistroVenta.AutoSize = true;
+            this.lblRegistroVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistroVenta.Location = new System.Drawing.Point(20, 9);
+            this.lblRegistroVenta.Name = "lblRegistroVenta";
+            this.lblRegistroVenta.Size = new System.Drawing.Size(185, 29);
+            this.lblRegistroVenta.TabIndex = 7;
+            this.lblRegistroVenta.Text = "Registro Venta";
+            // 
+            // btnRegistrarVenta
+            // 
+            this.btnRegistrarVenta.Location = new System.Drawing.Point(25, 534);
+            this.btnRegistrarVenta.Name = "btnRegistrarVenta";
+            this.btnRegistrarVenta.Size = new System.Drawing.Size(127, 27);
+            this.btnRegistrarVenta.TabIndex = 8;
+            this.btnRegistrarVenta.Text = "Registrar Venta";
+            this.btnRegistrarVenta.UseVisualStyleBackColor = true;
+            this.btnRegistrarVenta.Click += new System.EventHandler(this.btnRegistrarVenta_Click);
+            // 
+            // lblToast
+            // 
+            this.lblToast.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblToast.Location = new System.Drawing.Point(525, 80);
+            this.lblToast.Name = "lblToast";
+            this.lblToast.Size = new System.Drawing.Size(201, 47);
+            this.lblToast.TabIndex = 15;
+            this.lblToast.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // GestionVentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1332, 614);
+            this.Controls.Add(this.lblToast);
             this.Controls.Add(this.btnRegistrarVenta);
             this.Controls.Add(this.lblRegistroVenta);
             this.Controls.Add(this.btnAgregarProducto);
@@ -254,5 +265,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
         private System.Windows.Forms.DataGridViewButtonColumn deleteItem;
+        private System.Windows.Forms.Label lblToast;
     }
 }

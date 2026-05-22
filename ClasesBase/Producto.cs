@@ -20,9 +20,10 @@ namespace ClasesBase
             Prod_Precio = precio;
         }
 
-        public Producto(string codigo) 
+        public Producto(string codigo, decimal precio) 
         {
             this.Prod_Codigo = codigo;
+            this.Prod_Precio = precio;
         }
     }
 }

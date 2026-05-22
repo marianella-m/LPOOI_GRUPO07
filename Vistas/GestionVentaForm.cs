@@ -142,7 +142,8 @@ namespace Vistas
                 VentaDetalle ventaDetalle = new VentaDetalle();
 
                 string codigoProducto = Convert.ToString(rowDetalle.Cells[0].Value);
-                ventaDetalle.Producto = new Producto(codigoProducto);
+                decimal precioProducto = Convert.ToDecimal(rowDetalle.Cells[2].Value);
+                ventaDetalle.Producto = new Producto(codigoProducto, precioProducto);
 
                 ventaDetalle.Cantidad = Convert.ToDecimal(rowDetalle.Cells[3].Value);
                 ventaDetalle.Total = Convert.ToDecimal(rowDetalle.Cells[4].Value);
@@ -154,6 +155,9 @@ namespace Vistas
             venta.detalles = ventaDetalles;
 
             VentaService.InsertVenta(venta);
+
+            FormControlUtil.showToast(lblToast, "Venta registrada exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
+            dataGridViewDetallesVenta.Rows.Clear();
         }
 
 

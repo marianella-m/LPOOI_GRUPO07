@@ -17,7 +17,7 @@ namespace ClasesBase.services
 
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "SELECT NUMERO, FECHA, CLI_DNI FROM VENTAS";
+            cmd.CommandText = "SELECT NUMERO AS [Número], FECHA AS [Fecha], CLI_DNI AS [Dni Cliente] FROM VENTAS";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = connection;
 
