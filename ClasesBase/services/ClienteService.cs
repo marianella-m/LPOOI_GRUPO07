@@ -7,14 +7,13 @@ namespace ClasesBase.services
 {
     public class ClienteService
     {
-        private string cadenaConexion =
-            ConfigurationManager.ConnectionStrings["opticaConnection"].ConnectionString;
+        //private string cadenaConexion = ConfigurationManager.ConnectionStrings["opticaConnection"].ConnectionString;
 
         public DataTable CargarObrasSociales()
         {
             string query = "SELECT CUIT, RAZON_SOCIAL FROM OBRAS_SOCIALES";
 
-            SqlDataAdapter da = new SqlDataAdapter(query, cadenaConexion);
+            SqlDataAdapter da = new SqlDataAdapter(query, ClasesBase.Properties.Settings.Default.opticaConnectionString);
             DataTable dt = new DataTable();
 
             da.Fill(dt);
@@ -25,7 +24,7 @@ namespace ClasesBase.services
         public void GuardarCliente(string dni, string apellido, string nombre,
                                    string direccion, string nroCarnet, string osCuit)
         {
-            using (SqlConnection con = new SqlConnection(cadenaConexion))
+            using (SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString))
             {
                 string query = @"INSERT INTO CLIENTES
                                 (DNI, APELLIDO, NOMBRE, DIRECCION, NRO_CARNET, OS_CUIT)
@@ -53,7 +52,7 @@ namespace ClasesBase.services
                              WHERE DNI LIKE @dni
                              AND APELLIDO LIKE @apellido";
 
-            SqlDataAdapter da = new SqlDataAdapter(query, cadenaConexion);
+            SqlDataAdapter da = new SqlDataAdapter(query, ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
             da.SelectCommand.Parameters.AddWithValue("@dni", "%" + dni + "%");
             da.SelectCommand.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
@@ -67,7 +66,7 @@ namespace ClasesBase.services
         public void ModificarCliente(string dni, string apellido, string nombre,
                                      string direccion, string nroCarnet, string osCuit)
         {
-            using (SqlConnection con = new SqlConnection(cadenaConexion))
+            using (SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString))
             {
                 string query = @"UPDATE CLIENTES
                                 SET APELLIDO = @apellido,
@@ -93,7 +92,7 @@ namespace ClasesBase.services
 
         public void EliminarCliente(string dni)
         {
-            using (SqlConnection con = new SqlConnection(cadenaConexion))
+            using (SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString))
             {
                 string query = "DELETE FROM CLIENTES WHERE DNI = @dni";
 
