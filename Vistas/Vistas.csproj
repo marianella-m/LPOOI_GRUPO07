@@ -98,7 +98,19 @@
     <Compile Include="ConsultaUsuarios.Designer.cs">
       <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultaVentaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaVentaForm.Designer.cs">
+      <DependentUpon>ConsultaVentaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormControlUtil.cs" />
+    <Compile Include="GestionVentaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionVentaForm.Designer.cs">
+      <DependentUpon>GestionVentaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,21 +128,33 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AltaClienteForm.resx">
       <DependentUpon>AltaClienteForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AltaObraSocialForm.resx">
       <DependentUpon>AltaObraSocialForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AltaProductosForm.resx">
       <DependentUpon>AltaProductosForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AltaUsuario.resx">
       <DependentUpon>AltaUsuario.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaProductos.resx">
       <DependentUpon>ConsultaProductos.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaUsuarios.resx">
       <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaVentaForm.resx">
+      <DependentUpon>ConsultaVentaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionVentaForm.resx">
+      <DependentUpon>GestionVentaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

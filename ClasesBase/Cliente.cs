@@ -15,6 +15,10 @@ namespace ClasesBase
         public string OS_CUIT { get; set; }
         public string Cli_NroCarnet { get; set; }
 
+        public Cliente(string dni)
+        {
+            this.Cli_DNI = dni;
+        }
 
         public Cliente(string nombre,string apellido,string dni,string direccion,string cuit,string nCarnet)
         {

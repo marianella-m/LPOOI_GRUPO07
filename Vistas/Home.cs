@@ -131,5 +131,15 @@ namespace Vistas
                 altaObraSocialToolStripMenuItem.Enabled = true;
             }
         }
+
+        private void registrarVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NavigationManager.Navigate(pnlContent, new GestionVentaForm());
+        }
+
+        private void consultarVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NavigationManager.Navigate(pnlContent, new ConsultaVentaForm());
+        }
     }
 }

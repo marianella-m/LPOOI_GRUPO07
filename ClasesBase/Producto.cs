@@ -19,5 +19,10 @@ namespace ClasesBase
             Prod_Descripcion = descripcion;
             Prod_Precio = precio;
         }
+
+        public Producto(string codigo) 
+        {
+            this.Prod_Codigo = codigo;
+        }
     }
 }
