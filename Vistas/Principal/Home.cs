@@ -106,29 +106,29 @@ namespace Vistas
         {
             if (u.Rol_Codigo == 1) //Administrador
             {
-                altaUsuarioToolStripMenuItem.Enabled= true;
-                altaProductoToolStripMenuItem.Enabled= true;
+                usuariosToolStripMenuItem.Enabled = true;
+                productosToolStripMenuItem.Enabled = true;
 
-                altaClienteToolStripMenuItem.Enabled= false;
-                altaObraSocialToolStripMenuItem.Enabled= false;
+                clientesToolStripMenuItem.Enabled = false;
+                ventasToolStripMenuItem.Enabled = false;
             }
 
             else if (u.Rol_Codigo == 2) //Operador
             {
-                altaUsuarioToolStripMenuItem.Enabled = false;
-                altaProductoToolStripMenuItem.Enabled = false;
+                usuariosToolStripMenuItem.Enabled = false;
+                productosToolStripMenuItem.Enabled = false;
 
-                altaClienteToolStripMenuItem.Enabled = true;
-                altaObraSocialToolStripMenuItem.Enabled = true;
+                clientesToolStripMenuItem.Enabled = true;
+                ventasToolStripMenuItem.Enabled = true;
             }
 
             else if (u.Rol_Codigo == 3) //Auditor
             {
-                altaUsuarioToolStripMenuItem.Enabled = true;
-                altaProductoToolStripMenuItem.Enabled = true;
+                usuariosToolStripMenuItem.Enabled = true;
+                productosToolStripMenuItem.Enabled = true;
 
-                altaClienteToolStripMenuItem.Enabled = true;
-                altaObraSocialToolStripMenuItem.Enabled = true;
+                clientesToolStripMenuItem.Enabled = true;
+                ventasToolStripMenuItem.Enabled = true;
             }
         }
 
