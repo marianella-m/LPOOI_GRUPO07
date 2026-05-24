@@ -8,11 +8,12 @@ using System.Text;
 using System.Windows.Forms;
 using ClasesBase;
 using ClasesBase.services;
+using Vistas.Principal;
 
 
 namespace Vistas
 {
-    public partial class AltaProductosForm : Form
+    public partial class AltaProductosForm : FormBase
     {
         string verificacion;
 
@@ -76,7 +77,7 @@ namespace Vistas
                 );
 
 
-                FormControlUtil.showToast(lblToast, "Modificado exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
+                this.showToast(lblToast, "Modificado exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
                 this.Hide();
             }
             else
@@ -88,7 +89,7 @@ namespace Vistas
                     p.Prod_Precio
                 );
 
-                FormControlUtil.showToast(lblToast, "Guardado exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
+                this.showToast(lblToast, "Guardado exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
 
                 txtCodigo.Clear();
                 txtCategoria.Clear();

@@ -74,6 +74,12 @@
     <Compile Include="ObrasSociales\AltaObraSocialForm.Designer.cs">
       <DependentUpon>AltaObraSocialForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Principal\FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\FormBase.Designer.cs">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Productos\AltaProductosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,7 +116,6 @@
     <Compile Include="Ventas\ConsultaVentasForm.Designer.cs">
       <DependentUpon>ConsultaVentasForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormControlUtil.cs" />
     <Compile Include="Ventas\GestionVentaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,7 +134,6 @@
     <Compile Include="Principal\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="NavigationManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Clientes\AltaClienteForm.resx">

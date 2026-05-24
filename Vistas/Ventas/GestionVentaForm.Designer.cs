@@ -56,7 +56,7 @@
             // cmbBoxClientes
             // 
             this.cmbBoxClientes.FormattingEnabled = true;
-            this.cmbBoxClientes.Location = new System.Drawing.Point(25, 80);
+            this.cmbBoxClientes.Location = new System.Drawing.Point(48, 80);
             this.cmbBoxClientes.Name = "cmbBoxClientes";
             this.cmbBoxClientes.Size = new System.Drawing.Size(197, 24);
             this.cmbBoxClientes.TabIndex = 0;
@@ -64,7 +64,7 @@
             // dtTmPickerVenta
             // 
             this.dtTmPickerVenta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtTmPickerVenta.Location = new System.Drawing.Point(289, 80);
+            this.dtTmPickerVenta.Location = new System.Drawing.Point(312, 80);
             this.dtTmPickerVenta.MinDate = new System.DateTime(2026, 1, 1, 0, 0, 0, 0);
             this.dtTmPickerVenta.Name = "dtTmPickerVenta";
             this.dtTmPickerVenta.Size = new System.Drawing.Size(197, 22);
@@ -74,7 +74,7 @@
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(22, 60);
+            this.lblCliente.Location = new System.Drawing.Point(45, 60);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(51, 17);
             this.lblCliente.TabIndex = 2;
@@ -83,7 +83,7 @@
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(286, 60);
+            this.lblFecha.Location = new System.Drawing.Point(309, 60);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(47, 17);
             this.lblFecha.TabIndex = 3;
@@ -97,7 +97,7 @@
             this.colHeaderPrecio});
             this.listViewProductos.FullRowSelect = true;
             this.listViewProductos.GridLines = true;
-            this.listViewProductos.Location = new System.Drawing.Point(25, 160);
+            this.listViewProductos.Location = new System.Drawing.Point(48, 160);
             this.listViewProductos.MultiSelect = false;
             this.listViewProductos.Name = "listViewProductos";
             this.listViewProductos.Size = new System.Drawing.Size(594, 157);
@@ -132,10 +132,10 @@
             this.cantidad,
             this.subtotal,
             this.deleteItem});
-            this.dataGridViewDetallesVenta.Location = new System.Drawing.Point(25, 366);
+            this.dataGridViewDetallesVenta.Location = new System.Drawing.Point(48, 366);
             this.dataGridViewDetallesVenta.Name = "dataGridViewDetallesVenta";
             this.dataGridViewDetallesVenta.RowTemplate.Height = 24;
-            this.dataGridViewDetallesVenta.Size = new System.Drawing.Size(1228, 136);
+            this.dataGridViewDetallesVenta.Size = new System.Drawing.Size(1272, 136);
             this.dataGridViewDetallesVenta.TabIndex = 5;
             this.dataGridViewDetallesVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDetallesVenta_CellContentClick);
             this.dataGridViewDetallesVenta.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDetallesVenta_CellEndEdit);
@@ -188,7 +188,7 @@
             // 
             // btnAgregarProducto
             // 
-            this.btnAgregarProducto.Location = new System.Drawing.Point(25, 128);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(48, 128);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(88, 26);
             this.btnAgregarProducto.TabIndex = 6;
@@ -200,7 +200,7 @@
             // 
             this.lblRegistroVenta.AutoSize = true;
             this.lblRegistroVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistroVenta.Location = new System.Drawing.Point(20, 9);
+            this.lblRegistroVenta.Location = new System.Drawing.Point(43, 9);
             this.lblRegistroVenta.Name = "lblRegistroVenta";
             this.lblRegistroVenta.Size = new System.Drawing.Size(185, 29);
             this.lblRegistroVenta.TabIndex = 7;
@@ -219,7 +219,7 @@
             // lblToast
             // 
             this.lblToast.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblToast.Location = new System.Drawing.Point(525, 80);
+            this.lblToast.Location = new System.Drawing.Point(548, 80);
             this.lblToast.Name = "lblToast";
             this.lblToast.Size = new System.Drawing.Size(201, 47);
             this.lblToast.TabIndex = 15;
@@ -234,7 +234,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1332, 614);
+            this.ClientSize = new System.Drawing.Size(1365, 614);
             this.Controls.Add(this.lblToast);
             this.Controls.Add(this.btnRegistrarVenta);
             this.Controls.Add(this.lblRegistroVenta);

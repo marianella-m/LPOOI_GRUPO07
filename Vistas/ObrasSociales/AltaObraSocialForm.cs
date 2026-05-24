@@ -8,10 +8,11 @@ using System.Text;
 using System.Windows.Forms;
 using ClasesBase;
 using ClasesBase.services;
+using Vistas.Principal;
 
 namespace Vistas
 {
-    public partial class AltaObraSocialForm : Form
+    public partial class AltaObraSocialForm : FormBase
     {
         char REQUIRED_CHAR = '*';
         ObraSocialService service;
@@ -88,7 +89,7 @@ namespace Vistas
             if (dialogResult == DialogResult.Yes) {
                 ObraSocial obraSocial = new ObraSocial(cuit, razonSocial, razonSocial, telefono);
                 service.saveObraSocial(obraSocial);
-                FormControlUtil.showToast(lblToast, "Guardado exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
+                this.showToast(lblToast, "Guardado exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
                 clearControls();
             }
 

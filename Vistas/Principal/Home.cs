@@ -8,10 +8,11 @@ using System.Text;
 using System.Windows.Forms;
 using ClasesBase.services;
 using ClasesBase;
+using Vistas.Principal;
 
 namespace Vistas
 {
-    public partial class Home : Form
+    public partial class Home : FormBase
     {
         Usuario usuarioActual = null;
 
@@ -35,13 +36,13 @@ namespace Vistas
 
         private void altaObraSocialToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NavigationManager.Navigate(pnlContent, new AltaObraSocialForm());
+            this.Navigate(pnlContent, new AltaObraSocialForm());
         }
 
         // funcionalidad a boton en pestaña cliente -> alta cliente
         private void altaClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NavigationManager.Navigate(pnlContent, new AltaClienteForm());
+            this.Navigate(pnlContent, new AltaClienteForm());
         }
 
         private void consultaObraSocialToolStripMenuItem_Click(object sender, EventArgs e)
@@ -83,23 +84,23 @@ namespace Vistas
 
         private void altaProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NavigationManager.Navigate(pnlContent, new AltaProductosForm());
+            this.Navigate(pnlContent, new AltaProductosForm());
         }
 
         private void consultaProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            NavigationManager.Navigate(pnlContent, new ConsultaProductos());
+            this.Navigate(pnlContent, new ConsultaProductos());
         }
 
         private void altaUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NavigationManager.Navigate(pnlContent, new AltaUsuario(0));
+            this.Navigate(pnlContent, new AltaUsuario(0));
         }
 
         private void consultarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NavigationManager.Navigate(pnlContent, new ConsultaUsuarios(this.usuarioActual));
+            this.Navigate(pnlContent, new ConsultaUsuarios(this.usuarioActual));
         }
 
         private void restricciones(Usuario u)
@@ -113,7 +114,7 @@ namespace Vistas
                 ventasToolStripMenuItem.Enabled = false;
             }
 
-            else if (u.Rol_Codigo == 2) //Operador
+            else if (u.Rol_Codigo == 3) //Operador
             {
                 usuariosToolStripMenuItem.Enabled = false;
                 productosToolStripMenuItem.Enabled = false;
@@ -122,7 +123,7 @@ namespace Vistas
                 ventasToolStripMenuItem.Enabled = true;
             }
 
-            else if (u.Rol_Codigo == 3) //Auditor
+            else if (u.Rol_Codigo == 2) //Auditor
             {
                 usuariosToolStripMenuItem.Enabled = true;
                 productosToolStripMenuItem.Enabled = true;
@@ -134,17 +135,17 @@ namespace Vistas
 
         private void registrarVentasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NavigationManager.Navigate(pnlContent, new GestionVentaForm());
+            this.Navigate(pnlContent, new GestionVentaForm());
         }
 
         private void consultarVentasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NavigationManager.Navigate(pnlContent, new ConsultaVentasForm());
+            this.Navigate(pnlContent, new ConsultaVentasForm());
         }
 
         private void consultaClienteslToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NavigationManager.Navigate(pnlContent, new ConsultaClientes());
+            this.Navigate(pnlContent, new ConsultaClientes());
         }
 
         

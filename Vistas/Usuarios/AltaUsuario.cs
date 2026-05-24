@@ -10,10 +10,12 @@ using System.Data.SqlClient;
 using System.Configuration;
 using ClasesBase.services;
 using ClasesBase;
+using Vistas.Principal;
+
 
 namespace Vistas
 {
-    public partial class AltaUsuario : Form
+    public partial class AltaUsuario : FormBase
     {
         int id;
         public AltaUsuario(int id)
@@ -78,13 +80,13 @@ namespace Vistas
                 {
                     oUser.Usu_ID = id;
                     UsuarioService.update_usuario(oUser);
-                    FormControlUtil.showToast(lblToast, "Modificado exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
+                    this.showToast(lblToast, "Modificado exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
                     this.Hide();
                 }
                 else
                 {
                     UsuarioService.insert_usuario(oUser);
-                    FormControlUtil.showToast(lblToast, "Guardado exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
+                    this.showToast(lblToast, "Guardado exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
                     clearControls();
                 }
             }

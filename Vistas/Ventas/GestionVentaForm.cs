@@ -8,10 +8,11 @@ using System.Text;
 using System.Windows.Forms;
 using ClasesBase;
 using ClasesBase.services;
+using Vistas.Principal;
 
 namespace Vistas
 {
-    public partial class GestionVentaForm : Form
+    public partial class GestionVentaForm : FormBase
     {
         public GestionVentaForm()
         {
@@ -25,15 +26,6 @@ namespace Vistas
 
             listViewProductos.Items.Clear();
 
-            /*
-            listViewProductos.View = View.Details;
-            listViewProductos.FullRowSelect = true;
-            listViewProductos.GridLines = true;
-
-            listViewProductos.Columns.Add("Código", 70);
-            listViewProductos.Columns.Add("Descripción", 220);
-            listViewProductos.Columns.Add("Precio", 90);    
-            */
             DataTable dtClientes = ClienteService.findAllClientes();
 
             dtClientes.Columns.Add("ClienteTexto", typeof(string),
@@ -159,7 +151,10 @@ namespace Vistas
 
             if (dataGridViewDetallesVenta.Rows.Count == 0)
             {
-                errorProviderVenta.SetError(cmbBoxClientes, "Por favor, cargue productos para registrar la venta.");
+                errorProviderVenta.SetIconAlignment(dataGridViewDetallesVenta, ErrorIconAlignment.TopLeft);
+                errorProviderVenta.SetIconPadding(dataGridViewDetallesVenta, 10);
+                
+                errorProviderVenta.SetError(dataGridViewDetallesVenta, "Por favor, cargue productos para registrar la venta.");
                 countErrors++;
             }
 
@@ -197,7 +192,7 @@ namespace Vistas
 
             VentaService.InsertVenta(venta);
 
-            FormControlUtil.showToast(lblToast, "Venta registrada exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
+            this.showToast(lblToast, "Venta registrada exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
             dataGridViewDetallesVenta.Rows.Clear();
         }
 
