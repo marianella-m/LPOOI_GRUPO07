@@ -22,10 +22,18 @@ namespace Vistas
 
         List<Rol> roles = new List<Rol>();
         List<Usuario> usuarios = new List<Usuario>();
-        
+
+        Color backColorOriginal;
+        Color foreColorOriginal;
+        Font fontOriginal;
+
         private void Form1_Load(object sender, EventArgs e)
         {
             txtPassword.PasswordChar = '*';
+
+            backColorOriginal = btnLogin.BackColor;
+            foreColorOriginal = btnLogin.ForeColor;
+            fontOriginal = btnLogin.Font;
         }
 
 
@@ -86,6 +94,26 @@ namespace Vistas
             }
         
         }
-        
+
+        private void btnLogin_MouseEnter(object sender, EventArgs e)
+        {
+            btnLogin.BackColor = Color.DodgerBlue;
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Font = new Font(btnLogin.Font, FontStyle.Bold);
+            btnLogin.Cursor = Cursors.Hand;
+        }
+        private void btnLogin_MouseHover(object sender, EventArgs e)
+        {
+            btnLogin.BackColor = Color.DodgerBlue;
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Font = new Font(btnLogin.Font, FontStyle.Bold);
+        }
+
+        private void btnLogin_MouseLeave(object sender, EventArgs e)
+        {
+            btnLogin.BackColor = backColorOriginal;
+            btnLogin.ForeColor = foreColorOriginal;
+            btnLogin.Font = fontOriginal;
+        }
     }
 }

@@ -34,7 +34,7 @@
             this.consultaObraSocialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaObraSocialToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaClienteslToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,7 +91,7 @@
             // 
             this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.altaClienteToolStripMenuItem,
-            this.consultaObraSocialToolStripMenuItem1});
+            this.consultaClienteslToolStripMenuItem});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.clientesToolStripMenuItem.Text = "Clientes";
@@ -103,11 +103,12 @@
             this.altaClienteToolStripMenuItem.Text = "Alta Cliente";
             this.altaClienteToolStripMenuItem.Click += new System.EventHandler(this.altaClienteToolStripMenuItem_Click);
             // 
-            // consultaObraSocialToolStripMenuItem1
+            // consultaClienteslToolStripMenuItem
             // 
-            this.consultaObraSocialToolStripMenuItem1.Name = "consultaObraSocialToolStripMenuItem1";
-            this.consultaObraSocialToolStripMenuItem1.Size = new System.Drawing.Size(191, 24);
-            this.consultaObraSocialToolStripMenuItem1.Text = "Consulta Clientes";
+            this.consultaClienteslToolStripMenuItem.Name = "consultaClienteslToolStripMenuItem";
+            this.consultaClienteslToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
+            this.consultaClienteslToolStripMenuItem.Text = "Consulta Clientes";
+            this.consultaClienteslToolStripMenuItem.Click += new System.EventHandler(this.consultaClienteslToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem
             // 
@@ -232,7 +233,7 @@
         private System.Windows.Forms.ToolStripMenuItem altaObraSocialToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaObraSocialToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altaClienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem consultaObraSocialToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem consultaClienteslToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altaProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaProductosToolStripMenuItem;
         private System.Windows.Forms.Button btnCloseSession;

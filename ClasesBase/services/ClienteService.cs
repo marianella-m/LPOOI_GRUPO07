@@ -21,8 +21,7 @@ namespace ClasesBase.services
             return dt;
         }
 
-        public void GuardarCliente(string dni, string apellido, string nombre,
-                                   string direccion, string nroCarnet, string osCuit)
+        public void GuardarCliente(Cliente nuevoCliente)
         {
             using (SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString))
             {
@@ -33,12 +32,12 @@ namespace ClasesBase.services
 
                 SqlCommand cmd = new SqlCommand(query, con);
 
-                cmd.Parameters.AddWithValue("@dni", dni);
-                cmd.Parameters.AddWithValue("@apellido", apellido);
-                cmd.Parameters.AddWithValue("@nombre", nombre);
-                cmd.Parameters.AddWithValue("@direccion", direccion);
-                cmd.Parameters.AddWithValue("@carnet", nroCarnet);
-                cmd.Parameters.AddWithValue("@os", osCuit);
+                cmd.Parameters.AddWithValue("@dni", nuevoCliente.Cli_DNI);
+                cmd.Parameters.AddWithValue("@apellido", nuevoCliente.Cli_Apellido);
+                cmd.Parameters.AddWithValue("@nombre", nuevoCliente.Cli_Nombre);
+                cmd.Parameters.AddWithValue("@direccion", nuevoCliente.Cli_Direccion);
+                cmd.Parameters.AddWithValue("@carnet", nuevoCliente.Cli_NroCarnet);
+                cmd.Parameters.AddWithValue("@os", nuevoCliente.OS_CUIT);
 
                 con.Open();
                 cmd.ExecuteNonQuery();
@@ -62,6 +61,32 @@ namespace ClasesBase.services
 
             return dt;
         }
+        
+        public static DataTable FindByDniCuitOS(string dni, string cuitObraSocial)
+        {
+            string query = @"SELECT DNI AS [Dni], APELLIDO AS [Apellido], NOMBRE AS [Nombre],
+                    DIRECCION AS [Dirección], NRO_CARNET AS [Número carnet], OS_CUIT AS [Cuit obra social] FROM CLIENTES
+                    WHERE (@dni IS NULL OR DNI LIKE @dni)
+                    AND (@cuit IS NULL OR OS_CUIT LIKE @cuit)";
+
+            SqlDataAdapter da = new SqlDataAdapter(query, ClasesBase.Properties.Settings.Default.opticaConnectionString);
+
+            if (string.IsNullOrEmpty(dni))
+                da.SelectCommand.Parameters.AddWithValue("@dni", DBNull.Value);
+            else
+                da.SelectCommand.Parameters.AddWithValue("@dni", "%" + dni + "%");
+
+            if (string.IsNullOrEmpty(cuitObraSocial))
+                da.SelectCommand.Parameters.AddWithValue("@cuit", DBNull.Value);
+            else
+                da.SelectCommand.Parameters.AddWithValue("@cuit", "%" + cuitObraSocial + "%");
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
+
 
         public static DataTable findAllClientes()
         {
@@ -75,8 +100,7 @@ namespace ClasesBase.services
             return dt;
         }
 
-        public void ModificarCliente(string dni, string apellido, string nombre,
-                                     string direccion, string nroCarnet, string osCuit)
+        public static void ModificarCliente(Cliente cliente)
         {
             using (SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString))
             {
@@ -90,19 +114,19 @@ namespace ClasesBase.services
 
                 SqlCommand cmd = new SqlCommand(query, con);
 
-                cmd.Parameters.AddWithValue("@dni", dni);
-                cmd.Parameters.AddWithValue("@apellido", apellido);
-                cmd.Parameters.AddWithValue("@nombre", nombre);
-                cmd.Parameters.AddWithValue("@direccion", direccion);
-                cmd.Parameters.AddWithValue("@carnet", nroCarnet);
-                cmd.Parameters.AddWithValue("@os", osCuit);
+                cmd.Parameters.AddWithValue("@apellido", cliente.Cli_Apellido);
+                cmd.Parameters.AddWithValue("@nombre", cliente.Cli_Nombre);
+                cmd.Parameters.AddWithValue("@direccion", cliente.Cli_Direccion);
+                cmd.Parameters.AddWithValue("@carnet", cliente.Cli_NroCarnet);
+                cmd.Parameters.AddWithValue("@os", cliente.OS_CUIT);
+                cmd.Parameters.AddWithValue("@dni", cliente.Cli_DNI);
 
                 con.Open();
                 cmd.ExecuteNonQuery();
             }
         }
 
-        public void EliminarCliente(string dni)
+        public static void EliminarCliente(string dni)
         {
             using (SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString))
             {

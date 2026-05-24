@@ -141,5 +141,12 @@ namespace Vistas
         {
             NavigationManager.Navigate(pnlContent, new ConsultaVentasForm());
         }
+
+        private void consultaClienteslToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NavigationManager.Navigate(pnlContent, new ConsultaClientes());
+        }
+
+        
     }
 }

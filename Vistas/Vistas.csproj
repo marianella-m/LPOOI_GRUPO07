@@ -62,110 +62,113 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AltaClienteForm.cs">
+    <Compile Include="Clientes\AltaClienteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AltaClienteForm.Designer.cs">
+    <Compile Include="Clientes\AltaClienteForm.Designer.cs">
       <DependentUpon>AltaClienteForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AltaObraSocialForm.cs">
+    <Compile Include="ObrasSociales\AltaObraSocialForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AltaObraSocialForm.Designer.cs">
+    <Compile Include="ObrasSociales\AltaObraSocialForm.Designer.cs">
       <DependentUpon>AltaObraSocialForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AltaProductosForm.cs">
+    <Compile Include="Productos\AltaProductosForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AltaProductosForm.Designer.cs">
+    <Compile Include="Productos\AltaProductosForm.Designer.cs">
       <DependentUpon>AltaProductosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AltaUsuario.cs">
+    <Compile Include="Usuarios\AltaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AltaUsuario.Designer.cs">
+    <Compile Include="Usuarios\AltaUsuario.Designer.cs">
       <DependentUpon>AltaUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultaClientes.cs">
+    <Compile Include="Clientes\ConsultaClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultaClientes.Designer.cs">
+    <Compile Include="Clientes\ConsultaClientes.Designer.cs">
       <DependentUpon>ConsultaClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultaProductos.cs">
+    <Compile Include="Productos\ConsultaProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultaProductos.Designer.cs">
+    <Compile Include="Productos\ConsultaProductos.Designer.cs">
       <DependentUpon>ConsultaProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultaUsuarios.cs">
+    <Compile Include="Usuarios\ConsultaUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultaUsuarios.Designer.cs">
+    <Compile Include="Usuarios\ConsultaUsuarios.Designer.cs">
       <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultaVentasForm.cs">
+    <Compile Include="Ventas\ConsultaVentasForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultaVentasForm.Designer.cs">
+    <Compile Include="Ventas\ConsultaVentasForm.Designer.cs">
       <DependentUpon>ConsultaVentasForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FormControlUtil.cs" />
-    <Compile Include="GestionVentaForm.cs">
+    <Compile Include="Ventas\GestionVentaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestionVentaForm.Designer.cs">
+    <Compile Include="Ventas\GestionVentaForm.Designer.cs">
       <DependentUpon>GestionVentaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Autenticacion\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Autenticacion\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home.cs">
+    <Compile Include="Principal\Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home.Designer.cs">
+    <Compile Include="Principal\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="NavigationManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AltaClienteForm.resx">
+    <EmbeddedResource Include="Clientes\AltaClienteForm.resx">
       <DependentUpon>AltaClienteForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="AltaObraSocialForm.resx">
+    <EmbeddedResource Include="Clientes\ConsultaClientes.resx">
+      <DependentUpon>ConsultaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObrasSociales\AltaObraSocialForm.resx">
       <DependentUpon>AltaObraSocialForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="AltaProductosForm.resx">
+    <EmbeddedResource Include="Productos\AltaProductosForm.resx">
       <DependentUpon>AltaProductosForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="AltaUsuario.resx">
+    <EmbeddedResource Include="Usuarios\AltaUsuario.resx">
       <DependentUpon>AltaUsuario.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConsultaProductos.resx">
+    <EmbeddedResource Include="Productos\ConsultaProductos.resx">
       <DependentUpon>ConsultaProductos.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConsultaUsuarios.resx">
+    <EmbeddedResource Include="Usuarios\ConsultaUsuarios.resx">
       <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConsultaVentasForm.resx">
+    <EmbeddedResource Include="Ventas\ConsultaVentasForm.resx">
       <DependentUpon>ConsultaVentasForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionVentaForm.resx">
+    <EmbeddedResource Include="Ventas\GestionVentaForm.resx">
       <DependentUpon>GestionVentaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Autenticacion\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home.resx">
+    <EmbeddedResource Include="Principal\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -289,6 +292,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

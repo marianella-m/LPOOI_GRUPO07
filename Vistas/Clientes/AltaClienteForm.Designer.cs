@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.lblTittle = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,20 +45,21 @@
             this.label8 = new System.Windows.Forms.Label();
             this.cmbObraSocial = new System.Windows.Forms.ComboBox();
             this.lblToast = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.errorProviderCliente = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCliente)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTittle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(15, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Alta de Clientes";
+            this.lblTittle.AutoSize = true;
+            this.lblTittle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.lblTittle.Location = new System.Drawing.Point(15, 11);
+            this.lblTittle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTittle.Name = "lblTittle";
+            this.lblTittle.Size = new System.Drawing.Size(207, 29);
+            this.lblTittle.TabIndex = 0;
+            this.lblTittle.Text = "Alta de Clientes";
             // 
             // label2
             // 
@@ -82,7 +84,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(415, 42);
+            this.label4.Location = new System.Drawing.Point(26, 110);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 17);
@@ -92,7 +94,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 107);
+            this.label5.Location = new System.Drawing.Point(390, 109);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 17);
@@ -127,7 +129,7 @@
             // 
             // txtDni
             // 
-            this.txtDni.Location = new System.Drawing.Point(416, 62);
+            this.txtDni.Location = new System.Drawing.Point(27, 130);
             this.txtDni.Margin = new System.Windows.Forms.Padding(4);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(132, 22);
@@ -135,10 +137,10 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(27, 130);
+            this.txtDireccion.Location = new System.Drawing.Point(394, 132);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(132, 22);
+            this.txtDireccion.Size = new System.Drawing.Size(253, 22);
             this.txtDireccion.TabIndex = 3;
             // 
             // txtNroCarnet
@@ -151,23 +153,22 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(164, 217);
+            this.btnGuardar.Location = new System.Drawing.Point(558, 193);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(89, 34);
             this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
-
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.cmbObraSocial);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnGuardar);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtNroCarnet);
             this.groupBox1.Controls.Add(this.label4);
@@ -181,7 +182,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(589, 286);
+            this.groupBox1.Size = new System.Drawing.Size(673, 254);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Cliente";
@@ -189,7 +190,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(412, 110);
+            this.label8.Location = new System.Drawing.Point(390, 42);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(82, 17);
             this.label8.TabIndex = 9;
@@ -197,10 +198,11 @@
             // 
             // cmbObraSocial
             // 
+            this.cmbObraSocial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbObraSocial.FormattingEnabled = true;
-            this.cmbObraSocial.Location = new System.Drawing.Point(415, 130);
+            this.cmbObraSocial.Location = new System.Drawing.Point(393, 62);
             this.cmbObraSocial.Name = "cmbObraSocial";
-            this.cmbObraSocial.Size = new System.Drawing.Size(133, 24);
+            this.cmbObraSocial.Size = new System.Drawing.Size(254, 24);
             this.cmbObraSocial.TabIndex = 8;
             // 
             // lblToast
@@ -212,29 +214,26 @@
             this.lblToast.TabIndex = 17;
             this.lblToast.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnCancelar
+            // errorProviderCliente
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(312, 217);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(89, 34);
-            this.btnCancelar.TabIndex = 10;
-            this.btnCancelar.Text = "Guardar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.errorProviderCliente.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderCliente.ContainerControl = this;
             // 
             // AltaClienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 369);
+            this.ClientSize = new System.Drawing.Size(756, 418);
             this.Controls.Add(this.lblToast);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTittle);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AltaClienteForm";
             this.Text = "AltaClienteForm";
+            this.Load += new System.EventHandler(this.AltaClienteForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,7 +241,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTittle;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -258,6 +257,6 @@
         private System.Windows.Forms.Label lblToast;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbObraSocial;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ErrorProvider errorProviderCliente;
     }
 }

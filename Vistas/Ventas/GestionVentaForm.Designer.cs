@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.cmbBoxClientes = new System.Windows.Forms.ComboBox();
             this.dtTmPickerVenta = new System.Windows.Forms.DateTimePicker();
             this.lblCliente = new System.Windows.Forms.Label();
@@ -47,7 +48,9 @@
             this.lblRegistroVenta = new System.Windows.Forms.Label();
             this.btnRegistrarVenta = new System.Windows.Forms.Button();
             this.lblToast = new System.Windows.Forms.Label();
+            this.errorProviderVenta = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetallesVenta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderVenta)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbBoxClientes
@@ -120,6 +123,7 @@
             // dataGridViewDetallesVenta
             // 
             this.dataGridViewDetallesVenta.AllowUserToAddRows = false;
+            this.dataGridViewDetallesVenta.AllowUserToResizeColumns = false;
             this.dataGridViewDetallesVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDetallesVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigoProducto,
@@ -221,6 +225,11 @@
             this.lblToast.TabIndex = 15;
             this.lblToast.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // errorProviderVenta
+            // 
+            this.errorProviderVenta.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderVenta.ContainerControl = this;
+            // 
             // GestionVentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -240,6 +249,7 @@
             this.Text = "GestionVenta";
             this.Load += new System.EventHandler(this.GestionVentaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetallesVenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderVenta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,5 +276,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
         private System.Windows.Forms.DataGridViewButtonColumn deleteItem;
         private System.Windows.Forms.Label lblToast;
+        private System.Windows.Forms.ErrorProvider errorProviderVenta;
     }
 }

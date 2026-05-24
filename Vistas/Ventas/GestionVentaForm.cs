@@ -18,6 +18,8 @@ namespace Vistas
             InitializeComponent();
         }
 
+        Dictionary<String, DataGridViewRow> mapRowsItems;
+
         private void GestionVentaForm_Load(object sender, EventArgs e)
         {
 
@@ -32,16 +34,21 @@ namespace Vistas
             listViewProductos.Columns.Add("Descripción", 220);
             listViewProductos.Columns.Add("Precio", 90);    
             */
-            DataTable tableClientes = ClienteService.findAllClientes();
+            DataTable dtClientes = ClienteService.findAllClientes();
 
-            tableClientes.Columns.Add("ClienteTexto", typeof(string), "NOMBRE + ' ' + APELLIDO + ' - ' + DNI");
+            dtClientes.Columns.Add("ClienteTexto", typeof(string),
+                "IIF(DNI = '0', 'Seleccione...', NOMBRE + ' ' + APELLIDO + ' - ' + DNI)");
 
-            cmbBoxClientes.DataSource = tableClientes;
+            DataRow defaultOptionRow = dtClientes.NewRow();
+            defaultOptionRow["DNI"] = "0";
+            dtClientes.Rows.InsertAt(defaultOptionRow, 0);
 
+            cmbBoxClientes.DataSource = dtClientes;
             cmbBoxClientes.DisplayMember = "ClienteTexto";
-            cmbBoxClientes.ValueMember = "DNI"; 
+            cmbBoxClientes.ValueMember = "DNI";
 
             DataTable tableProductos = ProductoService.list_productos();
+            mapRowsItems = new Dictionary<String, DataGridViewRow>();
 
             foreach(DataRow productoRow in tableProductos.Rows)
             {
@@ -61,8 +68,11 @@ namespace Vistas
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (respuesta == DialogResult.Yes)
-                {
+                {   
+                    DataGridViewRow filaAEliminar = dataGridViewDetallesVenta.Rows[e.RowIndex];
+                    string codigoProducto = filaAEliminar.Cells[0].Value.ToString();
                     dataGridViewDetallesVenta.Rows.RemoveAt(e.RowIndex);
+                    mapRowsItems.Remove(codigoProducto);
                 }
             }
 
@@ -84,14 +94,32 @@ namespace Vistas
             {
                 ListViewItem itemSeleccionado = listViewProductos.SelectedItems[0];
 
-                string idProducto = itemSeleccionado.Text;
+                string codigoProducto = itemSeleccionado.Text;
 
                 string nombreProducto = itemSeleccionado.SubItems[1].Text;
                 string precioProducto = itemSeleccionado.SubItems[2].Text;
 
                 float cantidadInicial = 1.0f;
 
-                dataGridViewDetallesVenta.Rows.Add(idProducto, nombreProducto, precioProducto, cantidadInicial, float.Parse(precioProducto) * cantidadInicial);
+                if (!mapRowsItems.ContainsKey(codigoProducto))
+                {
+                    dataGridViewDetallesVenta.Rows.Add(codigoProducto, nombreProducto, precioProducto, cantidadInicial, float.Parse(precioProducto) * cantidadInicial);
+                    DataGridViewRow lasRowDetalleVenta = dataGridViewDetallesVenta.Rows[dataGridViewDetallesVenta.RowCount - 1];
+
+                    mapRowsItems.Add(codigoProducto, lasRowDetalleVenta);
+                    
+                }
+                else
+                {
+                    DataGridViewRow rowProductoExistente = mapRowsItems[codigoProducto];
+                    int index = rowProductoExistente.Index;
+                    decimal cantidadActual = Convert.ToDecimal(dataGridViewDetallesVenta.Rows[index].Cells["Cantidad"].Value);
+                    dataGridViewDetallesVenta.Rows[index].Cells["Cantidad"].Value = cantidadActual + 1;
+                    decimal productoPrecio = Convert.ToDecimal(dataGridViewDetallesVenta.Rows[index].Cells[2].Value);
+                    dataGridViewDetallesVenta.Rows[index].Cells[4].Value = (cantidadActual + 1) * productoPrecio;
+                    dataGridViewDetallesVenta.Refresh();
+                }
+                
             }
             else
             {
@@ -117,22 +145,35 @@ namespace Vistas
             }
         }
 
+        bool IsFormValid()
+        {
+            errorProviderVenta.Clear();
+
+            int countErrors = 0;
+
+            if (Convert.ToInt32(cmbBoxClientes.SelectedValue) == 0)
+            {
+                errorProviderVenta.SetError(cmbBoxClientes, "Por favor, seleccione un cliente para la venta.");
+                countErrors++;
+            }
+
+            if (dataGridViewDetallesVenta.Rows.Count == 0)
+            {
+                errorProviderVenta.SetError(cmbBoxClientes, "Por favor, cargue productos para registrar la venta.");
+                countErrors++;
+            }
+
+            return countErrors == 0;
+        }
+
         private void btnRegistrarVenta_Click(object sender, EventArgs e)
         {
+           if(!IsFormValid())
+               return;
+
             Venta venta = new Venta();
-
-            if (cmbBoxClientes.SelectedValue != null)
-            {
-                string dniCliente = cmbBoxClientes.SelectedValue.ToString();
-                venta.Cliente = new Cliente(dniCliente);
-
-            }
-            else
-            {
-                MessageBox.Show("Por favor, seleccione un cliente para la venta.", "Aviso");
-            }
-
-
+            string dniCliente = cmbBoxClientes.SelectedValue.ToString();
+            venta.Cliente = new Cliente(dniCliente, null);
             venta.Fecha = dtTmPickerVenta.Value ;
 
             List<VentaDetalle> ventaDetalles = new List<VentaDetalle>();

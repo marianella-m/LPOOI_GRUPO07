@@ -42,7 +42,7 @@
             this.dtGridVentas.Name = "dtGridVentas";
             this.dtGridVentas.ReadOnly = true;
             this.dtGridVentas.RowTemplate.Height = 24;
-            this.dtGridVentas.Size = new System.Drawing.Size(555, 325);
+            this.dtGridVentas.Size = new System.Drawing.Size(528, 325);
             this.dtGridVentas.TabIndex = 0;
             // 
             // label1
