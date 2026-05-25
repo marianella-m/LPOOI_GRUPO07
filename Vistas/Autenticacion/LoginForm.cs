@@ -18,102 +18,93 @@ namespace Vistas
         public LoginForm()
         {
             InitializeComponent();
+
+            txtContrasenia.PasswordChar = '*';
+
+            lblErrorNombreUsuario.Visible = false;
+            lblErrorContrasenia.Visible = false;
         }
 
         List<Rol> roles = new List<Rol>();
         List<Usuario> usuarios = new List<Usuario>();
 
-        Color backColorOriginal;
-        Color foreColorOriginal;
-        Font fontOriginal;
+        private void btnLogin_Click(object sender, EventArgs e) {
+            string username = txtNombreUsuario.Text.Trim();
+            string password = txtContrasenia.Text.Trim();
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            txtPassword.PasswordChar = '*';
-
-            backColorOriginal = btnLogin.BackColor;
-            foreColorOriginal = btnLogin.ForeColor;
-            fontOriginal = btnLogin.Font;
-        }
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
-
-
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
-            { 
-                MessageBox.Show("Usuario y contraseña son campos requeridos, no pueden estar vacios", "Ingreso invalido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            
             Usuario usuarioLoggeado = LoginService.loginDB(username, password);
 
-            if (usuarioLoggeado != null)
-            {
+            if (usuarioLoggeado != null) {
                 new Home(usuarioLoggeado).Show();
                 this.Hide();
-            }else {
-                MessageBox.Show("Usuario y password incorrectos", "Ingreso invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else {
+                MessageBox.Show("El usuario o la contraseña son incorrectos. Verifique los datos.", "Error de Autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNombreUsuario.Focus();
             }
-            
         }
 
-        private void btnShowHidePassword_Click(object sender, EventArgs e)
-        {
-            if (txtPassword.PasswordChar.Equals('*')) {
-                txtPassword.PasswordChar = '\0';
+        // Boton que muestra contraseña
+        private void btnShowHidePassword_Click(object sender, EventArgs e) {
+            if (txtContrasenia.PasswordChar.Equals('*')) {
+                txtContrasenia.PasswordChar = '\0';
                 btnShowHidePassword.Image = Properties.Resources.hide;
-            }
-            else { 
-                txtPassword.PasswordChar = '*';
+            } else {
+                txtContrasenia.PasswordChar = '*';
                 btnShowHidePassword.Image = Properties.Resources.view__2_;
             }
         }
 
-        private void validateDatabaseConnection() {
-            string nombreConexion = "opticaConnection";
+        //Navegación
+        private void txtNombreUsuario_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                e.SuppressKeyPress = true;
 
-            try
-            {
-                string cadena = ConfigurationManager.ConnectionStrings[nombreConexion].ConnectionString;
-                using (SqlConnection con = new SqlConnection(cadena))
-                {
-                    con.Open();
-                    this.Text += " - BD Conectada";
-                }
+                if (validarCampoUsuario())
+                    txtContrasenia.Focus();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error crítico de base de datos: " + ex.Message,
-                                "Error de Inicio",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
 
+        private void txtContrasenia_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                e.SuppressKeyPress = true;
+
+                if (validarCampoContrasenia())
+                    btnLogin_Click(btnLogin, EventArgs.Empty);
             }
-        
         }
 
-        private void btnLogin_MouseEnter(object sender, EventArgs e)
-        {
-            btnLogin.BackColor = Color.DodgerBlue;
-            btnLogin.ForeColor = Color.White;
-            btnLogin.Font = new Font(btnLogin.Font, FontStyle.Bold);
-            btnLogin.Cursor = Cursors.Hand;
-        }
-        private void btnLogin_MouseHover(object sender, EventArgs e)
-        {
-            btnLogin.BackColor = Color.DodgerBlue;
-            btnLogin.ForeColor = Color.White;
-            btnLogin.Font = new Font(btnLogin.Font, FontStyle.Bold);
+        // Validacion de cambos no vacios
+        private bool validarCampoUsuario() {
+            string nombreUsuario = txtNombreUsuario.Text.Trim();
+
+            if (string.IsNullOrEmpty(nombreUsuario)) {
+                lblErrorNombreUsuario.Visible = true;
+                txtNombreUsuario.Focus();
+                return false;
+            }
+
+            lblErrorNombreUsuario.Visible = false;
+            return true;
         }
 
-        private void btnLogin_MouseLeave(object sender, EventArgs e)
-        {
-            btnLogin.BackColor = backColorOriginal;
-            btnLogin.ForeColor = foreColorOriginal;
-            btnLogin.Font = fontOriginal;
+        private bool validarCampoContrasenia() {
+            string contrasenia = txtContrasenia.Text.Trim();
+
+            if (string.IsNullOrEmpty(contrasenia)) {
+                lblErrorContrasenia.Visible = true;
+                txtContrasenia.Focus();
+                return false;
+            }
+            
+            lblErrorContrasenia.Visible = false;
+            return true;
+       }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e) {
+            DialogResult dialogResult = MessageBox.Show("¿Está seguro que desea salir?", "Alerta", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+
+            if (dialogResult == DialogResult.Cancel)
+                e.Cancel = true;
         }
     }
 }
