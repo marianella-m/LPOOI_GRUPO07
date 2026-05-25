@@ -29,153 +29,247 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtNombreUsuario = new System.Windows.Forms.TextBox();
+            this.txtContrasenia = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnShowHidePassword = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.picUsuario = new System.Windows.Forms.PictureBox();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.picContrasenia = new System.Windows.Forms.PictureBox();
+            this.pnlImagen = new System.Windows.Forms.Panel();
+            this.picLentes = new System.Windows.Forms.PictureBox();
+            this.pnlLogin = new System.Windows.Forms.Panel();
+            this.lblErrorContrasenia = new System.Windows.Forms.Label();
+            this.lblErrorNombreUsuario = new System.Windows.Forms.Label();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineUsuario = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picContrasenia)).BeginInit();
+            this.pnlImagen.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLentes)).BeginInit();
+            this.pnlLogin.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // txtNombreUsuario
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(313, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Bienvenido al Sistema";
+            this.txtNombreUsuario.BackColor = System.Drawing.Color.AliceBlue;
+            this.txtNombreUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreUsuario.Location = new System.Drawing.Point(102, 133);
+            this.txtNombreUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombreUsuario.Name = "txtNombreUsuario";
+            this.txtNombreUsuario.Size = new System.Drawing.Size(162, 17);
+            this.txtNombreUsuario.TabIndex = 1;
+            this.txtNombreUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNombreUsuario_KeyDown);
             // 
-            // txtUsername
+            // txtContrasenia
             // 
-            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(77, 121);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(215, 22);
-            this.txtUsername.TabIndex = 1;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(77, 181);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(215, 22);
-            this.txtPassword.TabIndex = 2;
+            this.txtContrasenia.BackColor = System.Drawing.Color.AliceBlue;
+            this.txtContrasenia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtContrasenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasenia.Location = new System.Drawing.Point(103, 186);
+            this.txtContrasenia.Margin = new System.Windows.Forms.Padding(2);
+            this.txtContrasenia.Name = "txtContrasenia";
+            this.txtContrasenia.Size = new System.Drawing.Size(162, 17);
+            this.txtContrasenia.TabIndex = 2;
+            this.txtContrasenia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtContrasenia_KeyDown);
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(124, 274);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(126, 261);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(89, 38);
+            this.btnLogin.Size = new System.Drawing.Size(98, 31);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Ingresar";
             this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.button1_Click);
-            this.btnLogin.MouseEnter += new System.EventHandler(this.btnLogin_MouseEnter);
-            this.btnLogin.MouseLeave += new System.EventHandler(this.btnLogin_MouseLeave);
-            this.btnLogin.MouseHover += new System.EventHandler(this.btnLogin_MouseHover);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnShowHidePassword);
-            this.groupBox1.Controls.Add(this.txtUsername);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Controls.Add(this.btnLogin);
-            this.groupBox1.Controls.Add(this.txtPassword);
-            this.groupBox1.Location = new System.Drawing.Point(147, 12);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(352, 407);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnShowHidePassword
             // 
-            this.btnShowHidePassword.Image = ((System.Drawing.Image)(resources.GetObject("btnShowHidePassword.Image")));
-            this.btnShowHidePassword.Location = new System.Drawing.Point(288, 181);
-            this.btnShowHidePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnShowHidePassword.BackColor = System.Drawing.Color.Transparent;
+            this.btnShowHidePassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnShowHidePassword.BackgroundImage")));
+            this.btnShowHidePassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnShowHidePassword.Location = new System.Drawing.Point(269, 186);
+            this.btnShowHidePassword.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowHidePassword.Name = "btnShowHidePassword";
-            this.btnShowHidePassword.Size = new System.Drawing.Size(35, 25);
+            this.btnShowHidePassword.Size = new System.Drawing.Size(26, 24);
             this.btnShowHidePassword.TabIndex = 9;
             this.btnShowHidePassword.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnShowHidePassword.UseVisualStyleBackColor = true;
+            this.btnShowHidePassword.UseVisualStyleBackColor = false;
             this.btnShowHidePassword.Click += new System.EventHandler(this.btnShowHidePassword_Click);
             // 
-            // pictureBox1
+            // picUsuario
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(45, 113);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(29, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.picUsuario.Image = ((System.Drawing.Image)(resources.GetObject("picUsuario.Image")));
+            this.picUsuario.Location = new System.Drawing.Point(60, 133);
+            this.picUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.picUsuario.Name = "picUsuario";
+            this.picUsuario.Size = new System.Drawing.Size(39, 24);
+            this.picUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picUsuario.TabIndex = 6;
+            this.picUsuario.TabStop = false;
             // 
-            // label2
+            // lblTitulo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(76, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(192, 29);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Inicio de Sesión";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(67, 60);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(205, 31);
+            this.lblTitulo.TabIndex = 8;
+            this.lblTitulo.Text = "Inicio de Sesión";
             // 
-            // pictureBox2
+            // picContrasenia
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(45, 174);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(29, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
+            this.picContrasenia.Image = ((System.Drawing.Image)(resources.GetObject("picContrasenia.Image")));
+            this.picContrasenia.Location = new System.Drawing.Point(60, 186);
+            this.picContrasenia.Margin = new System.Windows.Forms.Padding(2);
+            this.picContrasenia.Name = "picContrasenia";
+            this.picContrasenia.Size = new System.Drawing.Size(39, 24);
+            this.picContrasenia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picContrasenia.TabIndex = 7;
+            this.picContrasenia.TabStop = false;
+            // 
+            // pnlImagen
+            // 
+            this.pnlImagen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlImagen.BackgroundImage")));
+            this.pnlImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImagen.Controls.Add(this.picLentes);
+            this.pnlImagen.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlImagen.Location = new System.Drawing.Point(0, 0);
+            this.pnlImagen.Name = "pnlImagen";
+            this.pnlImagen.Size = new System.Drawing.Size(200, 336);
+            this.pnlImagen.TabIndex = 8;
+            // 
+            // picLentes
+            // 
+            this.picLentes.BackColor = System.Drawing.Color.Transparent;
+            this.picLentes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picLentes.BackgroundImage")));
+            this.picLentes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picLentes.Location = new System.Drawing.Point(0, 109);
+            this.picLentes.Name = "picLentes";
+            this.picLentes.Size = new System.Drawing.Size(200, 112);
+            this.picLentes.TabIndex = 0;
+            this.picLentes.TabStop = false;
+            // 
+            // pnlLogin
+            // 
+            this.pnlLogin.BackColor = System.Drawing.Color.AliceBlue;
+            this.pnlLogin.Controls.Add(this.lblErrorContrasenia);
+            this.pnlLogin.Controls.Add(this.lblErrorNombreUsuario);
+            this.pnlLogin.Controls.Add(this.btnLogin);
+            this.pnlLogin.Controls.Add(this.btnShowHidePassword);
+            this.pnlLogin.Controls.Add(this.txtNombreUsuario);
+            this.pnlLogin.Controls.Add(this.lblTitulo);
+            this.pnlLogin.Controls.Add(this.picUsuario);
+            this.pnlLogin.Controls.Add(this.txtContrasenia);
+            this.pnlLogin.Controls.Add(this.picContrasenia);
+            this.pnlLogin.Controls.Add(this.shapeContainer1);
+            this.pnlLogin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlLogin.Location = new System.Drawing.Point(200, 0);
+            this.pnlLogin.Name = "pnlLogin";
+            this.pnlLogin.Size = new System.Drawing.Size(334, 336);
+            this.pnlLogin.TabIndex = 9;
+            // 
+            // lblErrorContrasenia
+            // 
+            this.lblErrorContrasenia.AutoSize = true;
+            this.lblErrorContrasenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorContrasenia.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblErrorContrasenia.Location = new System.Drawing.Point(102, 212);
+            this.lblErrorContrasenia.Name = "lblErrorContrasenia";
+            this.lblErrorContrasenia.Size = new System.Drawing.Size(108, 15);
+            this.lblErrorContrasenia.TabIndex = 12;
+            this.lblErrorContrasenia.Text = "Campo obligatorio";
+            // 
+            // lblErrorNombreUsuario
+            // 
+            this.lblErrorNombreUsuario.AutoSize = true;
+            this.lblErrorNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorNombreUsuario.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblErrorNombreUsuario.Location = new System.Drawing.Point(102, 158);
+            this.lblErrorNombreUsuario.Name = "lblErrorNombreUsuario";
+            this.lblErrorNombreUsuario.Size = new System.Drawing.Size(108, 15);
+            this.lblErrorNombreUsuario.TabIndex = 11;
+            this.lblErrorNombreUsuario.Text = "Campo obligatorio";
+            // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape1,
+            this.lineUsuario});
+            this.shapeContainer1.Size = new System.Drawing.Size(334, 336);
+            this.shapeContainer1.TabIndex = 10;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.BorderWidth = 2;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 102;
+            this.lineShape1.X2 = 262;
+            this.lineShape1.Y1 = 209;
+            this.lineShape1.Y2 = 209;
+            // 
+            // lineUsuario
+            // 
+            this.lineUsuario.BorderWidth = 2;
+            this.lineUsuario.Name = "lineUsuario";
+            this.lineUsuario.X1 = 102;
+            this.lineUsuario.X2 = 262;
+            this.lineUsuario.Y1 = 155;
+            this.lineUsuario.Y2 = 155;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 444);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ClientSize = new System.Drawing.Size(534, 336);
+            this.Controls.Add(this.pnlLogin);
+            this.Controls.Add(this.pnlImagen);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "LoginForm";
-            this.Text = "Login";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picContrasenia)).EndInit();
+            this.pnlImagen.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picLentes)).EndInit();
+            this.pnlLogin.ResumeLayout(false);
+            this.pnlLogin.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtNombreUsuario;
+        private System.Windows.Forms.TextBox txtContrasenia;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox picContrasenia;
+        private System.Windows.Forms.PictureBox picUsuario;
+        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnShowHidePassword;
+        private System.Windows.Forms.Panel pnlImagen;
+        private System.Windows.Forms.PictureBox picLentes;
+        private System.Windows.Forms.Panel pnlLogin;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineUsuario;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.Label lblErrorContrasenia;
+        private System.Windows.Forms.Label lblErrorNombreUsuario;
 
     }
 }
