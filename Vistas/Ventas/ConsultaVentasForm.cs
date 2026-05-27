@@ -15,12 +15,42 @@ namespace Vistas
         public ConsultaVentasForm()
         {
             InitializeComponent();
+            // carga de combox clientes para seleccionar 
+            load_combo_clientes();
         }
 
         private void ConsultaVentasForm_Load(object sender, EventArgs e)
         {
             dtGridVentas.DataSource = VentaService.FindAllVentas();
         }
+
+        // cargar clientes en combox 
+        private void load_combo_clientes()
+        {
+            comboClientes.DisplayMember = "NOMBRE";
+            comboClientes.ValueMember = "DNI";
+            comboClientes.DataSource = ClienteService.findAllClientes();
+
+        }
+
+        // Boton consultar ventas por cliente
+        private void btnConsultarVentasCliente_Click(object sender, EventArgs e)
+        {
+            if (comboClientes.SelectedValue != null)
+            {
+                try
+                {
+                    string dniSeleccionado = comboClientes.SelectedValue.ToString();
+                    DataTable dtVentas = VentaService.listar_ventas_por_cliente_sp(dniSeleccionado);
+                    dtGridVentas.DataSource = dtVentas;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al consultar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
 
     }
 }

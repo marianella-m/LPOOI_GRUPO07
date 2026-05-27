@@ -80,6 +80,7 @@ namespace Vistas
             }
         }
 
+
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
             if (listViewProductos.SelectedItems.Count > 0)
@@ -87,7 +88,6 @@ namespace Vistas
                 ListViewItem itemSeleccionado = listViewProductos.SelectedItems[0];
 
                 string codigoProducto = itemSeleccionado.Text;
-
                 string nombreProducto = itemSeleccionado.SubItems[1].Text;
                 string precioProducto = itemSeleccionado.SubItems[2].Text;
 
@@ -95,23 +95,28 @@ namespace Vistas
 
                 if (!mapRowsItems.ContainsKey(codigoProducto))
                 {
+                    // Agrega el producto a la grilla por primera vez
                     dataGridViewDetallesVenta.Rows.Add(codigoProducto, nombreProducto, precioProducto, cantidadInicial, float.Parse(precioProducto) * cantidadInicial);
-                    DataGridViewRow lasRowDetalleVenta = dataGridViewDetallesVenta.Rows[dataGridViewDetallesVenta.RowCount - 1];
 
+                    // Guardamos la referencia de la fila recién creada en el mapa
+                    DataGridViewRow lasRowDetalleVenta = dataGridViewDetallesVenta.Rows[dataGridViewDetallesVenta.RowCount - 1];
                     mapRowsItems.Add(codigoProducto, lasRowDetalleVenta);
-                    
                 }
                 else
                 {
+                    // El producto ya existe en el carrito, trabajamos directo sobre la fila guardada
                     DataGridViewRow rowProductoExistente = mapRowsItems[codigoProducto];
-                    int index = rowProductoExistente.Index;
-                    decimal cantidadActual = Convert.ToDecimal(dataGridViewDetallesVenta.Rows[index].Cells["Cantidad"].Value);
-                    dataGridViewDetallesVenta.Rows[index].Cells["Cantidad"].Value = cantidadActual + 1;
-                    decimal productoPrecio = Convert.ToDecimal(dataGridViewDetallesVenta.Rows[index].Cells[2].Value);
-                    dataGridViewDetallesVenta.Rows[index].Cells[4].Value = (cantidadActual + 1) * productoPrecio;
+
+                    // 1. Sumamos 1 a la cantidad usando el índice de columna [3]
+                    decimal cantidadActual = Convert.ToDecimal(rowProductoExistente.Cells[3].Value);
+                    rowProductoExistente.Cells[3].Value = cantidadActual + 1;
+
+                    // 2. Calculamos el nuevo subtotal usando los índices [2] (Precio) y [4] (Subtotal)
+                    decimal productoPrecio = Convert.ToDecimal(rowProductoExistente.Cells[2].Value);
+                    rowProductoExistente.Cells[4].Value = (cantidadActual + 1) * productoPrecio;
+
                     dataGridViewDetallesVenta.Refresh();
                 }
-                
             }
             else
             {
@@ -119,6 +124,7 @@ namespace Vistas
                                 "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
 
         private void dataGridViewDetallesVenta_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
@@ -161,15 +167,17 @@ namespace Vistas
             return countErrors == 0;
         }
 
+  
+
         private void btnRegistrarVenta_Click(object sender, EventArgs e)
         {
-           if(!IsFormValid())
-               return;
+            if (!IsFormValid())
+                return;
 
             Venta venta = new Venta();
             string dniCliente = cmbBoxClientes.SelectedValue.ToString();
             venta.Cliente = new Cliente(dniCliente, null);
-            venta.Fecha = dtTmPickerVenta.Value ;
+            venta.Fecha = dtTmPickerVenta.Value;
 
             List<VentaDetalle> ventaDetalles = new List<VentaDetalle>();
 
@@ -184,19 +192,15 @@ namespace Vistas
                 ventaDetalle.Cantidad = Convert.ToDecimal(rowDetalle.Cells[3].Value);
                 ventaDetalle.Total = Convert.ToDecimal(rowDetalle.Cells[4].Value);
 
-
                 ventaDetalles.Add(ventaDetalle);
             }
 
             venta.detalles = ventaDetalles;
-
             VentaService.InsertVenta(venta);
-
             this.showToast(lblToast, "Venta registrada exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
             dataGridViewDetallesVenta.Rows.Clear();
+            mapRowsItems.Clear();
         }
-
-
 
 
     }

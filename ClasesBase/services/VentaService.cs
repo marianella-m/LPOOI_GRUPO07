@@ -7,7 +7,8 @@ using System.Data;
 
 namespace ClasesBase.services
 {
-    public class VentaService{
+    public class VentaService
+    {
 
         //public static List<Venta> FindAllVentas()
 
@@ -31,12 +32,12 @@ namespace ClasesBase.services
             return datatable;
         }
 
-
+        // metodo para insertar venta
         public static void InsertVenta(Venta venta)
         {
             SqlConnection connection = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
-            string queryInsertVenta = "INSERT INTO VENTAS (CLI_DNI, FECHA) VALUES (@Dni, @Fecha); SELECT SCOPE_IDENTITY();" ;
+            string queryInsertVenta = "INSERT INTO VENTAS (CLI_DNI, FECHA) VALUES (@Dni, @Fecha); SELECT SCOPE_IDENTITY();";
             int idVentaGenerado;
 
             SqlCommand cmd = new SqlCommand();
@@ -47,13 +48,29 @@ namespace ClasesBase.services
             cmd.Parameters.AddWithValue("@Dni", venta.Cliente.Cli_DNI);
             cmd.Parameters.AddWithValue("@Fecha", venta.Fecha);
 
-            connection.Open();
-            idVentaGenerado = Convert.ToInt32(cmd.ExecuteScalar());
-
-            InsertDetalles(cmd, venta.detalles, idVentaGenerado);
-
-            //connection.Close();
+            try
+            {
+                connection.Open();
+                idVentaGenerado = Convert.ToInt32(cmd.ExecuteScalar());
+                InsertDetalles(cmd, venta.detalles, idVentaGenerado);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al insertar la venta en la base de datos: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+            if (venta.detalles != null)
+            {
+                venta.detalles.Clear();
+            }
         }
+
 
         static void InsertDetalles(SqlCommand cmd, List<VentaDetalle> detalles, int ventaNumero)
         {
@@ -65,9 +82,9 @@ namespace ClasesBase.services
             cmd.Parameters.Add("@VentaNumero", SqlDbType.Int);
             cmd.Parameters.Add("@ProductoCodigo", SqlDbType.VarChar);
             cmd.Parameters.Add("@ProductoPrecio", SqlDbType.Decimal);
-            cmd.Parameters.Add("@Cantidad", SqlDbType.Decimal); 
+            cmd.Parameters.Add("@Cantidad", SqlDbType.Decimal);
 
-            foreach(VentaDetalle detalle in detalles)
+            foreach (VentaDetalle detalle in detalles)
             {
                 cmd.Parameters["@VentaNumero"].Value = ventaNumero;
                 cmd.Parameters["@ProductoCodigo"].Value = detalle.Producto.Prod_Codigo;
@@ -78,5 +95,43 @@ namespace ClasesBase.services
 
             cmd.Connection.Close();
         }
+
+
+
+        public static DataTable listar_ventas_por_cliente_sp(string dniCliente)
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "listar_ventas_por_cliente_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@dni_cliente", dniCliente);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            try
+            {
+                cnn.Open();
+                da.Fill(dt); 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en la base de datos: " + ex.Message);
+            }
+            finally
+            {
+                if (cnn.State == ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
+            }
+
+            return dt;
+        }
+
     }
+
 }

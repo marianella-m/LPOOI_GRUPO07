@@ -30,6 +30,9 @@
         {
             this.dtGridVentas = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboClientes = new System.Windows.Forms.ComboBox();
+            this.btnConsultarVentasCliente = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridVentas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,30 +41,63 @@
             this.dtGridVentas.AllowUserToAddRows = false;
             this.dtGridVentas.AllowUserToDeleteRows = false;
             this.dtGridVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGridVentas.Location = new System.Drawing.Point(49, 113);
+            this.dtGridVentas.Location = new System.Drawing.Point(45, 161);
+            this.dtGridVentas.Margin = new System.Windows.Forms.Padding(2);
             this.dtGridVentas.Name = "dtGridVentas";
             this.dtGridVentas.ReadOnly = true;
             this.dtGridVentas.RowTemplate.Height = 24;
-            this.dtGridVentas.Size = new System.Drawing.Size(528, 325);
+            this.dtGridVentas.Size = new System.Drawing.Size(396, 264);
             this.dtGridVentas.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(53, 47);
+            this.label1.Location = new System.Drawing.Point(40, 38);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 29);
+            this.label1.Size = new System.Drawing.Size(172, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Consulta Ventas";
             // 
+            // comboClientes
+            // 
+            this.comboClientes.FormattingEnabled = true;
+            this.comboClientes.Location = new System.Drawing.Point(45, 110);
+            this.comboClientes.Name = "comboClientes";
+            this.comboClientes.Size = new System.Drawing.Size(121, 21);
+            this.comboClientes.TabIndex = 2;
+            // 
+            // btnConsultarVentasCliente
+            // 
+            this.btnConsultarVentasCliente.Location = new System.Drawing.Point(253, 108);
+            this.btnConsultarVentasCliente.Name = "btnConsultarVentasCliente";
+            this.btnConsultarVentasCliente.Size = new System.Drawing.Size(141, 23);
+            this.btnConsultarVentasCliente.TabIndex = 3;
+            this.btnConsultarVentasCliente.Text = "CONSULTAR VENTAS";
+            this.btnConsultarVentasCliente.UseVisualStyleBackColor = true;
+            this.btnConsultarVentasCliente.Click += new System.EventHandler(this.btnConsultarVentasCliente_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(42, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(122, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "SELECCIONE CLIENTE";
+            // 
             // ConsultaVentasForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 592);
+            this.ClientSize = new System.Drawing.Size(596, 481);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnConsultarVentasCliente);
+            this.Controls.Add(this.comboClientes);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtGridVentas);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ConsultaVentasForm";
             this.Text = "ConsultaVentaForm";
             this.Load += new System.EventHandler(this.ConsultaVentasForm_Load);
@@ -75,6 +111,9 @@
 
         private System.Windows.Forms.DataGridView dtGridVentas;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboClientes;
+        private System.Windows.Forms.Button btnConsultarVentasCliente;
+        private System.Windows.Forms.Label label2;
 
 
     }
