@@ -132,6 +132,41 @@ namespace ClasesBase.services
             return dt;
         }
 
+        public static DataTable listar_ventas_por_fecha_sp(DateTime fechaInicioSeleccionada, DateTime fechaFinSeleccionada)
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "listar_ventas_por_fecha_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@fecha_inicio", fechaInicioSeleccionada);
+            cmd.Parameters.AddWithValue("@fecha_fin", fechaFinSeleccionada);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            try
+            {
+                cnn.Open();
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en la base de datos: " + ex.Message);
+            }
+            finally
+            {
+                if (cnn.State == ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
+            }
+
+            return dt;
+        }
+
     }
 
 }

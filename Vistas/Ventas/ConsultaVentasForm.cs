@@ -51,6 +51,19 @@ namespace Vistas
             }
         }
 
-
+        private void btnConsultarbyRango_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime fechaInicioSeleccionada = dtVentaInicio.Value;
+                DateTime fechaFinSeleccionada = dtVentaFin.Value;
+                DataTable dtVentas = VentaService.listar_ventas_por_fecha_sp(fechaInicioSeleccionada, fechaFinSeleccionada);
+                dtGridVentas.DataSource = dtVentas;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al consultar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
