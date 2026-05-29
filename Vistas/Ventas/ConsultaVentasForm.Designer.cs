@@ -36,7 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dtVentaInicio = new System.Windows.Forms.DateTimePicker();
             this.dtVentaFin = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnConsultarbyRango = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridVentas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,21 +122,22 @@
             this.dtVentaFin.TabIndex = 7;
             this.dtVentaFin.Value = new System.DateTime(2026, 5, 26, 23, 59, 0, 0);
             // 
-            // button1
+            // btnConsultarbyRango
             // 
-            this.button1.Location = new System.Drawing.Point(281, 146);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "CONSULTAR VENTAS";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnConsultarbyRango.Location = new System.Drawing.Point(281, 146);
+            this.btnConsultarbyRango.Name = "btnConsultarbyRango";
+            this.btnConsultarbyRango.Size = new System.Drawing.Size(141, 23);
+            this.btnConsultarbyRango.TabIndex = 8;
+            this.btnConsultarbyRango.Text = "CONSULTAR VENTAS";
+            this.btnConsultarbyRango.UseVisualStyleBackColor = true;
+            this.btnConsultarbyRango.Click += new System.EventHandler(this.btnConsultarbyRango_Click);
             // 
             // ConsultaVentasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 481);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnConsultarbyRango);
             this.Controls.Add(this.dtVentaFin);
             this.Controls.Add(this.dtVentaInicio);
             this.Controls.Add(this.label3);
@@ -165,7 +166,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtVentaInicio;
         private System.Windows.Forms.DateTimePicker dtVentaFin;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnConsultarbyRango;
 
 
     }
