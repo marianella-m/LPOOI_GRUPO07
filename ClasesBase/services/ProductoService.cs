@@ -122,5 +122,37 @@ namespace ClasesBase.services
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
+        public static DataTable list_productos_por_descripcion_sp()
+        {
+            SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "listar_productos_por_descripcion_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = con;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
+
+        public static DataTable list_productos_por_categoria_sp()
+        {
+            SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "listar_productos_por_categoria_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = con;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
     }
 }

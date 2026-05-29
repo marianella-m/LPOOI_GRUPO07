@@ -49,7 +49,7 @@ namespace Vistas
 
                 form.ShowDialog();
 
-                load_productos();
+                cargarProductosSegunOrden();
             }
             else
             {
@@ -72,8 +72,42 @@ namespace Vistas
                 if (r == DialogResult.Yes)
                 {
                     ProductoService.delete_producto(codigo);
-                    load_productos();
+                    cargarProductosSegunOrden();
                 }
+            }
+        }
+
+        private void btnOrdenar_Click(object sender, EventArgs e)
+        {
+            cargarProductosSegunOrden();
+
+            if (rbDescripcion.Checked)
+            {
+                dgvProductos.DataSource = ProductoService.list_productos_por_descripcion_sp();
+            }
+            else if (rbCategoria.Checked)
+            {
+                dgvProductos.DataSource = ProductoService.list_productos_por_categoria_sp();
+            }
+            else
+            { 
+                MessageBox.Show("Seleccione una opción");
+            }
+        }
+
+        private void cargarProductosSegunOrden()
+        {
+            if (rbDescripcion.Checked)
+            {
+                dgvProductos.DataSource = ProductoService.list_productos_por_descripcion_sp();
+            }
+            else if (rbCategoria.Checked)
+            {
+                dgvProductos.DataSource = ProductoService.list_productos_por_categoria_sp();
+            }
+            else
+            {
+                load_productos();
             }
         }
     }
