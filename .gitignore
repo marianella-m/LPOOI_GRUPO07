@@ -1,4 +1,8 @@
-#Visual Studio 2010
+# Visual Studio 2010
 *.suo
 **/bin/
 **/obj/
+
+# Base de datos
+*.mdf
+*.ldf
