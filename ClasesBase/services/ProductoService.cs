@@ -76,8 +76,8 @@ namespace ClasesBase.services
             SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO PRODUCTOS( CODIGO, CATEGORIA, DESCRIPCION, PRECIO) VALUES (@cod, @cat, @des, @pre)";
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "insertar_producto_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = con;
 
             cmd.Parameters.AddWithValue("@cod", codigo);
@@ -94,8 +94,8 @@ namespace ClasesBase.services
             SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "UPDATE PRODUCTOS SET CATEGORIA=@cat, DESCRIPCION=@des, PRECIO=@pre WHERE CODIGO=@cod";
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "actualizar_producto_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = con;
 
             cmd.Parameters.AddWithValue("@cod", codigo);
@@ -112,8 +112,8 @@ namespace ClasesBase.services
             SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "DELETE FROM PRODUCTOS WHERE CODIGO=@cod";
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "eliminar_producto_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = con;
 
             cmd.Parameters.AddWithValue("@cod", codigo);
