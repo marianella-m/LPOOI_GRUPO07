@@ -21,16 +21,26 @@ namespace Vistas
 
         private void ConsultaVentasForm_Load(object sender, EventArgs e)
         {
-            dtGridVentas.DataSource = VentaService.FindAllVentas();
+            //dtGridVentas.DataSource = VentaService.FindAllVentas();
+
         }
 
         // cargar clientes en combox 
         private void load_combo_clientes()
         {
+            DataTable dtClientes = ClienteService.findAllClientes();
+            DataRow filaInformativa = dtClientes.NewRow();
+
+            filaInformativa["DNI"] = "";
+            filaInformativa["NOMBRE"] = "Seleccione Usuario";
+
+            dtClientes.Rows.InsertAt(filaInformativa, 0);
+
             comboClientes.DisplayMember = "NOMBRE";
             comboClientes.ValueMember = "DNI";
-            comboClientes.DataSource = ClienteService.findAllClientes();
+            comboClientes.DataSource = dtClientes;
 
+            comboClientes.SelectedIndex = 0;
         }
 
         // Boton consultar ventas por cliente
@@ -58,7 +68,7 @@ namespace Vistas
                 DateTime fechaInicioSeleccionada = dtVentaInicio.Value;
                 DateTime fechaFinSeleccionada = dtVentaFin.Value;
                 DataTable dtVentas = VentaService.listar_ventas_por_fecha_sp(fechaInicioSeleccionada, fechaFinSeleccionada);
-                dtGridVentas.DataSource = dtVentas;
+                dtGridFechas.DataSource = dtVentas;
             }
             catch (Exception ex)
             {
