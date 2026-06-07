@@ -154,5 +154,23 @@ namespace ClasesBase.services
 
             return dt;
         }
+
+        public static DataTable list_productos_por_cliente_sp(string dni)
+        {
+            DataTable dt = new DataTable();
+
+            string cnn = ClasesBase.Properties.Settings.Default.opticaConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(cnn))
+            {
+                SqlCommand cmd = new SqlCommand("listar_productos_por_cliente_sp", connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@DNI", dni);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+            return dt;
+        }
     }
 }

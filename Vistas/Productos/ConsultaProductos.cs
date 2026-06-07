@@ -23,6 +23,7 @@ namespace Vistas
 
         private void ConsultaProductos_Load(object sender, EventArgs e)
         {
+            load_clientes();
             load_productos();
         }
 
@@ -109,6 +110,31 @@ namespace Vistas
             {
                 load_productos();
             }
+        }
+
+        private void load_clientes()
+        {
+            DataTable dt = ClienteService.findAllClientes();
+            DataRow filaInformativa = dt.NewRow();
+
+            filaInformativa["DNI"] = "";
+            filaInformativa["NOMBRE"] = "Seleccione Cliente";
+
+            cmBoxCliente.DisplayMember = "NOMBRE";
+            cmBoxCliente.ValueMember = "DNI";
+
+            dt.Rows.InsertAt(filaInformativa, 0);
+            cmBoxCliente.DataSource = dt;
+        }
+
+        private void cmBoxCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmBoxCliente.SelectedValue != null)
+            {
+                string dniSeleccionado = cmBoxCliente.SelectedValue.ToString();
+                dgvProductos.DataSource = ProductoService.list_productos_por_cliente_sp(dniSeleccionado);
+            }
+
         }
     }
 }
