@@ -128,7 +128,7 @@ namespace ClasesBase.services
             SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "listar_productos_por_descripcion_sp";
+            cmd.CommandText = "dbo.listar_productos_por_descripcion_sp";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = con;
 
@@ -144,7 +144,7 @@ namespace ClasesBase.services
             SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "listar_productos_por_categoria_sp";
+            cmd.CommandText = "dbo.listar_productos_por_categoria_sp";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = con;
 
