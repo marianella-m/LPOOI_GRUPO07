@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEliminarObraSocial = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSaveObraSocial = new System.Windows.Forms.Button();
@@ -65,14 +65,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(420, 218);
             this.dataGridView1.TabIndex = 1;
             // 
-            // button1
+            // btnEliminarObraSocial
             // 
-            this.button1.Location = new System.Drawing.Point(172, 274);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Eliminar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEliminarObraSocial.Location = new System.Drawing.Point(172, 274);
+            this.btnEliminarObraSocial.Name = "btnEliminarObraSocial";
+            this.btnEliminarObraSocial.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarObraSocial.TabIndex = 2;
+            this.btnEliminarObraSocial.Text = "Eliminar";
+            this.btnEliminarObraSocial.UseVisualStyleBackColor = true;
+            this.btnEliminarObraSocial.Click += new System.EventHandler(this.btnEliminarObraSocial_Click);
             // 
             // button2
             // 
@@ -203,7 +204,7 @@
             this.ClientSize = new System.Drawing.Size(575, 576);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEliminarObraSocial);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "ConsultasObrasSocialesForm";
@@ -221,7 +222,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEliminarObraSocial;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSaveObraSocial;

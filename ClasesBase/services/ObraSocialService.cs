@@ -53,8 +53,21 @@ namespace ClasesBase.services
         }
 
 
+        public static void EliminarObraSocial(string cuit)
+        {
+            SqlConnection conection = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
+            SqlCommand cmd = new SqlCommand();
 
+            cmd.CommandText = "DELETE FROM OBRAS_SOCIALES WHERE CUIT=@cui";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = conection;
 
+            cmd.Parameters.AddWithValue("@cui", cuit);
+
+            conection.Open();
+            cmd.ExecuteNonQuery();
+
+        }
     }
 }

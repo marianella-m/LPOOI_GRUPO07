@@ -24,12 +24,29 @@ namespace Vistas.ObrasSociales
         {
 
             dataGridView1.DataSource = ObraSocialService.FindAllObrasSociales();
-            
+
         }
 
+        private void btnEliminarObraSocial_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow != null)
+            {
+                string cuitObra = dataGridView1.CurrentRow.Cells["Cuit"].Value.ToString();
 
+                DialogResult r = MessageBox.Show(
+                    "¿Seguro que querés eliminar esta Obra Social?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo
+                );
 
+                if (r == DialogResult.Yes)
+                {
+                    ObraSocialService.EliminarObraSocial(cuitObra);
+                    dataGridView1.DataSource = ObraSocialService.FindAllObrasSociales();
 
+                }
+            }
+        }
 
     }
 }
