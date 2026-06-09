@@ -88,7 +88,7 @@ namespace Vistas
 
             if (dialogResult == DialogResult.Yes) {
                 ObraSocial obraSocial = new ObraSocial(cuit, razonSocial, razonSocial, telefono);
-                service.saveObraSocial(obraSocial);
+                service.saveObraSocial(cuit, razonSocial, razonSocial, telefono);
                 this.showToast(lblToast, "Guardado exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
                 clearControls();
             }

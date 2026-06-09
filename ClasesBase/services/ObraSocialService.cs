@@ -13,9 +13,23 @@ namespace ClasesBase.services
 
         public ObraSocialService() { }
 
-        public void saveObraSocial(ObraSocial obraSocial) {
-            obrasSociales.Add(obraSocial);
-            Console.WriteLine("Numero de elementos: " + obrasSociales.Count());
+        public void saveObraSocial(string cuit, string razonSocial, string direccion, string telefono)
+        {
+            SqlConnection conection = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "INSERT INTO OBRAS_SOCIALES (CUIT,RAZON_SOCIAL,DIRECCION,TELEFONO) VALUES (@cui,@raSo,@dir,@tel)";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = conection;
+
+            cmd.Parameters.AddWithValue("@cui", cuit);
+            cmd.Parameters.AddWithValue("@raSo", razonSocial);
+            cmd.Parameters.AddWithValue("@dir", direccion);
+            cmd.Parameters.AddWithValue("@tel", telefono);
+
+            conection.Open();
+            cmd.ExecuteNonQuery();
+            conection.Close();
         }
 
         public static DataTable FindAllObrasSociales()
@@ -24,7 +38,7 @@ namespace ClasesBase.services
 
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "SELECT CUIT AS [Cuit], RAZON_SOCIAL AS [Razón Social], DIRECCION AS [Dirección], TELEFONO AS [Teléfono] FROM VENTAS";
+            cmd.CommandText = "SELECT CUIT AS [Cuit], RAZON_SOCIAL AS [Razón Social], DIRECCION AS [Dirección], TELEFONO AS [Teléfono] FROM OBRAS_SOCIALES";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = connection;
 
@@ -37,5 +51,10 @@ namespace ClasesBase.services
             connection.Close();
             return datatable;
         }
+
+
+
+
+
     }
 }

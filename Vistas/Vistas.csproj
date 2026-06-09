@@ -76,6 +76,12 @@
     <Compile Include="ObrasSociales\AltaObraSocialForm.Designer.cs">
       <DependentUpon>AltaObraSocialForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ObrasSociales\ConsultasObrasSocialesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ObrasSociales\ConsultasObrasSocialesForm.Designer.cs">
+      <DependentUpon>ConsultasObrasSocialesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal\FormBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     <EmbeddedResource Include="ObrasSociales\AltaObraSocialForm.resx">
       <DependentUpon>AltaObraSocialForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObrasSociales\ConsultasObrasSocialesForm.resx">
+      <DependentUpon>ConsultasObrasSocialesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\AltaProductosForm.resx">
       <DependentUpon>AltaProductosForm.cs</DependentUpon>

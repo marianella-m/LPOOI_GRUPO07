@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using ClasesBase.services;
 using ClasesBase;
 using Vistas.Principal;
+using Vistas.ObrasSociales;
 
 namespace Vistas
 {
@@ -47,10 +48,7 @@ namespace Vistas
 
         private void consultaObraSocialToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pnlContent.Controls.Clear();
-            TextBox txtBox = new TextBox();
-            txtBox.Text = "Texto Ingresado......";
-            pnlContent.Controls.Add(txtBox);
+            this.Navigate(pnlContent, new ConsultasObrasSocialesForm());
         }
 
         private void Home_FormClosed(object sender, FormClosedEventArgs e)
