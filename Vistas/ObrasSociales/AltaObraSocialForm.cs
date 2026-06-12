@@ -15,14 +15,26 @@ namespace Vistas
     public partial class AltaObraSocialForm : FormBase
     {
         char REQUIRED_CHAR = '*';
-        ObraSocialService service;
+        //ObraSocialService service;
 
         public AltaObraSocialForm()
         {
             InitializeComponent();
             setRequiredChar();
-            service = new ObraSocialService();
+            //service = new ObraSocialService();
         }
+
+        ObraSocial obraSocialModificada = null;
+
+        public AltaObraSocialForm(ObraSocial obraSocial) {
+            InitializeComponent();
+            obraSocialModificada = obraSocial;
+        
+        }
+
+
+
+
 
         void setRequiredChar() { 
             lblCuit.Text += REQUIRED_CHAR;
@@ -88,7 +100,7 @@ namespace Vistas
 
             if (dialogResult == DialogResult.Yes) {
                 ObraSocial obraSocial = new ObraSocial(cuit, razonSocial, razonSocial, telefono);
-                service.saveObraSocial(cuit, razonSocial, razonSocial, telefono);
+                ObraSocialService.saveObraSocial(cuit, razonSocial, razonSocial, telefono);
                 this.showToast(lblToast, "Guardado exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
                 clearControls();
             }

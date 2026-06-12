@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnEliminarObraSocial = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnModificarObraSocial = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSaveObraSocial = new System.Windows.Forms.Button();
             this.lblDireccion = new System.Windows.Forms.Label();
@@ -43,6 +43,7 @@
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblToast = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +52,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(169, 9);
+            this.label1.Location = new System.Drawing.Point(178, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(191, 13);
             this.label1.TabIndex = 0;
@@ -60,14 +61,14 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(63, 35);
+            this.dataGridView1.Location = new System.Drawing.Point(63, 48);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(420, 218);
+            this.dataGridView1.Size = new System.Drawing.Size(420, 221);
             this.dataGridView1.TabIndex = 1;
             // 
             // btnEliminarObraSocial
             // 
-            this.btnEliminarObraSocial.Location = new System.Drawing.Point(172, 274);
+            this.btnEliminarObraSocial.Location = new System.Drawing.Point(163, 284);
             this.btnEliminarObraSocial.Name = "btnEliminarObraSocial";
             this.btnEliminarObraSocial.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarObraSocial.TabIndex = 2;
@@ -75,14 +76,15 @@
             this.btnEliminarObraSocial.UseVisualStyleBackColor = true;
             this.btnEliminarObraSocial.Click += new System.EventHandler(this.btnEliminarObraSocial_Click);
             // 
-            // button2
+            // btnModificarObraSocial
             // 
-            this.button2.Location = new System.Drawing.Point(303, 274);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Modificar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnModificarObraSocial.Location = new System.Drawing.Point(294, 284);
+            this.btnModificarObraSocial.Name = "btnModificarObraSocial";
+            this.btnModificarObraSocial.Size = new System.Drawing.Size(75, 23);
+            this.btnModificarObraSocial.TabIndex = 3;
+            this.btnModificarObraSocial.Text = "Modificar";
+            this.btnModificarObraSocial.UseVisualStyleBackColor = true;
+            this.btnModificarObraSocial.Click += new System.EventHandler(this.btnModificarObraSocial_Click);
             // 
             // groupBox1
             // 
@@ -114,6 +116,7 @@
             this.btnSaveObraSocial.TabIndex = 4;
             this.btnSaveObraSocial.Text = "Guardar";
             this.btnSaveObraSocial.UseVisualStyleBackColor = true;
+            this.btnSaveObraSocial.Click += new System.EventHandler(this.btnSaveObraSocial_Click);
             // 
             // lblDireccion
             // 
@@ -197,13 +200,24 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "label2";
             // 
+            // lblToast
+            // 
+            this.lblToast.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblToast.Location = new System.Drawing.Point(387, 4);
+            this.lblToast.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblToast.Name = "lblToast";
+            this.lblToast.Size = new System.Drawing.Size(151, 23);
+            this.lblToast.TabIndex = 14;
+            this.lblToast.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ConsultasObrasSocialesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 576);
+            this.Controls.Add(this.lblToast);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnModificarObraSocial);
             this.Controls.Add(this.btnEliminarObraSocial);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
@@ -223,7 +237,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnEliminarObraSocial;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnModificarObraSocial;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSaveObraSocial;
         private System.Windows.Forms.Label lblDireccion;
@@ -235,5 +249,6 @@
         private System.Windows.Forms.TextBox txtRazonSocial;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblToast;
     }
 }

@@ -13,7 +13,7 @@ namespace ClasesBase.services
 
         public ObraSocialService() { }
 
-        public void saveObraSocial(string cuit, string razonSocial, string direccion, string telefono)
+        public static void saveObraSocial(string cuit, string razonSocial, string direccion, string telefono)
         {
             SqlConnection conection = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
             SqlCommand cmd = new SqlCommand();
