@@ -16,7 +16,7 @@ namespace Vistas
         public ConsultaClientes()
         {
             InitializeComponent();
-            dtGridClientes.DataSource = ClienteService.FindByDniApellidoNombre(null, null, null);
+            dtGridClientes.DataSource = ClienteService.FindByDniApellidoNombre(null, null, null, null);
         }
 
         private void btnBuscarClientes_Click(object sender, EventArgs e)
@@ -24,7 +24,8 @@ namespace Vistas
             string dni = txtDni.Text;
             string apellido = txtApellido.Text;
             string nombre = txtNombre.Text;
-            dtGridClientes.DataSource = ClienteService.FindByDniApellidoNombre(dni, apellido, nombre);
+            string categoria = cmbCategoria.Text;
+            dtGridClientes.DataSource = ClienteService.FindByDniApellidoNombre(dni, apellido, nombre, categoria);
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -36,7 +37,7 @@ namespace Vistas
             DialogResult resultado = form.ShowDialog();
             
             if (resultado == DialogResult.Cancel)
-                dtGridClientes.DataSource = ClienteService.FindByDniApellidoNombre(null, null, null);
+                dtGridClientes.DataSource = ClienteService.FindByDniApellidoNombre(null, null, null,null);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -47,7 +48,7 @@ namespace Vistas
             {
                 string dniCliente = dtGridClientes.CurrentRow.Cells["Dni"].Value.ToString();
                 ClienteService.EliminarCliente(dniCliente);
-                ClienteService.FindByDniApellidoNombre(null, null, null);
+                ClienteService.FindByDniApellidoNombre(null, null, null, null);
             }
 
         }
@@ -63,6 +64,17 @@ namespace Vistas
 
             return new Cliente(nombre, apellido, dni, direccion, cuitObraSocial, nroCarnet);
             
+        }
+
+        private void ConsultaClientes_Load(object sender, EventArgs e)
+        {
+            cmbCategoria.Items.Add("Dni");
+            cmbCategoria.Items.Add("Apellido");
+            cmbCategoria.Items.Add("Nombre");
+            cmbCategoria.Items.Add("Dirección");
+            cmbCategoria.Items.Add("Número carnet");
+            cmbCategoria.Items.Add("Cuit obra social");
+            cmbCategoria.SelectedIndex = 0;
         }
     }
 }

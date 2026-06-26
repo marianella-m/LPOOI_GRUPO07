@@ -62,7 +62,7 @@ namespace ClasesBase.services
             return dt;
         }
 
-        public static DataTable FindByDniApellidoNombre(string dni, string apellido, string nombre)
+        public static DataTable FindByDniApellidoNombre(string dni, string apellido, string nombre, string categoria)
         {
             string cnn = ClasesBase.Properties.Settings.Default.opticaConnectionString;
             SqlDataAdapter da = new SqlDataAdapter("buscar_clientes_sp", cnn);
@@ -82,7 +82,10 @@ namespace ClasesBase.services
                 da.SelectCommand.Parameters.AddWithValue("@nombre", DBNull.Value);
             else
                 da.SelectCommand.Parameters.AddWithValue("@nombre", nombre);
-
+            if (string.IsNullOrEmpty(categoria))
+                da.SelectCommand.Parameters.AddWithValue("@categoria", "Dni");
+            else
+                da.SelectCommand.Parameters.AddWithValue("@categoria", categoria);
             DataTable dt = new DataTable();
             da.Fill(dt);
 

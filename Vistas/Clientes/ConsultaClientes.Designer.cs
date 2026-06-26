@@ -39,6 +39,8 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblFilterNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
+            this.lblCategoria = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +52,7 @@
             this.dtGridClientes.AllowUserToResizeRows = false;
             this.dtGridClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGridClientes.Location = new System.Drawing.Point(21, 120);
-            this.dtGridClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtGridClientes.Margin = new System.Windows.Forms.Padding(2);
             this.dtGridClientes.Name = "dtGridClientes";
             this.dtGridClientes.ReadOnly = true;
             this.dtGridClientes.RowTemplate.Height = 24;
@@ -71,7 +73,7 @@
             // txtDni
             // 
             this.txtDni.Location = new System.Drawing.Point(21, 72);
-            this.txtDni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDni.Margin = new System.Windows.Forms.Padding(2);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(112, 20);
             this.txtDni.TabIndex = 2;
@@ -79,7 +81,7 @@
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(162, 72);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(112, 20);
             this.txtApellido.TabIndex = 3;
@@ -106,8 +108,8 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(524, 67);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Location = new System.Drawing.Point(571, 70);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(50, 24);
             this.btnBuscar.TabIndex = 6;
@@ -118,7 +120,7 @@
             // btnActualizar
             // 
             this.btnActualizar.Location = new System.Drawing.Point(500, 314);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(67, 21);
             this.btnActualizar.TabIndex = 7;
@@ -129,7 +131,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(571, 314);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(67, 21);
             this.btnEliminar.TabIndex = 8;
@@ -155,11 +157,31 @@
             this.txtNombre.Size = new System.Drawing.Size(112, 20);
             this.txtNombre.TabIndex = 9;
             // 
+            // cmbCategoria
+            // 
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Location = new System.Drawing.Point(445, 73);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(121, 21);
+            this.cmbCategoria.TabIndex = 11;
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Location = new System.Drawing.Point(442, 56);
+            this.lblCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(66, 13);
+            this.lblCategoria.TabIndex = 12;
+            this.lblCategoria.Text = "Ordenar por:";
+            // 
             // ConsultaClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 363);
+            this.Controls.Add(this.lblCategoria);
+            this.Controls.Add(this.cmbCategoria);
             this.Controls.Add(this.lblFilterNombre);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.btnEliminar);
@@ -171,9 +193,10 @@
             this.Controls.Add(this.txtDni);
             this.Controls.Add(this.lblClientes);
             this.Controls.Add(this.dtGridClientes);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ConsultaClientes";
             this.Text = "Consulta Clientes";
+            this.Load += new System.EventHandler(this.ConsultaClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtGridClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -193,5 +216,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label lblFilterNombre;
         private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.ComboBox cmbCategoria;
+        private System.Windows.Forms.Label lblCategoria;
     }
 }
