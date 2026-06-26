@@ -60,6 +60,13 @@ namespace Vistas.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap bienes {
+            get {
+                object obj = ResourceManager.GetObject("bienes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap elegante {
             get {
                 object obj = ResourceManager.GetObject("elegante", resourceCulture);

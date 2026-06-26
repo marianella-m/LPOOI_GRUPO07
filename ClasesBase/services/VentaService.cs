@@ -10,8 +10,6 @@ namespace ClasesBase.services
     public class VentaService
     {
 
-        //public static List<Venta> FindAllVentas()
-
         public static DataTable FindAllVentas()
         {
             SqlConnection connection = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
@@ -165,6 +163,35 @@ namespace ClasesBase.services
             }
 
             return dt;
+        }
+
+
+        public static void DeleteVenta(int numeroVenta)
+        {
+            SqlConnection connection = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "eliminar_venta_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = connection;
+
+            cmd.Parameters.AddWithValue("@nro", numeroVenta);
+
+            try
+            {
+                connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en la base de datos al eliminar la venta: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
         }
 
     }

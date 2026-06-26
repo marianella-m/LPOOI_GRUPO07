@@ -38,6 +38,7 @@
             this.dtVentaFin = new System.Windows.Forms.DateTimePicker();
             this.btnConsultarbyRango = new System.Windows.Forms.Button();
             this.dtGridFechas = new System.Windows.Forms.DataGridView();
+            this.btnEliminarVenta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridVentas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridFechas)).BeginInit();
             this.SuspendLayout();
@@ -52,8 +53,9 @@
             this.dtGridVentas.Name = "dtGridVentas";
             this.dtGridVentas.ReadOnly = true;
             this.dtGridVentas.RowTemplate.Height = 24;
-            this.dtGridVentas.Size = new System.Drawing.Size(348, 264);
+            this.dtGridVentas.Size = new System.Drawing.Size(348, 233);
             this.dtGridVentas.TabIndex = 0;
+            this.dtGridVentas.Click += new System.EventHandler(this.dtGridVentas_Click);
             // 
             // label1
             // 
@@ -151,14 +153,30 @@
             this.dtGridFechas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGridFechas.Location = new System.Drawing.Point(441, 185);
             this.dtGridFechas.Name = "dtGridFechas";
-            this.dtGridFechas.Size = new System.Drawing.Size(351, 264);
+            this.dtGridFechas.Size = new System.Drawing.Size(351, 233);
             this.dtGridFechas.TabIndex = 9;
+            this.dtGridFechas.Click += new System.EventHandler(this.dtGridFechas_Click);
+            // 
+            // btnEliminarVenta
+            // 
+            this.btnEliminarVenta.BackColor = System.Drawing.Color.Firebrick;
+            this.btnEliminarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnEliminarVenta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEliminarVenta.Location = new System.Drawing.Point(331, 465);
+            this.btnEliminarVenta.Name = "btnEliminarVenta";
+            this.btnEliminarVenta.Size = new System.Drawing.Size(164, 31);
+            this.btnEliminarVenta.TabIndex = 10;
+            this.btnEliminarVenta.Text = "ELIMINAR VENTA";
+            this.btnEliminarVenta.UseVisualStyleBackColor = false;
+            this.btnEliminarVenta.Click += new System.EventHandler(this.btnEliminarVenta_Click);
             // 
             // ConsultaVentasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 481);
+            this.ClientSize = new System.Drawing.Size(832, 538);
+            this.Controls.Add(this.btnEliminarVenta);
             this.Controls.Add(this.dtGridFechas);
             this.Controls.Add(this.btnConsultarbyRango);
             this.Controls.Add(this.dtVentaFin);
@@ -193,6 +211,7 @@
         private System.Windows.Forms.DateTimePicker dtVentaFin;
         private System.Windows.Forms.Button btnConsultarbyRango;
         private System.Windows.Forms.DataGridView dtGridFechas;
+        private System.Windows.Forms.Button btnEliminarVenta;
 
 
     }

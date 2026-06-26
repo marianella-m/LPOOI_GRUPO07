@@ -49,43 +49,49 @@
             this.btnRegistrarVenta = new System.Windows.Forms.Button();
             this.lblToast = new System.Windows.Forms.Label();
             this.errorProviderVenta = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetallesVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderVenta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbBoxClientes
             // 
             this.cmbBoxClientes.FormattingEnabled = true;
-            this.cmbBoxClientes.Location = new System.Drawing.Point(48, 80);
+            this.cmbBoxClientes.Location = new System.Drawing.Point(36, 65);
+            this.cmbBoxClientes.Margin = new System.Windows.Forms.Padding(2);
             this.cmbBoxClientes.Name = "cmbBoxClientes";
-            this.cmbBoxClientes.Size = new System.Drawing.Size(197, 24);
+            this.cmbBoxClientes.Size = new System.Drawing.Size(149, 21);
             this.cmbBoxClientes.TabIndex = 0;
             // 
             // dtTmPickerVenta
             // 
             this.dtTmPickerVenta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtTmPickerVenta.Location = new System.Drawing.Point(312, 80);
+            this.dtTmPickerVenta.Location = new System.Drawing.Point(234, 65);
+            this.dtTmPickerVenta.Margin = new System.Windows.Forms.Padding(2);
             this.dtTmPickerVenta.MinDate = new System.DateTime(2026, 1, 1, 0, 0, 0, 0);
             this.dtTmPickerVenta.Name = "dtTmPickerVenta";
-            this.dtTmPickerVenta.Size = new System.Drawing.Size(197, 22);
+            this.dtTmPickerVenta.Size = new System.Drawing.Size(149, 20);
             this.dtTmPickerVenta.TabIndex = 1;
             this.dtTmPickerVenta.Value = new System.DateTime(2026, 5, 25, 23, 59, 59, 0);
             // 
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(45, 60);
+            this.lblCliente.Location = new System.Drawing.Point(34, 49);
+            this.lblCliente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(51, 17);
+            this.lblCliente.Size = new System.Drawing.Size(39, 13);
             this.lblCliente.TabIndex = 2;
             this.lblCliente.Text = "Cliente";
             // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(309, 60);
+            this.lblFecha.Location = new System.Drawing.Point(232, 49);
+            this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(47, 17);
+            this.lblFecha.Size = new System.Drawing.Size(37, 13);
             this.lblFecha.TabIndex = 3;
             this.lblFecha.Text = "Fecha";
             // 
@@ -97,10 +103,11 @@
             this.colHeaderPrecio});
             this.listViewProductos.FullRowSelect = true;
             this.listViewProductos.GridLines = true;
-            this.listViewProductos.Location = new System.Drawing.Point(48, 160);
+            this.listViewProductos.Location = new System.Drawing.Point(36, 130);
+            this.listViewProductos.Margin = new System.Windows.Forms.Padding(2);
             this.listViewProductos.MultiSelect = false;
             this.listViewProductos.Name = "listViewProductos";
-            this.listViewProductos.Size = new System.Drawing.Size(594, 157);
+            this.listViewProductos.Size = new System.Drawing.Size(446, 128);
             this.listViewProductos.TabIndex = 4;
             this.listViewProductos.UseCompatibleStateImageBehavior = false;
             this.listViewProductos.View = System.Windows.Forms.View.Details;
@@ -132,10 +139,11 @@
             this.cantidad,
             this.subtotal,
             this.deleteItem});
-            this.dataGridViewDetallesVenta.Location = new System.Drawing.Point(48, 366);
+            this.dataGridViewDetallesVenta.Location = new System.Drawing.Point(36, 297);
+            this.dataGridViewDetallesVenta.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewDetallesVenta.Name = "dataGridViewDetallesVenta";
             this.dataGridViewDetallesVenta.RowTemplate.Height = 24;
-            this.dataGridViewDetallesVenta.Size = new System.Drawing.Size(1272, 136);
+            this.dataGridViewDetallesVenta.Size = new System.Drawing.Size(965, 110);
             this.dataGridViewDetallesVenta.TabIndex = 5;
             this.dataGridViewDetallesVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDetallesVenta_CellContentClick);
             this.dataGridViewDetallesVenta.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDetallesVenta_CellEndEdit);
@@ -188,9 +196,10 @@
             // 
             // btnAgregarProducto
             // 
-            this.btnAgregarProducto.Location = new System.Drawing.Point(48, 128);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(36, 104);
+            this.btnAgregarProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
-            this.btnAgregarProducto.Size = new System.Drawing.Size(88, 26);
+            this.btnAgregarProducto.Size = new System.Drawing.Size(66, 21);
             this.btnAgregarProducto.TabIndex = 6;
             this.btnAgregarProducto.Text = "Agregar";
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
@@ -200,17 +209,19 @@
             // 
             this.lblRegistroVenta.AutoSize = true;
             this.lblRegistroVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistroVenta.Location = new System.Drawing.Point(43, 9);
+            this.lblRegistroVenta.Location = new System.Drawing.Point(32, 7);
+            this.lblRegistroVenta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRegistroVenta.Name = "lblRegistroVenta";
-            this.lblRegistroVenta.Size = new System.Drawing.Size(185, 29);
+            this.lblRegistroVenta.Size = new System.Drawing.Size(147, 24);
             this.lblRegistroVenta.TabIndex = 7;
             this.lblRegistroVenta.Text = "Registro Venta";
             // 
             // btnRegistrarVenta
             // 
-            this.btnRegistrarVenta.Location = new System.Drawing.Point(25, 534);
+            this.btnRegistrarVenta.Location = new System.Drawing.Point(19, 434);
+            this.btnRegistrarVenta.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrarVenta.Name = "btnRegistrarVenta";
-            this.btnRegistrarVenta.Size = new System.Drawing.Size(127, 27);
+            this.btnRegistrarVenta.Size = new System.Drawing.Size(95, 22);
             this.btnRegistrarVenta.TabIndex = 8;
             this.btnRegistrarVenta.Text = "Registrar Venta";
             this.btnRegistrarVenta.UseVisualStyleBackColor = true;
@@ -219,9 +230,10 @@
             // lblToast
             // 
             this.lblToast.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblToast.Location = new System.Drawing.Point(548, 80);
+            this.lblToast.Location = new System.Drawing.Point(411, 65);
+            this.lblToast.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblToast.Name = "lblToast";
-            this.lblToast.Size = new System.Drawing.Size(201, 47);
+            this.lblToast.Size = new System.Drawing.Size(151, 38);
             this.lblToast.TabIndex = 15;
             this.lblToast.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -230,11 +242,22 @@
             this.errorProviderVenta.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProviderVenta.ContainerControl = this;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Vistas.Properties.Resources.bienes;
+            this.pictureBox1.Location = new System.Drawing.Point(520, 152);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(104, 106);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
             // GestionVentaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1365, 614);
+            this.ClientSize = new System.Drawing.Size(1049, 499);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblToast);
             this.Controls.Add(this.btnRegistrarVenta);
             this.Controls.Add(this.lblRegistroVenta);
@@ -245,11 +268,13 @@
             this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.dtTmPickerVenta);
             this.Controls.Add(this.cmbBoxClientes);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GestionVentaForm";
             this.Text = "GestionVenta";
             this.Load += new System.EventHandler(this.GestionVentaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetallesVenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderVenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,5 +302,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn deleteItem;
         private System.Windows.Forms.Label lblToast;
         private System.Windows.Forms.ErrorProvider errorProviderVenta;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
