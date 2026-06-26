@@ -108,6 +108,7 @@ namespace Vistas
                 productosToolStripMenuItem.Enabled = true;
 
                 clientesToolStripMenuItem.Enabled = false;
+                obrasSocialesToolStripMenuItem.Enabled = false;
                 ventasToolStripMenuItem.Enabled = false;
             }
 
