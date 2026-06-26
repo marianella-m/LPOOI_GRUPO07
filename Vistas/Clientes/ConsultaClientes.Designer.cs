@@ -68,9 +68,9 @@
             this.lblClientes.Location = new System.Drawing.Point(17, 15);
             this.lblClientes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblClientes.Name = "lblClientes";
-            this.lblClientes.Size = new System.Drawing.Size(91, 25);
+            this.lblClientes.Size = new System.Drawing.Size(213, 25);
             this.lblClientes.TabIndex = 1;
-            this.lblClientes.Text = "Clientes";
+            this.lblClientes.Text = "Consulta de Clientes";
             // 
             // txtDni
             // 
