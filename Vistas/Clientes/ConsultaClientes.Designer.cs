@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaClientes));
             this.dtGridClientes = new System.Windows.Forms.DataGridView();
             this.lblClientes = new System.Windows.Forms.Label();
             this.txtDni = new System.Windows.Forms.TextBox();
@@ -205,8 +206,11 @@
             this.Controls.Add(this.txtDni);
             this.Controls.Add(this.lblClientes);
             this.Controls.Add(this.dtGridClientes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ConsultaClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Clientes";
             this.Load += new System.EventHandler(this.ConsultaClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtGridClientes)).EndInit();

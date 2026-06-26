@@ -158,6 +158,9 @@
     <EmbeddedResource Include="ObrasSociales\ConsultaObrasSocialesForm.resx">
       <DependentUpon>ConsultaObrasSocialesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Principal\FormBase.resx">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Productos\AltaProductosForm.resx">
       <DependentUpon>AltaProductosForm.cs</DependentUpon>
       <SubType>Designer</SubType>

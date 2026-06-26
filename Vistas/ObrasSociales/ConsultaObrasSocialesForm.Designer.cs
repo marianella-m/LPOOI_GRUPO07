@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaObrasSocialesForm));
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,9 +40,10 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(264, 98);
+            this.btnBuscar.Location = new System.Drawing.Point(198, 80);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(98, 24);
+            this.btnBuscar.Size = new System.Drawing.Size(74, 20);
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -51,9 +53,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 16);
+            this.label2.Location = new System.Drawing.Point(7, 13);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(353, 29);
+            this.label2.Size = new System.Drawing.Size(282, 25);
             this.label2.TabIndex = 10;
             this.label2.Text = "Consulta de Obras Sociales";
             // 
@@ -61,9 +64,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 59);
+            this.label1.Location = new System.Drawing.Point(8, 48);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(262, 17);
+            this.label1.Size = new System.Drawing.Size(204, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Consultar clientes por Obra Social:";
             // 
@@ -71,10 +75,11 @@
             // 
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.lblCantidad.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidad.Location = new System.Drawing.Point(16, 428);
+            this.lblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidad.Location = new System.Drawing.Point(12, 348);
+            this.lblCantidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(258, 26);
+            this.lblCantidad.Size = new System.Drawing.Size(186, 20);
             this.lblCantidad.TabIndex = 13;
             this.lblCantidad.Text = "Cantidad de Clientes: ";
             // 
@@ -82,32 +87,38 @@
             // 
             this.cmbObraSocial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbObraSocial.FormattingEnabled = true;
-            this.cmbObraSocial.Location = new System.Drawing.Point(17, 98);
+            this.cmbObraSocial.Location = new System.Drawing.Point(13, 80);
+            this.cmbObraSocial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbObraSocial.Name = "cmbObraSocial";
-            this.cmbObraSocial.Size = new System.Drawing.Size(179, 24);
+            this.cmbObraSocial.Size = new System.Drawing.Size(135, 21);
             this.cmbObraSocial.TabIndex = 14;
             // 
             // dgvClientes
             // 
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(17, 145);
+            this.dgvClientes.Location = new System.Drawing.Point(13, 118);
+            this.dgvClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.RowTemplate.Height = 24;
-            this.dgvClientes.Size = new System.Drawing.Size(588, 268);
+            this.dgvClientes.Size = new System.Drawing.Size(441, 218);
             this.dgvClientes.TabIndex = 15;
             // 
             // ConsultaObrasSocialesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 504);
+            this.ClientSize = new System.Drawing.Size(463, 410);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.cmbObraSocial);
             this.Controls.Add(this.lblCantidad);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnBuscar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ConsultaObrasSocialesForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsultaObrasSocialesForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
