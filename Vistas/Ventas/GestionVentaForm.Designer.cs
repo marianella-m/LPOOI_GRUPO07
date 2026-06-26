@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionVentaForm));
             this.cmbBoxClientes = new System.Windows.Forms.ComboBox();
             this.dtTmPickerVenta = new System.Windows.Forms.DateTimePicker();
             this.lblCliente = new System.Windows.Forms.Label();
@@ -280,8 +281,11 @@
             this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.dtTmPickerVenta);
             this.Controls.Add(this.cmbBoxClientes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GestionVentaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionVenta";
             this.Load += new System.EventHandler(this.GestionVentaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetallesVenta)).EndInit();

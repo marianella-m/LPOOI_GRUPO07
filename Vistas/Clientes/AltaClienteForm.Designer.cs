@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaClienteForm));
             this.lblTittle = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -188,7 +189,7 @@
             this.cmbObraSocial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbObraSocial.FormattingEnabled = true;
             this.cmbObraSocial.Location = new System.Drawing.Point(295, 50);
-            this.cmbObraSocial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbObraSocial.Margin = new System.Windows.Forms.Padding(2);
             this.cmbObraSocial.Name = "cmbObraSocial";
             this.cmbObraSocial.Size = new System.Drawing.Size(192, 21);
             this.cmbObraSocial.TabIndex = 3;
@@ -216,7 +217,10 @@
             this.Controls.Add(this.lblToast);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblTittle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AltaClienteForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AltaClienteForm";
             this.Load += new System.EventHandler(this.AltaClienteForm_Load);
             this.groupBox1.ResumeLayout(false);
