@@ -212,34 +212,3 @@ namespace ClasesBase.services
     
     }
 }
-
-
-
-/*
- 
- // 1. Declaramos la variable al principio
-    DataTable dt = new DataTable();
-
-    try
-    {
-        // Usa la cadena o método de conexión que ya tengas en tu proyecto (ej. Conexion.ObtenerConexion())
-        using (SqlConnection conexion = new SqlConnection("Tu_Cadena_Conexion_Aqui")) 
-        {
-            using (SqlCommand cmd = new SqlCommand("dbo.listar_productos_por_fecha_sp", conexion))
-            {
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@fecha_inicio", fechaInicio);
-                cmd.Parameters.AddWithValue("@fecha_fin", fechaFin);
-
-                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
-                {
-                    conexion.Open();
-                    da.Fill(dt); // Si todo sale bien, se llena aquí
-                }
-            }
-        }
-    }
- 
- 
- */
