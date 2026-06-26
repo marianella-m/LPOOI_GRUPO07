@@ -70,7 +70,7 @@
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(202, 50);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(122, 20);
             this.txtPassword.TabIndex = 1;
@@ -78,7 +78,7 @@
             // txtNombreUsuario
             // 
             this.txtNombreUsuario.Location = new System.Drawing.Point(20, 50);
-            this.txtNombreUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.Size = new System.Drawing.Size(154, 20);
             this.txtNombreUsuario.TabIndex = 0;
@@ -86,7 +86,7 @@
             // txtApellidoNombre
             // 
             this.txtApellidoNombre.Location = new System.Drawing.Point(20, 106);
-            this.txtApellidoNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtApellidoNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellidoNombre.Name = "txtApellidoNombre";
             this.txtApellidoNombre.Size = new System.Drawing.Size(154, 20);
             this.txtApellidoNombre.TabIndex = 2;
@@ -133,8 +133,8 @@
             // 
             // btnSaveUsuario
             // 
-            this.btnSaveUsuario.Location = new System.Drawing.Point(268, 233);
-            this.btnSaveUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSaveUsuario.Location = new System.Drawing.Point(305, 164);
+            this.btnSaveUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveUsuario.Name = "btnSaveUsuario";
             this.btnSaveUsuario.Size = new System.Drawing.Size(67, 28);
             this.btnSaveUsuario.TabIndex = 4;
@@ -154,6 +154,7 @@
             // 
             this.groupBox1.Controls.Add(this.btnShowHidePassword);
             this.groupBox1.Controls.Add(this.comboRol);
+            this.groupBox1.Controls.Add(this.btnSaveUsuario);
             this.groupBox1.Controls.Add(this.lblRol);
             this.groupBox1.Controls.Add(this.lblApellidoNombre);
             this.groupBox1.Controls.Add(this.lblPassword);
@@ -163,10 +164,10 @@
             this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(11, 52);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(388, 165);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(388, 206);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Usuario";
@@ -175,7 +176,7 @@
             // 
             this.btnShowHidePassword.Image = ((System.Drawing.Image)(resources.GetObject("btnShowHidePassword.Image")));
             this.btnShowHidePassword.Location = new System.Drawing.Point(321, 48);
-            this.btnShowHidePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnShowHidePassword.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowHidePassword.Name = "btnShowHidePassword";
             this.btnShowHidePassword.Size = new System.Drawing.Size(26, 20);
             this.btnShowHidePassword.TabIndex = 14;
@@ -200,12 +201,9 @@
             this.ClientSize = new System.Drawing.Size(450, 295);
             this.Controls.Add(this.lblToast);
             this.Controls.Add(this.txtTitulo);
-            this.Controls.Add(this.btnSaveUsuario);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AltaUsuario";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AltaUsuario";
             this.Load += new System.EventHandler(this.AltaUsuario_Load);
             this.groupBox1.ResumeLayout(false);
