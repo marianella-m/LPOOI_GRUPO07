@@ -59,6 +59,11 @@ namespace Vistas
                 MessageBox.Show("Precio inválido");
                 return;
             }
+            if (precio < 0)
+            {
+                MessageBox.Show("El precio no puede ser negativo");
+                return;
+            }
 
             Producto p = new Producto(
                 txtCodigo.Text,
