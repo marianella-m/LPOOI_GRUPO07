@@ -56,6 +56,11 @@ namespace Vistas
                     string dniSeleccionado = comboClientes.SelectedValue.ToString();
                     DataTable dtVentas = VentaService.listar_ventas_por_cliente_sp(dniSeleccionado);
                     dtGridVentas.DataSource = dtVentas;
+
+                    int totalRegistros = dtGridVentas.RowCount;
+                    lblTotalVentasPorCliente.Text = "Total ventas " + comboClientes.Text + " : " + totalRegistros;
+
+                    lblTotalVentasPorCliente.Visible = (totalRegistros > 0) ? true : false;
                 }
                 catch (Exception ex)
                 {
@@ -72,6 +77,9 @@ namespace Vistas
                 DateTime fechaFinSeleccionada = dtVentaFin.Value.AddMinutes(1);
                 DataTable dtVentas = VentaService.listar_ventas_por_fecha_sp(fechaInicioSeleccionada, fechaFinSeleccionada);
                 dtGridFechas.DataSource = dtVentas;
+                int totalRegistros = dtGridFechas.RowCount;
+                lblTotalVentasPorRangoFechas.Text = "Total ventas: " + totalRegistros;
+                lblTotalVentasPorRangoFechas.Visible = (totalRegistros > 0) ? true : false;
 
             }
             catch (Exception ex)
