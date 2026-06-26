@@ -89,8 +89,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="optica_log.ldf">
-      <DependentUpon>optica.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>optica.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>

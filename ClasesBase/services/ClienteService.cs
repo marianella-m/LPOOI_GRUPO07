@@ -61,26 +61,31 @@ namespace ClasesBase.services
 
             return dt;
         }
-        
-        public static DataTable FindByDniCuitOS(string dni, string cuitObraSocial)
-        {
-            string query = @"SELECT DNI AS [Dni], APELLIDO AS [Apellido], NOMBRE AS [Nombre],
-                    DIRECCION AS [Dirección], NRO_CARNET AS [Número carnet], OS_CUIT AS [Cuit obra social] FROM CLIENTES
-                    WHERE (@dni IS NULL OR DNI LIKE @dni)
-                    AND (@cuit IS NULL OR OS_CUIT LIKE @cuit)";
 
-            SqlDataAdapter da = new SqlDataAdapter(query, ClasesBase.Properties.Settings.Default.opticaConnectionString);
+        public static DataTable FindByDniApellidoNombre(string dni, string apellido, string nombre, string categoria)
+        {
+            string cnn = ClasesBase.Properties.Settings.Default.opticaConnectionString;
+            SqlDataAdapter da = new SqlDataAdapter("buscar_clientes_sp", cnn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
 
             if (string.IsNullOrEmpty(dni))
                 da.SelectCommand.Parameters.AddWithValue("@dni", DBNull.Value);
             else
-                da.SelectCommand.Parameters.AddWithValue("@dni", "%" + dni + "%");
+                da.SelectCommand.Parameters.AddWithValue("@dni", dni);
 
-            if (string.IsNullOrEmpty(cuitObraSocial))
-                da.SelectCommand.Parameters.AddWithValue("@cuit", DBNull.Value);
+            if (string.IsNullOrEmpty(apellido))
+                da.SelectCommand.Parameters.AddWithValue("@apellido", DBNull.Value);
             else
-                da.SelectCommand.Parameters.AddWithValue("@cuit", "%" + cuitObraSocial + "%");
+                da.SelectCommand.Parameters.AddWithValue("@apellido", apellido);
 
+            if (string.IsNullOrEmpty(nombre))
+                da.SelectCommand.Parameters.AddWithValue("@nombre", DBNull.Value);
+            else
+                da.SelectCommand.Parameters.AddWithValue("@nombre", nombre);
+            if (string.IsNullOrEmpty(categoria))
+                da.SelectCommand.Parameters.AddWithValue("@categoria", "Dni");
+            else
+                da.SelectCommand.Parameters.AddWithValue("@categoria", categoria);
             DataTable dt = new DataTable();
             da.Fill(dt);
 
