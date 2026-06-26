@@ -183,7 +183,7 @@
             // pnlContent
             // 
             this.pnlContent.Location = new System.Drawing.Point(9, 63);
-            this.pnlContent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlContent.Margin = new System.Windows.Forms.Padding(2);
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(868, 495);
             this.pnlContent.TabIndex = 2;
@@ -192,7 +192,7 @@
             // 
             this.btnCloseSession.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseSession.Location = new System.Drawing.Point(417, 11);
-            this.btnCloseSession.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCloseSession.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseSession.Name = "btnCloseSession";
             this.btnCloseSession.Padding = new System.Windows.Forms.Padding(0, 6, 0, 6);
             this.btnCloseSession.Size = new System.Drawing.Size(56, 32);
@@ -211,13 +211,11 @@
             this.Controls.Add(this.btnCloseSession);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.menuPrincipal);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuPrincipal;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Home";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Home";
+            this.Text = "";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Home_FormClosed);
             this.Load += new System.EventHandler(this.Home_Load);
             this.menuPrincipal.ResumeLayout(false);
