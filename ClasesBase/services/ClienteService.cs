@@ -144,5 +144,20 @@ namespace ClasesBase.services
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public static DataTable BuscarClientesPorObraSocial(string osCuit)
+        {
+            string query = @"SELECT DNI as 'DNI', APELLIDO as 'Apellido', NOMBRE as 'Nombre', DIRECCION as 'Dirección', NRO_CARNET as 'Nro Carnet', OS_CUIT as 'Obra Social'
+                            FROM CLIENTES
+                            WHERE OS_CUIT = @osCuit";
+
+            SqlDataAdapter da = new SqlDataAdapter(query, ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            da.SelectCommand.Parameters.AddWithValue("@osCuit", osCuit);
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
     }
 }
