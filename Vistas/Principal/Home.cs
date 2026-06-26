@@ -47,10 +47,7 @@ namespace Vistas
 
         private void consultaObraSocialToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pnlContent.Controls.Clear();
-            TextBox txtBox = new TextBox();
-            txtBox.Text = "Texto Ingresado......";
-            pnlContent.Controls.Add(txtBox);
+            this.Navigate(pnlContent, new ConsultaObrasSocialesForm());
         }
 
         private void Home_FormClosed(object sender, FormClosedEventArgs e)
