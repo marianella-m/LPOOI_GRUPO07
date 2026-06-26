@@ -133,6 +133,10 @@ namespace Vistas
             {
                 string dniSeleccionado = cmBoxCliente.SelectedValue.ToString();
                 dgvProductos.DataSource = ProductoService.list_productos_por_cliente_sp(dniSeleccionado);
+
+                int totalVentasPeriodo = dgvProductos.Rows.Count;
+                lblCantidadTotal.Text = "Total Productos: " + totalVentasPeriodo.ToString();
+
             }
 
         }

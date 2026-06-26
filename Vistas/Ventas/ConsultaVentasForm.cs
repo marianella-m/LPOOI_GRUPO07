@@ -69,9 +69,13 @@ namespace Vistas
             try
             {
                 DateTime fechaInicioSeleccionada = dtVentaInicio.Value;
-                DateTime fechaFinSeleccionada = dtVentaFin.Value;
+                DateTime fechaFinSeleccionada = dtVentaFin.Value.AddMinutes(1);
                 DataTable dtVentas = VentaService.listar_ventas_por_fecha_sp(fechaInicioSeleccionada, fechaFinSeleccionada);
                 dtGridFechas.DataSource = dtVentas;
+
+                int totalVentasPeriodo = dtVentas.Rows.Count;
+                lblTotalVentasFecha.Text = "Total Ventas: " + totalVentasPeriodo.ToString();
+
             }
             catch (Exception ex)
             {

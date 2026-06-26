@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblClientes = new System.Windows.Forms.Label();
             this.cmBoxCliente = new System.Windows.Forms.ComboBox();
+            this.lblCantidadTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,35 +50,37 @@
             this.dgvProductos.AllowUserToDeleteRows = false;
             this.dgvProductos.AllowUserToResizeColumns = false;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(11, 160);
+            this.dgvProductos.Location = new System.Drawing.Point(15, 197);
+            this.dgvProductos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
-            this.dgvProductos.Size = new System.Drawing.Size(437, 194);
+            this.dgvProductos.Size = new System.Drawing.Size(583, 239);
             this.dgvProductos.TabIndex = 5;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(7, 13);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(9, 16);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(231, 25);
+            this.label6.Size = new System.Drawing.Size(290, 29);
             this.label6.TabIndex = 9;
             this.label6.Text = "Consulta de Productos";
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(264, 15);
+            this.txtBuscar.Location = new System.Drawing.Point(352, 18);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(85, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(112, 22);
             this.txtBuscar.TabIndex = 0;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(374, 9);
+            this.btnBuscar.Location = new System.Drawing.Point(499, 11);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 29);
+            this.btnBuscar.Size = new System.Drawing.Size(100, 36);
             this.btnBuscar.TabIndex = 1;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -85,9 +88,10 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(266, 377);
+            this.btnBorrar.Location = new System.Drawing.Point(355, 464);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(75, 26);
+            this.btnBorrar.Size = new System.Drawing.Size(100, 32);
             this.btnBorrar.TabIndex = 6;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
@@ -95,9 +99,10 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(374, 377);
+            this.btnModificar.Location = new System.Drawing.Point(499, 464);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 26);
+            this.btnModificar.Size = new System.Drawing.Size(100, 32);
             this.btnModificar.TabIndex = 7;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -106,10 +111,10 @@
             // rbDescripcion
             // 
             this.rbDescripcion.AutoSize = true;
-            this.rbDescripcion.Location = new System.Drawing.Point(12, 71);
-            this.rbDescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.rbDescripcion.Location = new System.Drawing.Point(16, 87);
+            this.rbDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbDescripcion.Name = "rbDescripcion";
-            this.rbDescripcion.Size = new System.Drawing.Size(81, 17);
+            this.rbDescripcion.Size = new System.Drawing.Size(103, 21);
             this.rbDescripcion.TabIndex = 2;
             this.rbDescripcion.TabStop = true;
             this.rbDescripcion.Text = "Descripción";
@@ -118,10 +123,10 @@
             // rbCategoria
             // 
             this.rbCategoria.AutoSize = true;
-            this.rbCategoria.Location = new System.Drawing.Point(12, 94);
-            this.rbCategoria.Margin = new System.Windows.Forms.Padding(2);
+            this.rbCategoria.Location = new System.Drawing.Point(16, 116);
+            this.rbCategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbCategoria.Name = "rbCategoria";
-            this.rbCategoria.Size = new System.Drawing.Size(72, 17);
+            this.rbCategoria.Size = new System.Drawing.Size(90, 21);
             this.rbCategoria.TabIndex = 3;
             this.rbCategoria.TabStop = true;
             this.rbCategoria.Text = "Categoría";
@@ -129,10 +134,10 @@
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(12, 118);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConsultar.Location = new System.Drawing.Point(16, 145);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(75, 26);
+            this.btnConsultar.Size = new System.Drawing.Size(100, 32);
             this.btnConsultar.TabIndex = 4;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -142,36 +147,49 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 48);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(11, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 13);
+            this.label1.Size = new System.Drawing.Size(188, 17);
             this.label1.TabIndex = 8;
             this.label1.Text = "Consultar productos por:";
             // 
             // lblClientes
             // 
             this.lblClientes.AutoSize = true;
-            this.lblClientes.Location = new System.Drawing.Point(277, 71);
+            this.lblClientes.Location = new System.Drawing.Point(369, 87);
+            this.lblClientes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClientes.Name = "lblClientes";
-            this.lblClientes.Size = new System.Drawing.Size(44, 13);
+            this.lblClientes.Size = new System.Drawing.Size(58, 17);
             this.lblClientes.TabIndex = 10;
             this.lblClientes.Text = "Clientes";
             // 
             // cmBoxCliente
             // 
             this.cmBoxCliente.FormattingEnabled = true;
-            this.cmBoxCliente.Location = new System.Drawing.Point(327, 67);
+            this.cmBoxCliente.Location = new System.Drawing.Point(436, 82);
+            this.cmBoxCliente.Margin = new System.Windows.Forms.Padding(4);
             this.cmBoxCliente.Name = "cmBoxCliente";
-            this.cmBoxCliente.Size = new System.Drawing.Size(121, 21);
+            this.cmBoxCliente.Size = new System.Drawing.Size(160, 24);
             this.cmBoxCliente.TabIndex = 11;
             this.cmBoxCliente.SelectedIndexChanged += new System.EventHandler(this.cmBoxCliente_SelectedIndexChanged);
             // 
+            // lblCantidadTotal
+            // 
+            this.lblCantidadTotal.AutoSize = true;
+            this.lblCantidadTotal.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblCantidadTotal.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidadTotal.Location = new System.Drawing.Point(17, 440);
+            this.lblCantidadTotal.Name = "lblCantidadTotal";
+            this.lblCantidadTotal.Size = new System.Drawing.Size(200, 26);
+            this.lblCantidadTotal.TabIndex = 12;
+            this.lblCantidadTotal.Text = "Total Productos: ";
+            // 
             // ConsultaProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 427);
+            this.ClientSize = new System.Drawing.Size(619, 526);
+            this.Controls.Add(this.lblCantidadTotal);
             this.Controls.Add(this.cmBoxCliente);
             this.Controls.Add(this.lblClientes);
             this.Controls.Add(this.label1);
@@ -184,6 +202,7 @@
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dgvProductos);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ConsultaProductos";
             this.Text = "ConsultaProductos";
             this.Load += new System.EventHandler(this.ConsultaProductos_Load);
@@ -207,5 +226,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblClientes;
         private System.Windows.Forms.ComboBox cmBoxCliente;
+        private System.Windows.Forms.Label lblCantidadTotal;
     }
 }
