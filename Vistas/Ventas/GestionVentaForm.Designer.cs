@@ -50,6 +50,7 @@
             this.lblToast = new System.Windows.Forms.Label();
             this.errorProviderVenta = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetallesVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,7 +59,7 @@
             // cmbBoxClientes
             // 
             this.cmbBoxClientes.FormattingEnabled = true;
-            this.cmbBoxClientes.Location = new System.Drawing.Point(36, 65);
+            this.cmbBoxClientes.Location = new System.Drawing.Point(37, 64);
             this.cmbBoxClientes.Margin = new System.Windows.Forms.Padding(2);
             this.cmbBoxClientes.Name = "cmbBoxClientes";
             this.cmbBoxClientes.Size = new System.Drawing.Size(149, 21);
@@ -67,7 +68,7 @@
             // dtTmPickerVenta
             // 
             this.dtTmPickerVenta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtTmPickerVenta.Location = new System.Drawing.Point(234, 65);
+            this.dtTmPickerVenta.Location = new System.Drawing.Point(333, 69);
             this.dtTmPickerVenta.Margin = new System.Windows.Forms.Padding(2);
             this.dtTmPickerVenta.MinDate = new System.DateTime(2026, 1, 1, 0, 0, 0, 0);
             this.dtTmPickerVenta.Name = "dtTmPickerVenta";
@@ -88,7 +89,7 @@
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(232, 49);
+            this.lblFecha.Location = new System.Drawing.Point(330, 49);
             this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(37, 13);
@@ -230,7 +231,7 @@
             // lblToast
             // 
             this.lblToast.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblToast.Location = new System.Drawing.Point(411, 65);
+            this.lblToast.Location = new System.Drawing.Point(517, 57);
             this.lblToast.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblToast.Name = "lblToast";
             this.lblToast.Size = new System.Drawing.Size(151, 38);
@@ -252,11 +253,22 @@
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.Location = new System.Drawing.Point(204, 62);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(59, 23);
+            this.btnBuscarCliente.TabIndex = 17;
+            this.btnBuscarCliente.Text = "Buscar";
+            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
+            // 
             // GestionVentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1049, 499);
+            this.Controls.Add(this.btnBuscarCliente);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblToast);
             this.Controls.Add(this.btnRegistrarVenta);
@@ -303,5 +315,6 @@
         private System.Windows.Forms.Label lblToast;
         private System.Windows.Forms.ErrorProvider errorProviderVenta;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnBuscarCliente;
     }
 }

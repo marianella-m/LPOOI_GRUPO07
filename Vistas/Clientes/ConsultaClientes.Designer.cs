@@ -41,6 +41,7 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.lblCategoria = new System.Windows.Forms.Label();
+            this.btnSeleccionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -175,11 +176,22 @@
             this.lblCategoria.TabIndex = 12;
             this.lblCategoria.Text = "Ordenar por:";
             // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.Location = new System.Drawing.Point(420, 314);
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.Size = new System.Drawing.Size(75, 21);
+            this.btnSeleccionar.TabIndex = 13;
+            this.btnSeleccionar.Text = "Seleccionar";
+            this.btnSeleccionar.UseVisualStyleBackColor = true;
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click_1);
+            // 
             // ConsultaClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 363);
+            this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.cmbCategoria);
             this.Controls.Add(this.lblFilterNombre);
@@ -218,5 +230,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.Button btnSeleccionar;
     }
 }

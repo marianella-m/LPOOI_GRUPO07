@@ -13,12 +13,13 @@ namespace Vistas
 {
     public partial class ConsultaClientes : Form
     {
+        public bool ModoSeleccion { get; set; }
+        public Cliente ClienteSeleccionado { get; private set; }
         public ConsultaClientes()
         {
             InitializeComponent();
             dtGridClientes.DataSource = ClienteService.FindByDniApellidoNombre(null, null, null, null);
         }
-
         private void btnBuscarClientes_Click(object sender, EventArgs e)
         {   
             string dni = txtDni.Text;
@@ -75,6 +76,26 @@ namespace Vistas
             cmbCategoria.Items.Add("Número carnet");
             cmbCategoria.Items.Add("Cuit obra social");
             cmbCategoria.SelectedIndex = 0;
+
+            btnSeleccionar.Visible = ModoSeleccion;
+            btnActualizar.Visible = !ModoSeleccion;
+            btnEliminar.Visible = !ModoSeleccion;
         }
+
+        private void btnSeleccionar_Click_1(object sender, EventArgs e)
+        {
+            if (dtGridClientes.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un cliente.");
+                return;
+            }
+
+            ClienteSeleccionado = mapClienteForRow(dtGridClientes.CurrentRow);
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+
     }
 }

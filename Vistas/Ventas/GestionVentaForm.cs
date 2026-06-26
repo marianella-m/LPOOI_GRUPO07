@@ -202,6 +202,17 @@ namespace Vistas
             mapRowsItems.Clear();
         }
 
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
+        {
+            ConsultaClientes consulta = new ConsultaClientes();
+            consulta.ModoSeleccion = true;
+
+            if (consulta.ShowDialog() == DialogResult.OK)
+            {
+                cmbBoxClientes.SelectedValue = consulta.ClienteSeleccionado.Cli_DNI;
+            }
+        }
+
 
     }
 }
