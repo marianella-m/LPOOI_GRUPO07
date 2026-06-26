@@ -61,13 +61,14 @@ namespace ClasesBase.services
 
             return dt;
         }
-        
-        public static DataTable FindByDniCuitOS(string dni, string cuitObraSocial)
+
+        public static DataTable FindByDniApellidoNombre(string dni, string apellido, string nombre)
         {
             string query = @"SELECT DNI AS [Dni], APELLIDO AS [Apellido], NOMBRE AS [Nombre],
                     DIRECCION AS [Dirección], NRO_CARNET AS [Número carnet], OS_CUIT AS [Cuit obra social] FROM CLIENTES
                     WHERE (@dni IS NULL OR DNI LIKE @dni)
-                    AND (@cuit IS NULL OR OS_CUIT LIKE @cuit)";
+                    AND (@apellido IS NULL OR APELLIDO LIKE @apellido)
+                    AND (@nombre IS NULL OR NOMBRE LIKE @nombre)";
 
             SqlDataAdapter da = new SqlDataAdapter(query, ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
@@ -76,10 +77,15 @@ namespace ClasesBase.services
             else
                 da.SelectCommand.Parameters.AddWithValue("@dni", "%" + dni + "%");
 
-            if (string.IsNullOrEmpty(cuitObraSocial))
-                da.SelectCommand.Parameters.AddWithValue("@cuit", DBNull.Value);
+            if (string.IsNullOrEmpty(apellido))
+                da.SelectCommand.Parameters.AddWithValue("@apellido", DBNull.Value);
             else
-                da.SelectCommand.Parameters.AddWithValue("@cuit", "%" + cuitObraSocial + "%");
+                da.SelectCommand.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
+
+            if (string.IsNullOrEmpty(nombre))
+                da.SelectCommand.Parameters.AddWithValue("@nombre", DBNull.Value);
+            else
+                da.SelectCommand.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
 
             DataTable dt = new DataTable();
             da.Fill(dt);

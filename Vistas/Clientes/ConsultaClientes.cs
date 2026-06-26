@@ -16,14 +16,15 @@ namespace Vistas
         public ConsultaClientes()
         {
             InitializeComponent();
-            dtGridClientes.DataSource = ClienteService.FindByDniCuitOS(null, null);
+            dtGridClientes.DataSource = ClienteService.FindByDniApellidoNombre(null, null, null);
         }
 
         private void btnBuscarClientes_Click(object sender, EventArgs e)
         {   
             string dni = txtDni.Text;
-            string cuitObraSocial = txtCuitOS.Text;
-            dtGridClientes.DataSource = ClienteService.FindByDniCuitOS(dni, cuitObraSocial);
+            string apellido = txtApellido.Text;
+            string nombre = txtNombre.Text;
+            dtGridClientes.DataSource = ClienteService.FindByDniApellidoNombre(dni, apellido, nombre);
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -35,7 +36,7 @@ namespace Vistas
             DialogResult resultado = form.ShowDialog();
             
             if (resultado == DialogResult.Cancel)
-                dtGridClientes.DataSource = ClienteService.FindByDniCuitOS(null, null);
+                dtGridClientes.DataSource = ClienteService.FindByDniApellidoNombre(null, null, null);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -46,7 +47,7 @@ namespace Vistas
             {
                 string dniCliente = dtGridClientes.CurrentRow.Cells["Dni"].Value.ToString();
                 ClienteService.EliminarCliente(dniCliente);
-                ClienteService.FindByDniCuitOS(null, null);
+                ClienteService.FindByDniApellidoNombre(null, null, null);
             }
 
         }
