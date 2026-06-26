@@ -73,9 +73,6 @@ namespace Vistas
                 DataTable dtVentas = VentaService.listar_ventas_por_fecha_sp(fechaInicioSeleccionada, fechaFinSeleccionada);
                 dtGridFechas.DataSource = dtVentas;
 
-                int totalVentasPeriodo = dtVentas.Rows.Count;
-                lblTotalVentasFecha.Text = "Total Ventas: " + totalVentasPeriodo.ToString();
-
             }
             catch (Exception ex)
             {

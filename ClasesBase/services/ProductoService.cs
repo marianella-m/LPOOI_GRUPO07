@@ -172,5 +172,74 @@ namespace ClasesBase.services
             }
             return dt;
         }
+
+        public static DataTable listar_productos_por_fecha_sp(DateTime fechaInicio, DateTime fechaFin)
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "listar_productos_por_fecha_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@fecha_inicio", fechaInicio);
+            cmd.Parameters.AddWithValue("@fecha_fin", fechaFin);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            try
+            {
+                cnn.Open();
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en la base de datos: " + ex.Message);
+            }
+            finally
+            {
+                if (cnn.State == ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
+            }
+
+            return dt;
+
+        }
+
+    
     }
 }
+
+
+
+/*
+ 
+ // 1. Declaramos la variable al principio
+    DataTable dt = new DataTable();
+
+    try
+    {
+        // Usa la cadena o método de conexión que ya tengas en tu proyecto (ej. Conexion.ObtenerConexion())
+        using (SqlConnection conexion = new SqlConnection("Tu_Cadena_Conexion_Aqui")) 
+        {
+            using (SqlCommand cmd = new SqlCommand("dbo.listar_productos_por_fecha_sp", conexion))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@fecha_inicio", fechaInicio);
+                cmd.Parameters.AddWithValue("@fecha_fin", fechaFin);
+
+                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                {
+                    conexion.Open();
+                    da.Fill(dt); // Si todo sale bien, se llena aquí
+                }
+            }
+        }
+    }
+ 
+ 
+ */

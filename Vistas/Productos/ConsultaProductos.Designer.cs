@@ -41,6 +41,10 @@
             this.lblClientes = new System.Windows.Forms.Label();
             this.cmBoxCliente = new System.Windows.Forms.ComboBox();
             this.lblCantidadTotal = new System.Windows.Forms.Label();
+            this.btnConsultarbyRango = new System.Windows.Forms.Button();
+            this.dtProductoFin = new System.Windows.Forms.DateTimePicker();
+            this.dtProductoInicio = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +58,7 @@
             this.dgvProductos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
-            this.dgvProductos.Size = new System.Drawing.Size(583, 239);
+            this.dgvProductos.Size = new System.Drawing.Size(601, 239);
             this.dgvProductos.TabIndex = 5;
             // 
             // label6
@@ -184,11 +188,65 @@
             this.lblCantidadTotal.TabIndex = 12;
             this.lblCantidadTotal.Text = "Total Productos: ";
             // 
+            // btnConsultarbyRango
+            // 
+            this.btnConsultarbyRango.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnConsultarbyRango.FlatAppearance.BorderSize = 0;
+            this.btnConsultarbyRango.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultarbyRango.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultarbyRango.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnConsultarbyRango.Location = new System.Drawing.Point(480, 161);
+            this.btnConsultarbyRango.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConsultarbyRango.Name = "btnConsultarbyRango";
+            this.btnConsultarbyRango.Size = new System.Drawing.Size(116, 28);
+            this.btnConsultarbyRango.TabIndex = 16;
+            this.btnConsultarbyRango.Text = "FILTRAR";
+            this.btnConsultarbyRango.UseVisualStyleBackColor = false;
+            this.btnConsultarbyRango.Click += new System.EventHandler(this.btnConsultarbyRango_Click);
+            // 
+            // dtProductoFin
+            // 
+            this.dtProductoFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtProductoFin.Location = new System.Drawing.Point(467, 135);
+            this.dtProductoFin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtProductoFin.MinDate = new System.DateTime(2026, 1, 1, 0, 0, 0, 0);
+            this.dtProductoFin.Name = "dtProductoFin";
+            this.dtProductoFin.Size = new System.Drawing.Size(129, 22);
+            this.dtProductoFin.TabIndex = 15;
+            this.dtProductoFin.Value = new System.DateTime(2026, 5, 26, 23, 59, 0, 0);
+            // 
+            // dtProductoInicio
+            // 
+            this.dtProductoInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtProductoInicio.Location = new System.Drawing.Point(335, 135);
+            this.dtProductoInicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtProductoInicio.MinDate = new System.DateTime(2026, 1, 1, 0, 0, 0, 0);
+            this.dtProductoInicio.Name = "dtProductoInicio";
+            this.dtProductoInicio.Size = new System.Drawing.Size(129, 22);
+            this.dtProductoInicio.TabIndex = 14;
+            this.dtProductoInicio.Value = new System.DateTime(2026, 5, 24, 23, 59, 0, 0);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(301, 116);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(295, 17);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "LISTADO DE PRODUCTOS POR FECHA";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
             // ConsultaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 526);
+            this.ClientSize = new System.Drawing.Size(642, 526);
+            this.Controls.Add(this.btnConsultarbyRango);
+            this.Controls.Add(this.dtProductoFin);
+            this.Controls.Add(this.dtProductoInicio);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lblCantidadTotal);
             this.Controls.Add(this.cmBoxCliente);
             this.Controls.Add(this.lblClientes);
@@ -227,5 +285,9 @@
         private System.Windows.Forms.Label lblClientes;
         private System.Windows.Forms.ComboBox cmBoxCliente;
         private System.Windows.Forms.Label lblCantidadTotal;
+        private System.Windows.Forms.Button btnConsultarbyRango;
+        private System.Windows.Forms.DateTimePicker dtProductoFin;
+        private System.Windows.Forms.DateTimePicker dtProductoInicio;
+        private System.Windows.Forms.Label label3;
     }
 }

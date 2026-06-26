@@ -132,12 +132,50 @@ namespace Vistas
             if (cmBoxCliente.SelectedValue != null)
             {
                 string dniSeleccionado = cmBoxCliente.SelectedValue.ToString();
-                dgvProductos.DataSource = ProductoService.list_productos_por_cliente_sp(dniSeleccionado);
+                DataTable dt = ProductoService.list_productos_por_cliente_sp(dniSeleccionado);
 
-                int totalVentasPeriodo = dgvProductos.Rows.Count;
-                lblCantidadTotal.Text = "Total Productos: " + totalVentasPeriodo.ToString();
+                dgvProductos.DataSource = dt;
+
+                int total = 0;
+
+                foreach (DataRow fila in dt.Rows)
+                {
+                    total += Convert.ToInt32(fila["Cantidad"]);
+                }
+
+                lblCantidadTotal.Text = "Total Productos Cliente: " + total;
 
             }
+
+        }
+        
+        private void btnConsultarbyRango_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime fechaInicioSeleccionada = dtProductoInicio.Value;
+                DateTime fechaFinSeleccionada = dtProductoFin.Value.AddDays(1);
+                DataTable dtProducto = ProductoService.listar_productos_por_fecha_sp(fechaInicioSeleccionada, fechaFinSeleccionada);
+                dgvProductos.DataSource = dtProducto;
+
+                int total = 0;
+
+                foreach (DataRow fila in dtProducto.Rows)
+                {
+                    total += Convert.ToInt32(fila["Cantidad"]);
+                }
+
+                lblCantidadTotal.Text = "Total Productos Vendidos: " + total;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al consultar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
 
         }
     }

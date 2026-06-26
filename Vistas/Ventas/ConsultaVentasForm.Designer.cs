@@ -39,7 +39,6 @@
             this.btnConsultarbyRango = new System.Windows.Forms.Button();
             this.dtGridFechas = new System.Windows.Forms.DataGridView();
             this.btnEliminarVenta = new System.Windows.Forms.Button();
-            this.lblTotalVentasFecha = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridVentas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridFechas)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +71,7 @@
             // 
             this.comboClientes.FormattingEnabled = true;
             this.comboClientes.Location = new System.Drawing.Point(193, 134);
-            this.comboClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboClientes.Margin = new System.Windows.Forms.Padding(4);
             this.comboClientes.Name = "comboClientes";
             this.comboClientes.Size = new System.Drawing.Size(160, 24);
             this.comboClientes.TabIndex = 2;
@@ -85,7 +84,7 @@
             this.btnConsultarVentasCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultarVentasCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnConsultarVentasCliente.Location = new System.Drawing.Point(181, 178);
-            this.btnConsultarVentasCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsultarVentasCliente.Margin = new System.Windows.Forms.Padding(4);
             this.btnConsultarVentasCliente.Name = "btnConsultarVentasCliente";
             this.btnConsultarVentasCliente.Size = new System.Drawing.Size(188, 28);
             this.btnConsultarVentasCliente.TabIndex = 3;
@@ -145,7 +144,7 @@
             this.btnConsultarbyRango.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultarbyRango.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnConsultarbyRango.Location = new System.Drawing.Point(731, 178);
-            this.btnConsultarbyRango.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsultarbyRango.Margin = new System.Windows.Forms.Padding(4);
             this.btnConsultarbyRango.Name = "btnConsultarbyRango";
             this.btnConsultarbyRango.Size = new System.Drawing.Size(188, 28);
             this.btnConsultarbyRango.TabIndex = 8;
@@ -157,7 +156,7 @@
             // 
             this.dtGridFechas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGridFechas.Location = new System.Drawing.Point(588, 228);
-            this.dtGridFechas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtGridFechas.Margin = new System.Windows.Forms.Padding(4);
             this.dtGridFechas.Name = "dtGridFechas";
             this.dtGridFechas.Size = new System.Drawing.Size(468, 287);
             this.dtGridFechas.TabIndex = 9;
@@ -170,7 +169,7 @@
             this.btnEliminarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnEliminarVenta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEliminarVenta.Location = new System.Drawing.Point(441, 572);
-            this.btnEliminarVenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminarVenta.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminarVenta.Name = "btnEliminarVenta";
             this.btnEliminarVenta.Size = new System.Drawing.Size(219, 38);
             this.btnEliminarVenta.TabIndex = 10;
@@ -178,23 +177,11 @@
             this.btnEliminarVenta.UseVisualStyleBackColor = false;
             this.btnEliminarVenta.Click += new System.EventHandler(this.btnEliminarVenta_Click);
             // 
-            // lblTotalVentasFecha
-            // 
-            this.lblTotalVentasFecha.AutoSize = true;
-            this.lblTotalVentasFecha.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.lblTotalVentasFecha.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalVentasFecha.Location = new System.Drawing.Point(589, 519);
-            this.lblTotalVentasFecha.Name = "lblTotalVentasFecha";
-            this.lblTotalVentasFecha.Size = new System.Drawing.Size(168, 26);
-            this.lblTotalVentasFecha.TabIndex = 13;
-            this.lblTotalVentasFecha.Text = "Total Ventas: ";
-            // 
             // ConsultaVentasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1109, 662);
-            this.Controls.Add(this.lblTotalVentasFecha);
             this.Controls.Add(this.btnEliminarVenta);
             this.Controls.Add(this.dtGridFechas);
             this.Controls.Add(this.btnConsultarbyRango);
@@ -231,7 +218,6 @@
         private System.Windows.Forms.Button btnConsultarbyRango;
         private System.Windows.Forms.DataGridView dtGridFechas;
         private System.Windows.Forms.Button btnEliminarVenta;
-        private System.Windows.Forms.Label lblTotalVentasFecha;
 
 
     }
