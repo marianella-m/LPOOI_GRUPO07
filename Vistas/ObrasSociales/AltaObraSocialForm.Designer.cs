@@ -48,7 +48,7 @@
             // txtCuit
             // 
             this.txtCuit.Location = new System.Drawing.Point(20, 50);
-            this.txtCuit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCuit.Margin = new System.Windows.Forms.Padding(2);
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.Size = new System.Drawing.Size(100, 20);
             this.txtCuit.TabIndex = 0;
@@ -56,7 +56,7 @@
             // txtRazonSocial
             // 
             this.txtRazonSocial.Location = new System.Drawing.Point(166, 50);
-            this.txtRazonSocial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRazonSocial.Margin = new System.Windows.Forms.Padding(2);
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.Size = new System.Drawing.Size(224, 20);
             this.txtRazonSocial.TabIndex = 1;
@@ -83,10 +83,10 @@
             this.groupBox1.Controls.Add(this.txtRazonSocial);
             this.groupBox1.Controls.Add(this.txtDireccion);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(11, 52);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(223, 67);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(416, 214);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -95,7 +95,7 @@
             // btnSaveObraSocial
             // 
             this.btnSaveObraSocial.Location = new System.Drawing.Point(322, 162);
-            this.btnSaveObraSocial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSaveObraSocial.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveObraSocial.Name = "btnSaveObraSocial";
             this.btnSaveObraSocial.Size = new System.Drawing.Size(67, 28);
             this.btnSaveObraSocial.TabIndex = 4;
@@ -146,7 +146,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(20, 106);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
             this.txtTelefono.TabIndex = 2;
@@ -154,7 +154,7 @@
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(166, 106);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(224, 20);
             this.txtDireccion.TabIndex = 3;
@@ -163,7 +163,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(11, 9);
+            this.label6.Location = new System.Drawing.Point(314, 9);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(234, 25);
@@ -173,7 +173,7 @@
             // lblToast
             // 
             this.lblToast.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblToast.Location = new System.Drawing.Point(249, 5);
+            this.lblToast.Location = new System.Drawing.Point(356, 312);
             this.lblToast.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblToast.Name = "lblToast";
             this.lblToast.Size = new System.Drawing.Size(151, 38);
@@ -184,15 +184,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 300);
+            this.ClientSize = new System.Drawing.Size(862, 466);
             this.Controls.Add(this.lblToast);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AltaObraSocialForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AltaObraSocialForm";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
