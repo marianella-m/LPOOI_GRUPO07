@@ -15,6 +15,7 @@ namespace Vistas
     public partial class Home : FormBase
     {
         Usuario usuarioActual = null;
+        private bool esCierreSesion = false;
 
         public Home(Usuario u)
         {
@@ -22,7 +23,7 @@ namespace Vistas
             usuarioActual = u;
         }
 
-        Font fuenteOriginal ;
+        Font fuenteOriginal;
 
         private void Home_Load(object sender, EventArgs e)
         {
@@ -39,7 +40,6 @@ namespace Vistas
             this.Navigate(pnlContent, new AltaObraSocialForm());
         }
 
-        // funcionalidad a boton en pestaña cliente -> alta cliente
         private void altaClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Navigate(pnlContent, new AltaClienteForm());
@@ -51,8 +51,11 @@ namespace Vistas
         }
 
         private void Home_FormClosed(object sender, FormClosedEventArgs e)
-        {   //el cierre de la aplicación se delega al cierre de este formulario
-            Application.Exit();
+        {
+            if (!esCierreSesion)
+            {
+                Application.Exit();
+            }
         }
 
         private void btnCloseSession_Click(object sender, EventArgs e)
@@ -60,14 +63,29 @@ namespace Vistas
             DialogResult dialogResult = MessageBox.Show("Esta seguro que desea cerrar sesión?", "Cierre de sesión", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
             if (dialogResult == DialogResult.OK)
-                this.Close();
+            {
+                esCierreSesion = true;
+                this.Close(); // Destruye el Home y libera sus recursos
+
+                // Busca el LoginForm original que está oculto en segundo plano
+                foreach (Form f in Application.OpenForms)
+                {
+                    if (f is LoginForm)
+                    {
+                        LoginForm login = (LoginForm)f;
+
+                        // Invoca el método seguro que limpia los controles y lo vuelve a mostrar
+                        login.MostrarYLimpiar();
+                        return;
+                    }
+                }
+            }
         }
 
         private void btnCloseSession_MouseHover(object sender, EventArgs e)
         {
             btnCloseSession.BackColor = Color.FromArgb(200, 60, 60);
             btnCloseSession.ForeColor = Color.White;
-
             btnCloseSession.Font = new Font(btnCloseSession.Font, FontStyle.Bold);
         }
 
@@ -75,7 +93,6 @@ namespace Vistas
         {
             btnCloseSession.BackColor = Color.FromArgb(220, 90, 90);
             btnCloseSession.ForeColor = Color.White;
-
             btnCloseSession.Font = fuenteOriginal;
         }
 
@@ -86,7 +103,6 @@ namespace Vistas
 
         private void consultaProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             this.Navigate(pnlContent, new ConsultaProductos());
         }
 
@@ -110,8 +126,10 @@ namespace Vistas
                 clientesToolStripMenuItem.Enabled = false;
                 obrasSocialesToolStripMenuItem.Enabled = false;
                 ventasToolStripMenuItem.Enabled = false;
-            }
 
+                // Carga automática al abrir
+                this.Navigate(pnlContent, new AltaProductosForm());
+            }
             else if (u.Rol_Codigo == 3) //Operador
             {
                 usuariosToolStripMenuItem.Enabled = false;
@@ -119,8 +137,10 @@ namespace Vistas
 
                 clientesToolStripMenuItem.Enabled = true;
                 ventasToolStripMenuItem.Enabled = true;
-            }
 
+                // Carga automática al abrir
+                this.Navigate(pnlContent, new AltaClienteForm());
+            }
             else if (u.Rol_Codigo == 2) //Auditor
             {
                 usuariosToolStripMenuItem.Enabled = true;
@@ -128,6 +148,9 @@ namespace Vistas
 
                 clientesToolStripMenuItem.Enabled = true;
                 ventasToolStripMenuItem.Enabled = true;
+
+                // Carga automática al abrir
+                this.Navigate(pnlContent, new AltaObraSocialForm());
             }
         }
 
@@ -145,7 +168,5 @@ namespace Vistas
         {
             this.Navigate(pnlContent, new ConsultaClientes());
         }
-
-        
     }
 }
