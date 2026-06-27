@@ -156,5 +156,21 @@ namespace Vistas
                 txtNombreUsuario.Focus();
             }
         }
+
+        /// <summary>
+        /// Método público que limpia las cajas de texto y vuelve a visibilizar el Login.
+        /// </summary>
+        public void MostrarYLimpiar()
+        {
+            txtNombreUsuario.Text = "";
+            txtContrasenia.Text = "";
+
+            // Si tienes etiquetas de error visibles, las reseteamos también
+            if (lblErrorNombreUsuario != null) lblErrorNombreUsuario.Visible = false;
+            if (lblErrorContrasenia != null) lblErrorContrasenia.Visible = false;
+
+            this.Show(); // Despierta el formulario oculto
+            txtNombreUsuario.Focus(); // Coloca el cursor listo para escribir
+        }
     }
 }
