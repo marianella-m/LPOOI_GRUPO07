@@ -14,8 +14,24 @@ namespace ClasesBase.services
         public ObraSocialService() { }
 
         public void saveObraSocial(ObraSocial obraSocial) {
-            obrasSociales.Add(obraSocial);
-            Console.WriteLine("Numero de elementos: " + obrasSociales.Count());
+            string connectionString = ClasesBase.Properties.Settings.Default.opticaConnectionString;
+
+            string query = "INSERT INTO OBRAS_SOCIALES (CUIT, RAZON_SOCIAL, DIRECCION, TELEFONO) VALUES (@cuit, @razon, @dir, @tel)";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@cuit", obraSocial.OS_CUIT); 
+                    cmd.Parameters.AddWithValue("@razon", obraSocial.OS_RazonSocial);
+                    cmd.Parameters.AddWithValue("@dir", obraSocial.OS_Direccion);
+                    cmd.Parameters.AddWithValue("@tel", obraSocial.OS_Telefono);
+
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
         }
 
         public static DataTable FindAllObrasSociales()

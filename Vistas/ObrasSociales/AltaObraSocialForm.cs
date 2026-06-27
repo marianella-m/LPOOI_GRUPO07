@@ -87,7 +87,7 @@ namespace Vistas
             DialogResult dialogResult = MessageBox.Show("¿Seguro que quieres guardar esta obra social?\n\n" + messageProperties, "Confirmar guardado", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (dialogResult == DialogResult.Yes) {
-                ObraSocial obraSocial = new ObraSocial(cuit, razonSocial, razonSocial, telefono);
+                ObraSocial obraSocial = new ObraSocial(cuit, razonSocial, direccion, telefono);
                 service.saveObraSocial(obraSocial);
                 this.showToast(lblToast, "Guardado exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
                 clearControls();

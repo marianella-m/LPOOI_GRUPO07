@@ -61,7 +61,7 @@
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
             this.menuPrincipal.Padding = new System.Windows.Forms.Padding(4, 16, 0, 16);
-            this.menuPrincipal.Size = new System.Drawing.Size(996, 51);
+            this.menuPrincipal.Size = new System.Drawing.Size(888, 51);
             this.menuPrincipal.TabIndex = 0;
             this.menuPrincipal.Text = "menuPrincipal";
             // 
@@ -182,7 +182,7 @@
             // 
             // pnlContent
             // 
-            this.pnlContent.Location = new System.Drawing.Point(9, 63);
+            this.pnlContent.Location = new System.Drawing.Point(10, 63);
             this.pnlContent.Margin = new System.Windows.Forms.Padding(2);
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(868, 495);
@@ -207,7 +207,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(996, 578);
+            this.ClientSize = new System.Drawing.Size(888, 578);
             this.Controls.Add(this.btnCloseSession);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.menuPrincipal);
