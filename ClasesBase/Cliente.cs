@@ -28,7 +28,6 @@ namespace ClasesBase
             this.Cli_Direccion = direccion;
             this.OS_CUIT = cuit;
             this.Cli_NroCarnet = nCarnet;
-
         }
     }
 }

@@ -14,7 +14,7 @@ namespace ClasesBase.services
             SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT CODIGO as 'Código', CATEGORIA as 'Categoría', DESCRIPCION as 'Descripción', PRECIO as 'Precio' FROM PRODUCTOS";
+            cmd.CommandText = "SELECT CODIGO as 'Código', CATEGORIA as 'Categoría', DESCRIPCION as 'Descripción', PRECIO as 'Precio' FROM PRODUCTOS WHERE ACTIVO = 1";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
 
@@ -29,7 +29,7 @@ namespace ClasesBase.services
             SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT CODIGO as 'Código', CATEGORIA as 'Categoría', DESCRIPCION as 'Descripción', PRECIO as 'Precio' FROM PRODUCTOS WHERE DESCRIPCION LIKE @pattern OR DESCRIPCION LIKE @pattern";
+            cmd.CommandText = "SELECT CODIGO as 'Código', CATEGORIA as 'Categoría', DESCRIPCION as 'Descripción', PRECIO as 'Precio' FROM PRODUCTOS WHERE ACTIVO = 1 AND DESCRIPCION LIKE @pattern OR DESCRIPCION LIKE @pattern";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
 
@@ -46,7 +46,7 @@ namespace ClasesBase.services
             SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT * FROM PRODUCTOS WHERE CODIGO=@cod";
+            cmd.CommandText = "SELECT * FROM PRODUCTOS WHERE ACTIVO = 1 AND CODIGO=@cod";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con;
 

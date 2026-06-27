@@ -48,7 +48,8 @@ namespace ClasesBase.services
         {
             string query = @"SELECT *
                              FROM CLIENTES
-                             WHERE DNI LIKE @dni
+                             WHERE ACTIVO = 1
+                             AND DNI LIKE @dni
                              AND APELLIDO LIKE @apellido";
 
             SqlDataAdapter da = new SqlDataAdapter(query, ClasesBase.Properties.Settings.Default.opticaConnectionString);
@@ -95,7 +96,7 @@ namespace ClasesBase.services
 
         public static DataTable findAllClientes()
         {
-            string query = "SELECT * FROM CLIENTES";
+            string query = "SELECT * FROM CLIENTES WHERE ACTIVO = 1";
 
             SqlDataAdapter da = new SqlDataAdapter(query, ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
@@ -135,7 +136,9 @@ namespace ClasesBase.services
         {
             using (SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString))
             {
-                string query = "DELETE FROM CLIENTES WHERE DNI = @dni";
+                string query = @"UPDATE CLIENTES
+                                SET ACTIVO = 0
+                                WHERE DNI = @dni";
 
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@dni", dni);
@@ -149,7 +152,8 @@ namespace ClasesBase.services
         {
             string query = @"SELECT DNI as 'DNI', APELLIDO as 'Apellido', NOMBRE as 'Nombre', DIRECCION as 'Dirección', NRO_CARNET as 'Nro Carnet', OS_CUIT as 'Obra Social'
                             FROM CLIENTES
-                            WHERE OS_CUIT = @osCuit";
+                            WHERE ACTIVO = 1 
+                            AND OS_CUIT = @osCuit";
 
             SqlDataAdapter da = new SqlDataAdapter(query, ClasesBase.Properties.Settings.Default.opticaConnectionString);
             da.SelectCommand.Parameters.AddWithValue("@osCuit", osCuit);
