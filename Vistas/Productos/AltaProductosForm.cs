@@ -24,7 +24,7 @@ namespace Vistas
             if (!string.IsNullOrEmpty(codigo))
             {
                 txtTitulo.Text = "Modificar Producto";
-                txtCodigo.Enabled = false;
+                //txtCodigo.Enabled = false;
                 cargar_producto(codigo);
             }
         }
@@ -35,7 +35,6 @@ namespace Vistas
 
             if (p != null)
             {
-                txtCodigo.Text = p.Prod_Codigo;
                 txtCategoria.Text = p.Prod_Categoria;
                 txtDescripcion.Text = p.Prod_Descripcion;
                 txtPrecio.Text = p.Prod_Precio.ToString();
@@ -44,7 +43,7 @@ namespace Vistas
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtCodigo.Text) ||
+            if (
                 string.IsNullOrWhiteSpace(txtCategoria.Text) ||
                 string.IsNullOrWhiteSpace(txtDescripcion.Text) ||
                 string.IsNullOrWhiteSpace(txtPrecio.Text))
@@ -66,7 +65,7 @@ namespace Vistas
             }
 
             Producto p = new Producto(
-                txtCodigo.Text,
+             
                 txtCategoria.Text,
                 txtDescripcion.Text,
                 precio
@@ -75,20 +74,20 @@ namespace Vistas
             if (!string.IsNullOrEmpty(this.verificacion))
             {
                 ProductoService.update_producto(
-                    p.Prod_Codigo,
+                    this.verificacion,
                     p.Prod_Categoria,
                     p.Prod_Descripcion,
                     p.Prod_Precio
                 );
 
-
+                MessageBox.Show("Producto modificado correctamente");
                 this.showToast(lblToast, "Modificado exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
                 this.Hide();
             }
             else
             {
                 ProductoService.insert_producto(
-                    p.Prod_Codigo,
+                   
                     p.Prod_Categoria,
                     p.Prod_Descripcion,
                     p.Prod_Precio
@@ -96,7 +95,6 @@ namespace Vistas
 
                 this.showToast(lblToast, "Guardado exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
 
-                txtCodigo.Clear();
                 txtCategoria.Clear();
                 txtDescripcion.Clear();
                 txtPrecio.Clear();

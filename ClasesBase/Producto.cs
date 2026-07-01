@@ -25,5 +25,13 @@ namespace ClasesBase
             this.Prod_Codigo = codigo;
             this.Prod_Precio = precio;
         }
+
+        public Producto( string categoria, string descripcion, decimal precio)
+        {
+            Prod_Categoria = categoria;
+            Prod_Descripcion = descripcion;
+            Prod_Precio = precio;
+        }
+
     }
 }

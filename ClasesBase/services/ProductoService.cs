@@ -71,7 +71,7 @@ namespace ClasesBase.services
             con.Close();
             return null;
         }
-        public static void insert_producto(string codigo, string categoria, string descripcion, decimal precio)
+        public static void insert_producto( string categoria, string descripcion, decimal precio)
         {
             SqlConnection con = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
@@ -80,7 +80,6 @@ namespace ClasesBase.services
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = con;
 
-            cmd.Parameters.AddWithValue("@cod", codigo);
             cmd.Parameters.AddWithValue("@cat", categoria);
             cmd.Parameters.AddWithValue("@des", descripcion);
             cmd.Parameters.AddWithValue("@pre", precio);
@@ -208,7 +207,6 @@ namespace ClasesBase.services
             return dt;
 
         }
-
     
     }
 }
