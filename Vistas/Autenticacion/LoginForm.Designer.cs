@@ -242,7 +242,6 @@
             this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picContrasenia)).EndInit();
             this.pnlImagen.ResumeLayout(false);

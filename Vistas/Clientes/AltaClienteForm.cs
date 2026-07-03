@@ -10,6 +10,7 @@ namespace Vistas
     public partial class AltaClienteForm : Form
     {
         ClienteService clienteService = new ClienteService();
+        ObraSocialService obraSocialService = new ObraSocialService();
 
         public AltaClienteForm()
         {
@@ -47,7 +48,7 @@ namespace Vistas
 
         private void CargarObrasSociales()
         {
-            DataTable dt = clienteService.CargarObrasSociales();
+            DataTable dt = obraSocialService.obtenerTodas();
 
             DataRow defaultOptionRow = dt.NewRow();
             defaultOptionRow["CUIT"] = "0";
