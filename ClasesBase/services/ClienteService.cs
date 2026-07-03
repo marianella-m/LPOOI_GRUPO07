@@ -9,17 +9,7 @@ namespace ClasesBase.services
     {
         //private string cadenaConexion = ConfigurationManager.ConnectionStrings["opticaConnection"].ConnectionString;
 
-        public DataTable CargarObrasSociales()
-        {
-            string query = "SELECT CUIT, RAZON_SOCIAL FROM OBRAS_SOCIALES";
-
-            SqlDataAdapter da = new SqlDataAdapter(query, ClasesBase.Properties.Settings.Default.opticaConnectionString);
-            DataTable dt = new DataTable();
-
-            da.Fill(dt);
-
-            return dt;
-        }
+        
 
         public void GuardarCliente(Cliente nuevoCliente)
         {

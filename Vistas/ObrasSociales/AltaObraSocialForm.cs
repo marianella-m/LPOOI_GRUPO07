@@ -14,7 +14,7 @@ namespace Vistas
 {
     public partial class AltaObraSocialForm : FormBase
     {
-        char REQUIRED_CHAR = '*';
+        char REQUIRED_CHAR = '*';                                                
         ObraSocialService service;
 
         public AltaObraSocialForm()
@@ -36,6 +36,15 @@ namespace Vistas
             if (string.IsNullOrWhiteSpace(txtCuit.Text))
             {
                 errorMessageBuilder.AppendLine("Cuit es campo requerido");
+            }
+            else 
+            {
+                DataTable dtObra = service.buscarPorCuit(txtCuit.Text);
+
+                if (dtObra != null && dtObra.Rows.Count > 0)
+                {
+                    errorMessageBuilder.AppendLine("Cuit ya esta registrado");
+                }
             }
 
             if (string.IsNullOrWhiteSpace(txtRazonSocial.Text))
@@ -88,7 +97,7 @@ namespace Vistas
 
             if (dialogResult == DialogResult.Yes) {
                 ObraSocial obraSocial = new ObraSocial(cuit, razonSocial, direccion, telefono);
-                service.saveObraSocial(obraSocial);
+                service.guardar(obraSocial);
                 this.showToast(lblToast, "Guardado exitosamente", Color.FromArgb(25, 80, 40), Color.FromArgb(220, 240, 225));
                 clearControls();
             }

@@ -9,13 +9,15 @@ namespace ClasesBase.services
 {
     public class ObraSocialService
     {
-        List<ObraSocial> obrasSociales = new List<ObraSocial>();
-
         public ObraSocialService() { }
 
-        public void saveObraSocial(ObraSocial obraSocial) {
+        /// <summary>
+        /// Inserta una obra social en la base de datos.
+        /// </summary>
+        /// <param name="obraSocial"></param>
+        public void guardar(ObraSocial obraSocial) 
+        {
             string connectionString = ClasesBase.Properties.Settings.Default.opticaConnectionString;
-
             string query = "INSERT INTO OBRAS_SOCIALES (CUIT, RAZON_SOCIAL, DIRECCION, TELEFONO) VALUES (@cuit, @razon, @dir, @tel)";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -34,24 +36,44 @@ namespace ClasesBase.services
             }
         }
 
-        public static DataTable FindAllObrasSociales()
+        /// <summary>
+        /// Retorna las obras sociales registradas.
+        /// </summary>
+        /// <returns></returns>
+        public DataTable obtenerTodas()
         {
-            SqlConnection connection = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
-
-            SqlCommand cmd = new SqlCommand();
-
-            cmd.CommandText = "SELECT CUIT AS [Cuit], RAZON_SOCIAL AS [Razón Social], DIRECCION AS [Dirección], TELEFONO AS [Teléfono] FROM VENTAS";
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = connection;
-
-            connection.Open();
-            SqlDataReader reader = cmd.ExecuteReader();
+            string query = "SELECT CUIT, RAZON_SOCIAL, DIRECCION, TELEFONO FROM OBRAS_SOCIALES";
 
             DataTable datatable = new DataTable();
-            datatable.Load(reader, LoadOption.OverwriteChanges);
+            SqlDataAdapter da = new SqlDataAdapter(query, ClasesBase.Properties.Settings.Default.opticaConnectionString);
 
-            connection.Close();
+            da.Fill(datatable);
+
             return datatable;
+        }
+
+        /// <summary>
+        /// Retorna una obra social buscada por cuit.
+        /// </summary>
+        /// <returns></returns>
+        public DataTable buscarPorCuit(string cuit)
+        {
+            string query = "SELECT CUIT, RAZON_SOCIAL, DIRECCION, TELEFONO FROM OBRAS_SOCIALES WHERE CUIT = @cuit";
+            DataTable dt = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@cuit", cuit);
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+            }
+            return dt;
         }
     }
 }
