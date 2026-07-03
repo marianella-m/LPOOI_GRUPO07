@@ -121,19 +121,6 @@ namespace Vistas
         }
 
         /// <summary>
-        /// Mensaje de confirmacion luego de cerrar la ventana Inicio Sesion.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e) 
-        {
-            DialogResult dialogResult = MessageBox.Show("¿Está seguro que desea salir?", "Alerta", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-
-            if (dialogResult == DialogResult.Cancel)
-                e.Cancel = true;
-        }
-
-        /// <summary>
         /// Luego de validar las credenciales de un usuario redirecciona al Menu Principal
         /// </summary>
         /// <param name="sender"></param>

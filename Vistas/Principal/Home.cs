@@ -65,16 +65,14 @@ namespace Vistas
             if (dialogResult == DialogResult.OK)
             {
                 esCierreSesion = true;
-                this.Close(); // Destruye el Home y libera sus recursos
+                this.Close();
 
-                // Busca el LoginForm original que está oculto en segundo plano
                 foreach (Form f in Application.OpenForms)
                 {
                     if (f is LoginForm)
                     {
                         LoginForm login = (LoginForm)f;
 
-                        // Invoca el método seguro que limpia los controles y lo vuelve a mostrar
                         login.MostrarYLimpiar();
                         return;
                     }
@@ -118,7 +116,7 @@ namespace Vistas
 
         private void restricciones(Usuario u)
         {
-            if (u.Rol_Codigo == 1) //Administrador
+            if (u.Rol_Codigo == 1)
             {
                 usuariosToolStripMenuItem.Enabled = true;
                 productosToolStripMenuItem.Enabled = true;
@@ -127,10 +125,9 @@ namespace Vistas
                 obrasSocialesToolStripMenuItem.Enabled = false;
                 ventasToolStripMenuItem.Enabled = false;
 
-                // Carga automática al abrir
                 this.Navigate(pnlContent, new AltaProductosForm());
             }
-            else if (u.Rol_Codigo == 3) //Operador
+            else if (u.Rol_Codigo == 3)
             {
                 usuariosToolStripMenuItem.Enabled = false;
                 productosToolStripMenuItem.Enabled = false;
@@ -138,10 +135,9 @@ namespace Vistas
                 clientesToolStripMenuItem.Enabled = true;
                 ventasToolStripMenuItem.Enabled = true;
 
-                // Carga automática al abrir
                 this.Navigate(pnlContent, new AltaClienteForm());
             }
-            else if (u.Rol_Codigo == 2) //Auditor
+            else if (u.Rol_Codigo == 2)
             {
                 usuariosToolStripMenuItem.Enabled = true;
                 productosToolStripMenuItem.Enabled = true;
@@ -149,7 +145,6 @@ namespace Vistas
                 clientesToolStripMenuItem.Enabled = true;
                 ventasToolStripMenuItem.Enabled = true;
 
-                // Carga automática al abrir
                 this.Navigate(pnlContent, new AltaObraSocialForm());
             }
         }

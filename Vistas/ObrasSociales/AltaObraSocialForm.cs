@@ -37,10 +37,14 @@ namespace Vistas
             {
                 errorMessageBuilder.AppendLine("Cuit es campo requerido");
             }
-
-            if (service.buscarPorCuit(txtCuit.Text) != null)
+            else 
             {
-                errorMessageBuilder.AppendLine("Cuit ya esta registrado");
+                DataTable dtObra = service.buscarPorCuit(txtCuit.Text);
+
+                if (dtObra != null && dtObra.Rows.Count > 0)
+                {
+                    errorMessageBuilder.AppendLine("Cuit ya esta registrado");
+                }
             }
 
             if (string.IsNullOrWhiteSpace(txtRazonSocial.Text))
