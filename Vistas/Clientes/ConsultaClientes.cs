@@ -49,7 +49,7 @@ namespace Vistas
             {
                 string dniCliente = dtGridClientes.CurrentRow.Cells["Dni"].Value.ToString();
                 ClienteService.EliminarCliente(dniCliente);
-                ClienteService.FindByDniApellidoNombre(null, null, null, null);
+                dtGridClientes.DataSource = ClienteService.FindByDniApellidoNombre(null, null, null, null);
             }
 
         }
