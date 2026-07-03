@@ -12,7 +12,7 @@ namespace Vistas
 {
     public partial class ConsultaVentasForm : Form
     {
-    
+
         private DataGridView ultimaGrillaSeleccionada = null;
 
         public ConsultaVentasForm()
@@ -59,39 +59,68 @@ namespace Vistas
 
                     int totalRegistros = dtGridVentas.RowCount;
                     lblTotalVentasPorCliente.Text = "Total ventas " + comboClientes.Text + " : " + totalRegistros;
+                    lblTotalVentasPorCliente.Visible = (totalRegistros > 0);
 
-                    lblTotalVentasPorCliente.Visible = (totalRegistros > 0) ? true : false;
+
+                    if (totalRegistros > 0)
+                    {
+                        decimal sumaAcumulada = Convert.ToDecimal(dtVentas.Compute("SUM([Total])", ""));
+
+                        lblGastoAcumulado.Text = "Monto Total Acumulado: $ " + sumaAcumulada.ToString("N2");
+                        lblGastoAcumulado.Visible = true;
+                    }
+                    else
+                    {
+                        lblGastoAcumulado.Visible = false;
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al consultar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error: " + ex.Message);
                 }
             }
         }
 
+        // boton para consultar ventas entre fechas
         private void btnConsultarbyRango_Click(object sender, EventArgs e)
         {
             try
             {
                 DateTime fechaInicioSeleccionada = dtVentaInicio.Value;
                 DateTime fechaFinSeleccionada = dtVentaFin.Value.AddMinutes(1);
+
                 DataTable dtVentas = VentaService.listar_ventas_por_fecha_sp(fechaInicioSeleccionada, fechaFinSeleccionada);
                 dtGridFechas.DataSource = dtVentas;
+
                 int totalRegistros = dtGridFechas.RowCount;
                 lblTotalVentasPorRangoFechas.Text = "Total ventas: " + totalRegistros;
-                lblTotalVentasPorRangoFechas.Visible = (totalRegistros > 0) ? true : false;
+                lblTotalVentasPorRangoFechas.Visible = (totalRegistros > 0);
 
+                if (totalRegistros > 0)
+                {
+                    if (dtGridFechas.Columns["Total"] != null)
+                    {
+                        dtGridFechas.Columns["Total"].DefaultCellStyle.Format = "$ #,##0.00";
+                    }
+                    decimal sumaAcumulada = Convert.ToDecimal(dtVentas.Compute("SUM([Total])", ""));
+
+                    lblGastoAcumuladoFechas.Text = "Monto Total Acumulado: $ " + sumaAcumulada.ToString("N2");
+                    lblGastoAcumuladoFechas.Visible = true;
+                }
+                else
+                {
+                    lblGastoAcumuladoFechas.Visible = false;
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al consultar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al consultar por fechas: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
 
         private void btnEliminarVenta_Click(object sender, EventArgs e)
         {
-
             if (ultimaGrillaSeleccionada == null || ultimaGrillaSeleccionada.CurrentRow == null)
             {
                 MessageBox.Show("Por favor, haga clic sobre la venta que desea eliminar en cualquiera de las dos tablas.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -105,7 +134,7 @@ namespace Vistas
             {
                 try
                 {
-    
+
                     int nroVenta = Convert.ToInt32(ultimaGrillaSeleccionada.CurrentRow.Cells["Número"].Value);
 
                     ClasesBase.services.VentaService.DeleteVenta(nroVenta);
