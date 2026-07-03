@@ -42,10 +42,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(11, 9);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(437, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(219, 25);
+            this.label6.Size = new System.Drawing.Size(275, 29);
             this.label6.TabIndex = 18;
             this.label6.Text = "Consulta de Usuarios";
             // 
@@ -55,25 +54,28 @@
             this.ListaUsuarios.AllowUserToDeleteRows = false;
             this.ListaUsuarios.AllowUserToResizeColumns = false;
             this.ListaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListaUsuarios.Location = new System.Drawing.Point(11, 52);
+            this.ListaUsuarios.Location = new System.Drawing.Point(280, 125);
+            this.ListaUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ListaUsuarios.Name = "ListaUsuarios";
             this.ListaUsuarios.ReadOnly = true;
-            this.ListaUsuarios.Size = new System.Drawing.Size(442, 203);
+            this.ListaUsuarios.Size = new System.Drawing.Size(589, 250);
             this.ListaUsuarios.TabIndex = 20;
             this.ListaUsuarios.MouseHover += new System.EventHandler(this.ListaUsuarios_MouseHover);
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(244, 12);
+            this.txtBuscar.Location = new System.Drawing.Point(460, 72);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(100, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(132, 22);
             this.txtBuscar.TabIndex = 21;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(363, 6);
+            this.btnBuscar.Location = new System.Drawing.Point(600, 66);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(67, 28);
+            this.btnBuscar.Size = new System.Drawing.Size(89, 34);
             this.btnBuscar.TabIndex = 22;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -81,9 +83,10 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(374, 259);
+            this.btnModificar.Location = new System.Drawing.Point(780, 396);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(67, 28);
+            this.btnModificar.Size = new System.Drawing.Size(89, 34);
             this.btnModificar.TabIndex = 23;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -91,9 +94,10 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(301, 259);
+            this.btnBorrar.Location = new System.Drawing.Point(682, 396);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(67, 28);
+            this.btnBorrar.Size = new System.Drawing.Size(89, 34);
             this.btnBorrar.TabIndex = 24;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
@@ -101,9 +105,9 @@
             // 
             // ConsultaUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 300);
+            this.ClientSize = new System.Drawing.Size(1149, 574);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnBuscar);
@@ -112,6 +116,7 @@
             this.Controls.Add(this.label6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ConsultaUsuarios";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

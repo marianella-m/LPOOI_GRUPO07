@@ -121,12 +121,12 @@
   <data name="btnShowHidePassword.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        dgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEDSURBVDhPzdK5
-        St5REAXwn8FoUphoE7SRCC6tyyuKQRCNCxjSujyCW+MK6mO49KbTRpHzMR/8/RpNCsmBuXBnzjl3mLn8
-        7/hc8VeYwBpu8Ygn3GAV453kJj5iHndYwCS+VUxhEX/wo7gv8AUnOMYwhrCPB9xjD4P4jlMcoa8t7scl
-        NtBTuQOso7fiV5kEuW/horStwia6ijBQr4bYxqfKpRZ8KJOWaY7tSgZvNYhmN5e0kXaSaItimrYjTPzG
-        TtXCCfccXyvXGmIGmAFlUBlYTPJqIuLkRnCGw+YQ28hq5mpVS5hurHEGP6s2i+5OcRNjWMF1faLEFZYx
-        2kl+Df/0ld8XzxJ/Ns7no5LlAAAAAElFTkSuQmCC
+        dgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAD9SURBVDhPzdLP
+        SgJRGIbxScxykdomahMFadvSWwxFiP5D0TbrEkrdlCWkl5G5t51uip5nmAlcDGSL8IXfwPnmnG8O50ww
+        98lGZsouLjDEJ77wjnOUkJhF1DHCIfawFtnHET5Qg3OnksMzOtjEBlqYYIwm1rGFFzxhBWEK6OMGGQuk
+        jUssRa5gE+P4Fj24NnzRwIIDsgq/6sQ4y7DmO5OCTcKmPu5g0fy2gWseHLgNt2MhXmRTt+1CXeMexjnO
+        fUXegvEQPUAPyIPywGziV+Via9vo4hE/hxjHq6nCqzpGGfE1VnAC3x0gjcQUcYYB/In0hlPsYKb86Vf+
+        zwTBNxJ/Ns5YoUitAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
