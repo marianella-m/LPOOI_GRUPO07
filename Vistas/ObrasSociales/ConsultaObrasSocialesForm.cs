@@ -10,7 +10,7 @@ namespace Vistas
 {
     public partial class ConsultaObrasSocialesForm : Form
     {
-        ClienteService clienteService = new ClienteService();
+        ObraSocialService obraSocialService = new ObraSocialService();
 
         public ConsultaObrasSocialesForm()
         {
@@ -22,7 +22,7 @@ namespace Vistas
         private void ConsultaObrasSocialesForm_Load(object sender, EventArgs e)
         {
             // 1. Cargar el ComboBox
-            DataTable dtObras = clienteService.CargarObrasSociales();
+            DataTable dtObras = obraSocialService.obtenerTodas();
             cmbObraSocial.DataSource = dtObras;
             cmbObraSocial.DisplayMember = "RAZON_SOCIAL";
             cmbObraSocial.ValueMember = "CUIT";
